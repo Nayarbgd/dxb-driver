@@ -29,9 +29,11 @@ export function Footer() {
           <div>
             <h4 className="text-foreground font-serif text-xl mb-6">Contact</h4>
             <ul className="space-y-4">
-              <li><a href="https://wa.me/971501234567" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm">WhatsApp Booking</a></li>
+              <li><a href="https://wa.me/971528730883" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors text-sm">+971 52 873 0883 (WhatsApp)</a></li>
+              <li><a href="tel:+971528730883" className="text-muted-foreground hover:text-primary transition-colors text-sm">+971 52 873 0883 (Call)</a></li>
+              <li><a href="mailto:dxbdriver@dxbdriver.com" className="text-muted-foreground hover:text-primary transition-colors text-sm">dxbdriver@dxbdriver.com</a></li>
               <li><Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors text-sm">Get a Quote</Link></li>
-              <li className="text-muted-foreground text-sm pt-4 border-t border-white/5 mt-4">Dubai, United Arab Emirates</li>
+              <li className="text-muted-foreground text-sm pt-4 border-t border-white/5 mt-4">DAMAC Smart Heights, 23rd Floor,<br />Barsha Heights, Dubai, UAE</li>
             </ul>
           </div>
         </div>

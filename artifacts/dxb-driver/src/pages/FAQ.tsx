@@ -190,7 +190,7 @@ export default function FAQ() {
               If you didn't find what you were looking for, message us directly. We respond on WhatsApp within 15 minutes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://wa.me/971501234567" target="_blank" rel="noreferrer" data-testid="link-faq-whatsapp">
+              <a href="https://wa.me/971528730883" target="_blank" rel="noreferrer" data-testid="link-faq-whatsapp">
                 <CTAButton variant="filled" className="px-12 py-4">Ask on WhatsApp</CTAButton>
               </a>
               <Link href="/contact" data-testid="link-faq-contact">

@@ -13,7 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { SiWhatsapp } from "react-icons/si";
-import { MapPin, Phone } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 const bookingSchema = z.object({
   name: z.string().min(2, "Please enter your full name"),
@@ -45,7 +45,7 @@ export default function Contact() {
 
   function onSubmit(data: BookingFormData) {
     const message = `New booking request from ${data.name}%0APhone: ${data.phone}%0APickup: ${data.pickup}%0ADrop-off: ${data.dropoff}%0ADate: ${data.date}%0AVehicle: ${data.vehicleType}${data.notes ? `%0ANotes: ${data.notes}` : ""}`;
-    window.open(`https://wa.me/971501234567?text=${message}`, "_blank");
+    window.open(`https://wa.me/971528730883?text=${message}`, "_blank");
     toast({
       title: "Redirecting to WhatsApp",
       description: "Your booking details have been pre-filled. Send the message to confirm.",
@@ -103,7 +103,7 @@ export default function Contact() {
 
                 <div className="space-y-6">
                   <a
-                    href="https://wa.me/971501234567"
+                    href="https://wa.me/971528730883"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-4 group"
@@ -114,27 +114,45 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-foreground text-sm font-semibold group-hover:text-primary transition-colors">WhatsApp</p>
-                      <p className="text-muted-foreground text-xs">+971 50 123 4567</p>
+                      <p className="text-muted-foreground text-xs">+971 52 873 0883</p>
                     </div>
                   </a>
 
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 border border-white/10 flex items-center justify-center text-muted-foreground">
+                  <a
+                    href="tel:+971528730883"
+                    className="flex items-center gap-4 group"
+                    data-testid="link-contact-phone"
+                  >
+                    <div className="w-10 h-10 border border-white/10 flex items-center justify-center text-muted-foreground group-hover:border-primary/30 group-hover:text-primary transition-colors">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="text-foreground text-sm font-semibold">Phone</p>
-                      <p className="text-muted-foreground text-xs">+971 50 123 4567</p>
+                      <p className="text-foreground text-sm font-semibold group-hover:text-primary transition-colors">Phone</p>
+                      <p className="text-muted-foreground text-xs">+971 52 873 0883</p>
                     </div>
-                  </div>
+                  </a>
 
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 border border-white/10 flex items-center justify-center text-muted-foreground">
+                  <a
+                    href="mailto:dxbdriver@dxbdriver.com"
+                    className="flex items-center gap-4 group"
+                    data-testid="link-contact-email"
+                  >
+                    <div className="w-10 h-10 border border-white/10 flex items-center justify-center text-muted-foreground group-hover:border-primary/30 group-hover:text-primary transition-colors">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-foreground text-sm font-semibold group-hover:text-primary transition-colors">Email</p>
+                      <p className="text-muted-foreground text-xs">dxbdriver@dxbdriver.com</p>
+                    </div>
+                  </a>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 border border-white/10 flex items-center justify-center text-muted-foreground shrink-0">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
                       <p className="text-foreground text-sm font-semibold">Location</p>
-                      <p className="text-muted-foreground text-xs">Dubai, United Arab Emirates</p>
+                      <p className="text-muted-foreground text-xs leading-relaxed">DAMAC Smart Heights, 23rd Floor,<br />Barsha Heights, Dubai, UAE</p>
                     </div>
                   </div>
                 </div>

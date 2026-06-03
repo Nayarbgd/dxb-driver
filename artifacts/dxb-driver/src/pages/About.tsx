@@ -222,7 +222,7 @@ export default function About() {
               <span className="text-primary">Difference.</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://wa.me/971501234567" target="_blank" rel="noreferrer" data-testid="link-about-whatsapp">
+              <a href="https://wa.me/971528730883" target="_blank" rel="noreferrer" data-testid="link-about-whatsapp">
                 <CTAButton variant="filled" className="px-12 py-4">Book Your Ride</CTAButton>
               </a>
               <Link href="/contact" data-testid="link-about-contact">

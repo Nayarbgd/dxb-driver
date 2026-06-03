@@ -23,7 +23,7 @@ export function MobileCTABar() {
     >
       <div className="flex w-full">
         <a
-          href="https://wa.me/971501234567"
+          href="https://wa.me/971528730883"
           target="_blank"
           rel="noreferrer"
           className="flex-1 bg-[#25D366] text-white flex items-center justify-center gap-2 py-4 px-2 font-semibold text-sm uppercase tracking-wider"

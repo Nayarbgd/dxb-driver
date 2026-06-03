@@ -147,7 +147,7 @@ export default function WhyChooseUs() {
             <Link href="/contact">
               <CTAButton variant="filled">Book Your Driver</CTAButton>
             </Link>
-            <a href="https://wa.me/971501234567" target="_blank" rel="noreferrer">
+            <a href="https://wa.me/971528730883" target="_blank" rel="noreferrer">
               <CTAButton variant="outline">WhatsApp Us</CTAButton>
             </a>
           </motion.div>
@@ -419,7 +419,7 @@ export default function WhyChooseUs() {
               <Link href="/contact">
                 <CTAButton variant="filled">Book Now</CTAButton>
               </Link>
-              <a href="https://wa.me/971501234567" target="_blank" rel="noreferrer">
+              <a href="https://wa.me/971528730883" target="_blank" rel="noreferrer">
                 <CTAButton variant="outline">WhatsApp Us</CTAButton>
               </a>
             </div>

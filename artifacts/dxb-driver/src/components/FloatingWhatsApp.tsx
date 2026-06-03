@@ -10,7 +10,7 @@ export function FloatingWhatsApp() {
       
       {/* Main button with subtle float animation */}
       <motion.a
-        href="https://wa.me/971501234567"
+        href="https://wa.me/971528730883"
         target="_blank"
         rel="noreferrer"
         aria-label="Contact on WhatsApp"

@@ -97,7 +97,7 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/971501234567" target="_blank" rel="noreferrer" data-testid="link-book-airport">
+              <a href="https://wa.me/971528730883" target="_blank" rel="noreferrer" data-testid="link-book-airport">
                 <CTAButton variant="filled">Book Airport Transfer</CTAButton>
               </a>
             </motion.div>
@@ -167,7 +167,7 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/971501234567" target="_blank" rel="noreferrer" data-testid="link-book-city">
+              <a href="https://wa.me/971528730883" target="_blank" rel="noreferrer" data-testid="link-book-city">
                 <CTAButton variant="filled">Book a City Ride</CTAButton>
               </a>
             </motion.div>
@@ -233,7 +233,7 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/971501234567" target="_blank" rel="noreferrer" data-testid="link-book-intemirate">
+              <a href="https://wa.me/971528730883" target="_blank" rel="noreferrer" data-testid="link-book-intemirate">
                 <CTAButton variant="filled">Plan Your Transfer</CTAButton>
               </a>
             </motion.div>
@@ -321,7 +321,7 @@ export default function Services() {
               Send us a message on WhatsApp or fill in a quote form. We respond within minutes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://wa.me/971501234567" target="_blank" rel="noreferrer" data-testid="link-services-whatsapp">
+              <a href="https://wa.me/971528730883" target="_blank" rel="noreferrer" data-testid="link-services-whatsapp">
                 <CTAButton variant="filled" className="px-12 py-4">Book via WhatsApp</CTAButton>
               </a>
               <Link href="/contact" data-testid="link-services-contact">
