@@ -23,10 +23,20 @@ export default function Services() {
 
       {/* PAGE HERO */}
       <section
-        className="pt-40 pb-24 md:pt-48 md:pb-32 border-b border-white/5"
+        className="relative pt-40 pb-24 md:pt-48 md:pb-32 border-b border-white/5 overflow-hidden"
         data-testid="section-services-hero"
       >
-        <div className="container mx-auto px-6 md:px-12">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780529874/Gemini_Generated_Image_ippay0ippay0ippa_vkrgfp.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center 30%",
+          }}
+        />
+        <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(to right, rgba(10,10,10,0.97) 0%, rgba(10,10,10,0.85) 55%, rgba(10,10,10,0.5) 100%)" }} />
+        <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(to top, rgba(10,10,10,1) 0%, transparent 40%)" }} />
+        <div className="relative z-10 container mx-auto px-6 md:px-12">
           <motion.span
             className="block text-primary text-xs uppercase tracking-[0.4em] mb-6"
             initial={{ opacity: 0 }}
@@ -100,11 +110,19 @@ export default function Services() {
               transition={{ duration: 0.8 }}
             >
               <div
-                className="aspect-[4/3] bg-card border border-white/10 flex items-center justify-center relative overflow-hidden"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80')", backgroundSize: "cover", backgroundPosition: "center" }}
+                className="aspect-[4/3] border border-white/10 relative overflow-hidden"
+                style={{
+                  backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780529871/Gemini_Generated_Image_k3cdkmk3cdkmk3cd_whaze7.png')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-card/80 to-background/80" />
-                <Plane className="w-24 h-24 text-primary/20 relative z-10" />
+                {/* Subtle overall tint */}
+                <div className="absolute inset-0 bg-background/15" />
+                {/* Bottom fade — hides watermark bottom edge */}
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0.7) 22%, transparent 48%)" }} />
+                {/* Right fade — hides watermark right edge */}
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to left, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.4) 20%, transparent 42%)" }} />
                 <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
                   <div className="border-t border-white/10 pt-6">
                     <p className="font-serif text-3xl text-foreground/60">DXB · DWC</p>
@@ -161,12 +179,17 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div 
-                className="aspect-[4/3] bg-background border border-white/10 flex items-center justify-center relative overflow-hidden"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=800&q=80')", backgroundSize: "cover", backgroundPosition: "center" }}
+              <div
+                className="aspect-[4/3] border border-white/10 relative overflow-hidden"
+                style={{
+                  backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780529912/Gemini_Generated_Image_xhp52wxhp52wxhp5_jbox4j.png')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-background/80 to-card/60" />
-                <MapPin className="w-24 h-24 text-primary/20 relative z-10" />
+                <div className="absolute inset-0 bg-background/15" />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0.7) 22%, transparent 48%)" }} />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to left, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.4) 20%, transparent 42%)" }} />
                 <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
                   <div className="border-t border-white/10 pt-6">
                     <p className="font-serif text-3xl text-foreground/60">DIFC · Downtown</p>
@@ -222,12 +245,17 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div 
-                className="aspect-[4/3] bg-card border border-white/10 flex items-center justify-center relative overflow-hidden"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80')", backgroundSize: "cover", backgroundPosition: "center" }}
+              <div
+                className="aspect-[4/3] border border-white/10 relative overflow-hidden"
+                style={{
+                  backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780529876/Gemini_Generated_Image_momdenmomdenmomd_rv9qgd.png')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-card/80 to-background/80" />
-                <Route className="w-24 h-24 text-primary/20 relative z-10" />
+                <div className="absolute inset-0 bg-background/15" />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0.7) 22%, transparent 48%)" }} />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to left, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.4) 20%, transparent 42%)" }} />
                 <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
                   <div className="border-t border-white/10 pt-6">
                     <p className="font-serif text-3xl text-foreground/60">AUH · SHJ · RAK</p>
