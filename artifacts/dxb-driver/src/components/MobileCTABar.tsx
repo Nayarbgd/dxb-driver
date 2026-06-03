@@ -18,7 +18,7 @@ export function MobileCTABar() {
 
   return (
     <div
-      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-card/95 backdrop-blur-md border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.6)] pb-safe"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-card/95 backdrop-blur-md border-t border-white/10 shadow-[0_-4px_20px_rgba(0,0,0,0.6)] pb-4"
       data-testid="bar-mobile-cta"
     >
       <div className="flex w-full">

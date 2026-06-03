@@ -95,6 +95,33 @@ export default function About() {
         </div>
       </section>
 
+      {/* Cinematic interlude */}
+      <section
+        className="relative py-32 overflow-hidden"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1920&q=80')",
+          backgroundSize: "cover",
+          backgroundPosition: "center 60%",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        <div className="absolute inset-0 bg-background/88" />
+        <div className="relative z-10 container mx-auto px-6 md:px-12 text-center max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9 }}
+          >
+            <div className="w-px h-16 bg-gradient-to-b from-transparent via-primary to-transparent mx-auto mb-10" />
+            <p className="font-serif text-3xl md:text-4xl text-foreground leading-relaxed italic">
+              "The standard of a chauffeur service is measured not by the car, but by the moment the door opens."
+            </p>
+            <div className="w-px h-16 bg-gradient-to-b from-primary via-primary/20 to-transparent mx-auto mt-10" />
+          </motion.div>
+        </div>
+      </section>
+
       {/* VALUES */}
       <section className="py-28 md:py-36 bg-card border-b border-white/5" data-testid="section-about-values">
         <div className="container mx-auto px-6 md:px-12">

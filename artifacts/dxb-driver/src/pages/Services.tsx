@@ -101,6 +101,7 @@ export default function Services() {
             >
               <div
                 className="aspect-[4/3] bg-card border border-white/10 flex items-center justify-center relative overflow-hidden"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80')", backgroundSize: "cover", backgroundPosition: "center" }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-card/80 to-background/80" />
                 <Plane className="w-24 h-24 text-primary/20 relative z-10" />
@@ -160,7 +161,10 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="aspect-[4/3] bg-background border border-white/10 flex items-center justify-center relative overflow-hidden">
+              <div 
+                className="aspect-[4/3] bg-background border border-white/10 flex items-center justify-center relative overflow-hidden"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1546436836-07a91091f160?auto=format&fit=crop&w=800&q=80')", backgroundSize: "cover", backgroundPosition: "center" }}
+              >
                 <div className="absolute inset-0 bg-gradient-to-br from-background/80 to-card/60" />
                 <MapPin className="w-24 h-24 text-primary/20 relative z-10" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
@@ -218,7 +222,10 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="aspect-[4/3] bg-card border border-white/10 flex items-center justify-center relative overflow-hidden">
+              <div 
+                className="aspect-[4/3] bg-card border border-white/10 flex items-center justify-center relative overflow-hidden"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80')", backgroundSize: "cover", backgroundPosition: "center" }}
+              >
                 <div className="absolute inset-0 bg-gradient-to-br from-card/80 to-background/80" />
                 <Route className="w-24 h-24 text-primary/20 relative z-10" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 z-10">

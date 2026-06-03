@@ -1,0 +1,102 @@
+Refine the existing DXB Driver website without changing the current structure or redesigning the page.
+
+IMPORTANT:
+This is a polish and quality upgrade only.
+
+1. TYPOGRAPHY IMPROVEMENTS
+
+The current typography feels too thin, cold, and generic.
+
+Improve the visual hierarchy by:
+
+* Using stronger font weights.
+* Making headlines feel more premium and luxurious.
+* Increasing contrast between headings and body text.
+* Making the website feel more confident and expensive.
+* Keep readability excellent on mobile.
+
+The overall feeling should be:
+Luxury concierge service, not generic SaaS.
+
+2. WHATSAPP BUTTON
+
+Improve the floating WhatsApp button:
+
+* Keep it on the bottom-right corner.
+* Move it slightly away from the screen edges.
+* Add more breathing room.
+* Add a subtle floating animation.
+* Add a soft pulse effect.
+* Add a gentle attention-grabbing motion similar to premium business websites.
+* Keep the animation elegant and professional.
+* Do not make it annoying.
+
+3. PREMIUM AUTOMOTIVE IMAGERY
+
+The website currently lacks strong automotive visuals.
+
+Add high-quality luxury vehicle imagery throughout the website.
+
+Focus on:
+
+* Executive sedans
+* Chauffeur experiences
+* Airport pickup moments
+* Luxury transportation
+* Dubai premium lifestyle
+
+Avoid:
+
+* Generic taxi photos
+* Cheap stock images
+* Low quality imagery
+
+4. HERO BACKGROUND UPGRADE
+
+Upgrade the hero section.
+
+Requirements:
+
+* Introduce a premium luxury vehicle background.
+* Create a cinematic atmosphere.
+* Use dark overlays.
+* Create smooth gradients from dark to slightly illuminated areas.
+* Make the hero feel expensive.
+* Keep text highly readable.
+
+The visual feeling should resemble:
+Luxury hotel concierge service + executive transportation.
+
+5. PERFORMANCE & SMOOTHNESS
+
+Improve the smoothness of the entire website.
+
+Optimize:
+
+* Scroll performance
+* Animation rendering
+* Image loading
+* Mobile responsiveness
+* Hover animations
+* Framer Motion usage
+* GPU acceleration where appropriate
+
+IMPORTANT:
+Do not reduce visual quality.
+
+Maintain the premium look while improving rendering performance.
+
+6. DO NOT CHANGE
+
+Do NOT:
+
+* redesign layouts
+* remove sections
+* change content structure
+* simplify the design
+* replace existing branding
+
+This is a premium visual polish and performance refinement pass only.
+
+Goal:
+Make the website feel more luxurious, more professional, more fluid, and more trustworthy without changing its architecture.

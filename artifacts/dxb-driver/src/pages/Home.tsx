@@ -9,6 +9,7 @@ import { TestimonialCard } from "@/components/TestimonialCard";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { cn } from "@/lib/utils";
 import {
   Accordion,
   AccordionContent,
@@ -35,12 +36,26 @@ export default function Home() {
         className="relative min-h-screen flex items-end pb-24 md:pb-32"
         data-testid="section-hero"
         style={{
-          background: "linear-gradient(160deg, #0A0A0A 0%, #111827 60%, #0A0A0A 100%)",
+          background: "#0A0A0A",
         }}
       >
+        {/* Cinematic vehicle background */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1920&q=85')",
+            backgroundSize: "cover",
+            backgroundPosition: "center 40%",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
+        {/* Multi-layer dark overlay for text legibility */}
+        <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(105deg, rgba(10,10,10,0.96) 0%, rgba(10,10,10,0.85) 45%, rgba(10,10,10,0.60) 100%)" }} />
+        <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0) 50%)" }} />
+
         {/* Cinematic grid lines */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.04] z-[2]"
           style={{
             backgroundImage:
               "linear-gradient(to right, #C9A84C 1px, transparent 1px), linear-gradient(to bottom, #C9A84C 1px, transparent 1px)",
@@ -49,7 +64,7 @@ export default function Home() {
         />
 
         {/* Gold accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent z-[2]" />
 
         {/* Hero content */}
         <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -264,7 +279,7 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0 relative">
-            <div className="hidden md:block absolute top-8 left-1/4 right-1/4 h-px bg-gradient-to-r from-primary/20 via-primary/50 to-primary/20" />
+            <div className="hidden md:block absolute top-[2.25rem] left-[16.67%] right-[16.67%] h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
             {[
               {
                 step: "01",
@@ -341,7 +356,7 @@ export default function Home() {
             ].map((fleet, i) => (
               <motion.div
                 key={i}
-                className={`border ${fleet.color} p-8 md:p-10 relative transition-colors duration-300 ${fleet.featured ? "bg-card" : "hover:border-primary/50"}`}
+                className={`border ${fleet.color} p-8 md:p-10 pt-12 md:pt-14 relative transition-colors duration-300 ${fleet.featured ? "bg-card" : "hover:border-primary/50"}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -357,6 +372,12 @@ export default function Home() {
                     Most Popular
                   </span>
                 )}
+                <div className={cn(
+                  "w-full h-px mb-8",
+                  fleet.featured 
+                    ? "bg-gradient-to-r from-transparent via-primary to-transparent" 
+                    : "bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                )} />
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center gap-4">
                     <Car className="w-6 h-6 text-primary opacity-70" />
