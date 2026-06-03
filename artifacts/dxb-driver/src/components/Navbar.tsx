@@ -24,6 +24,7 @@ export function Navbar() {
 
   const navLinks = [
     { href: "/services", label: "Services" },
+    { href: "/why-choose-us", label: "Why Us" },
     { href: "/pricing", label: "Fleet & Pricing" },
     { href: "/about", label: "About" },
     { href: "/faq", label: "FAQ" },

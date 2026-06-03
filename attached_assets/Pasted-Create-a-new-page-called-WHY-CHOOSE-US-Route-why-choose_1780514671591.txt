@@ -1,0 +1,206 @@
+Create a new page called:
+
+WHY CHOOSE US
+
+Route:
+/why-choose-us
+
+Add it to the main navigation between Services and Pricing.
+
+Maintain the existing premium design language, colors, spacing, animations and typography.
+
+Do NOT generate your own copy.
+
+Use the exact text below.
+
+==================================================
+HERO SECTION
+============
+
+Headline:
+
+More Than A Ride.
+A Better Travel Experience.
+
+Subheadline:
+
+Whether you're heading to the airport, an important meeting, or exploring the UAE, DXB Driver is built around one simple goal: making every journey smooth, comfortable, and stress-free.
+
+Primary CTA:
+Book Your Driver
+
+Secondary CTA:
+WhatsApp Us
+
+==================================================
+SECTION 2
+=========
+
+Title:
+
+Why Clients Choose DXB Driver
+
+Body Copy:
+
+Most transportation services focus on getting you from one place to another.
+
+We focus on everything that happens in between.
+
+The difference is not just the vehicle.
+It's the experience.
+
+Reliable scheduling.
+Professional drivers.
+Clear communication.
+Comfortable travel.
+And the peace of mind that comes from knowing your transportation is already taken care of.
+
+For business professionals, visitors, families, and frequent travelers, that difference matters.
+
+==================================================
+SECTION 3
+=========
+
+Title:
+
+Built Around Reliability
+
+Body Copy:
+
+When timing matters, reliability matters.
+
+Whether you're catching a flight, attending an important meeting, or planning a day of travel, transportation should never be something you need to worry about.
+
+DXB Driver is designed to help clients travel with confidence through professional planning, clear communication, and dependable service.
+
+Because the best journeys are the ones that feel effortless.
+
+==================================================
+SECTION 4
+=========
+
+Title:
+
+Who We Serve
+
+Create 4 premium cards.
+
+CARD 1
+
+Business Travelers
+
+Professional transportation for meetings, conferences, corporate events, and executive schedules.
+
+CARD 2
+
+Airport Transfers
+
+Smooth airport pickups and drop-offs designed to eliminate travel stress and save valuable time.
+
+CARD 3
+
+Visitors & Tourists
+
+Comfortable transportation for discovering Dubai and the UAE without the hassle of navigating unfamiliar roads.
+
+CARD 4
+
+Families
+
+Reliable transportation solutions for everyday travel, special occasions, and family outings.
+
+==================================================
+SECTION 5
+=========
+
+Title:
+
+What Makes The Difference
+
+Create a premium icon grid.
+
+Professional Drivers
+
+Travel with experienced drivers who understand the importance of punctuality, professionalism, and customer service.
+
+Comfortable Vehicles
+
+Enjoy a comfortable environment designed to make every journey more enjoyable.
+
+Flexible Scheduling
+
+Book transportation around your schedule, not the other way around.
+
+Airport Expertise
+
+Stress-free transfers with careful planning and reliable timing.
+
+Fast Communication
+
+Quick responses and simple booking through WhatsApp and direct contact.
+
+Dubai & UAE Coverage
+
+Travel conveniently across Dubai and the wider UAE.
+
+==================================================
+SECTION 6
+=========
+
+Title:
+
+Simple From Start To Finish
+
+Step 1
+
+Contact Us
+
+Tell us where and when you need transportation.
+
+Step 2
+
+Confirm Your Booking
+
+Receive confirmation and travel details.
+
+Step 3
+
+Enjoy The Journey
+
+Sit back, relax, and let us handle the drive.
+
+==================================================
+SECTION 7
+=========
+
+Title:
+
+The Real Luxury Is Peace Of Mind
+
+Body Copy:
+
+Luxury isn't only about the vehicle.
+
+It's about knowing someone is already waiting.
+Knowing your schedule is under control.
+Knowing you'll arrive comfortably and on time.
+
+That's the experience DXB Driver aims to deliver every day.
+
+==================================================
+FINAL CTA
+=========
+
+Headline:
+
+Ready For A Better Travel Experience?
+
+Subheadline:
+
+Book your next journey today and travel with comfort, confidence, and convenience.
+
+Buttons:
+
+Book Now
+
+WhatsApp Us

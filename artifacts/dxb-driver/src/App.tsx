@@ -9,6 +9,7 @@ import Pricing from "@/pages/Pricing";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import FAQ from "@/pages/FAQ";
+import WhyChooseUs from "@/pages/WhyChooseUs";
 import { MobileCTABar } from "@/components/MobileCTABar";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/faq" component={FAQ} />
+      <Route path="/why-choose-us" component={WhyChooseUs} />
       <Route component={NotFound} />
     </Switch>
   );
