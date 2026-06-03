@@ -43,7 +43,7 @@ export default function Home() {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1920&q=85')",
+            backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780516144/ChatGPT_Image_3_jun_2026_11_48_01_p.m._ixdefp.png')",
             backgroundSize: "cover",
             backgroundPosition: "center 40%",
             backgroundRepeat: "no-repeat",
