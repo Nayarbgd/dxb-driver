@@ -9,6 +9,7 @@ import Pricing from "@/pages/Pricing";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import FAQ from "@/pages/FAQ";
+import { MobileCTABar } from "@/components/MobileCTABar";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ function App() {
       <TooltipProvider>
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
           <Router />
+          <MobileCTABar />
         </WouterRouter>
         <Toaster />
       </TooltipProvider>

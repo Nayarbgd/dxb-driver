@@ -36,8 +36,8 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group" data-testid="link-home">
-          <span className="font-serif text-2xl tracking-widest font-bold text-primary transition-transform group-hover:scale-105 duration-500">
+        <Link href="/" className="flex items-center gap-2" data-testid="link-home">
+          <span className="font-serif text-2xl tracking-[0.3em] font-bold text-primary transition-all duration-500">
             DXB DRIVER
           </span>
         </Link>
@@ -48,12 +48,15 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm uppercase tracking-widest transition-colors duration-300 hover:text-primary ${
+              className={`text-sm uppercase tracking-widest transition-colors duration-300 hover:text-primary relative py-2 ${
                 location === link.href ? "text-primary" : "text-muted-foreground"
               }`}
               data-testid={`link-nav-${link.label.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
             >
               {link.label}
+              {location === link.href && (
+                <span className="absolute bottom-0 left-0 right-0 h-px bg-primary" />
+              )}
             </Link>
           ))}
           <div className="ml-4">
@@ -78,14 +81,15 @@ export function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-background/98 backdrop-blur-xl z-50 flex flex-col px-6 py-8"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", stiffness: 300, damping: 35 }}
+            className="fixed inset-0 bg-background/98 backdrop-blur-xl z-50 flex flex-col px-6 py-8 md:hidden"
           >
+            <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/40 to-transparent" />
             <div className="flex justify-between items-center mb-12">
-              <span className="font-serif text-2xl tracking-widest font-bold text-primary">
+              <span className="font-serif text-2xl tracking-[0.3em] font-bold text-primary">
                 DXB DRIVER
               </span>
               <button

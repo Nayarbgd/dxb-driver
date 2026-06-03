@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Plane, MapPin, Route, ChevronRight, Clock, Shield, Star, Car } from "lucide-react";
+import { Plane, MapPin, Route, Clock, Shield, Star, Car } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 import { CTAButton } from "@/components/CTAButton";
 import { SectionTitle } from "@/components/SectionTitle";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -59,27 +60,44 @@ export default function Home() {
               custom={0}
               variants={fadeUp}
             >
-              <span className="inline-block text-primary text-xs uppercase tracking-[0.4em] mb-8 border border-primary/30 px-4 py-2">
+              <span className="inline-block text-primary text-xs uppercase tracking-[0.4em] mb-8">
+                <span className="w-6 h-px bg-primary inline-block mr-3 align-middle" />
                 Dubai's Premier Chauffeur Service
               </span>
             </motion.div>
 
-            <motion.h1
-              className="font-serif text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.9] text-foreground mb-8"
-              initial="hidden"
-              animate="visible"
-              custom={1}
-              variants={fadeUp}
-            >
-              Arrive
-              <br />
-              <span className="text-primary">Without</span>
-              <br />
-              Compromise.
-            </motion.h1>
+            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.9] text-foreground mb-8">
+              <div className="overflow-hidden">
+                <motion.div
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.1 }}
+                >
+                  Arrive
+                </motion.div>
+              </div>
+              <div className="overflow-hidden">
+                <motion.div
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.15 }}
+                >
+                  <span className="text-primary">Without</span>
+                </motion.div>
+              </div>
+              <div className="overflow-hidden">
+                <motion.div
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.2 }}
+                >
+                  Compromise.
+                </motion.div>
+              </div>
+            </h1>
 
             <motion.p
-              className="text-muted-foreground text-lg md:text-xl max-w-lg mb-12 leading-relaxed"
+              className="text-muted-foreground text-lg md:text-xl max-w-lg mb-8 leading-relaxed"
               initial="hidden"
               animate="visible"
               custom={2}
@@ -89,7 +107,19 @@ export default function Home() {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex items-center gap-3 my-8"
+              initial="hidden"
+              animate="visible"
+              custom={2}
+              variants={fadeUp}
+            >
+              <span className="w-8 h-px bg-primary/40" />
+              <span className="w-1 h-1 bg-primary/60 rounded-full" />
+              <span className="w-8 h-px bg-primary/40" />
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 items-center"
               initial="hidden"
               animate="visible"
               custom={3}
@@ -100,17 +130,29 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer"
                 data-testid="link-hero-whatsapp"
+                className="w-full sm:w-auto"
               >
                 <CTAButton variant="filled" className="w-full sm:w-auto px-10 py-4 text-sm">
                   Book via WhatsApp
                 </CTAButton>
               </a>
-              <Link href="/contact" data-testid="link-hero-quote">
+              <span className="text-muted-foreground/40 text-xs italic font-serif mx-2">or</span>
+              <Link href="/contact" data-testid="link-hero-quote" className="w-full sm:w-auto">
                 <CTAButton variant="outline" className="w-full sm:w-auto px-10 py-4 text-sm">
                   Get a Quote
                 </CTAButton>
               </Link>
             </motion.div>
+
+            <motion.p
+              className="text-muted-foreground/50 text-xs mt-6 uppercase tracking-widest"
+              initial="hidden"
+              animate="visible"
+              custom={4}
+              variants={fadeUp}
+            >
+              RTA Licensed · 24/7 Available · No upfront payment
+            </motion.p>
           </div>
         </div>
 
@@ -129,18 +171,21 @@ export default function Home() {
               { icon: <Clock className="w-4 h-4" />, label: "24/7 Available" },
               { icon: <Shield className="w-4 h-4" />, label: "RTA Licensed" },
               { icon: <Star className="w-4 h-4" />, label: "Professional Drivers" },
-              { icon: <ChevronRight className="w-4 h-4" />, label: "Fast WhatsApp Response" },
+              { icon: <SiWhatsapp className="w-4 h-4" />, label: "Fast WhatsApp Response" },
             ].map((item, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="flex items-center gap-3"
+                className={`flex items-center gap-3 ${i < 3 ? "md:border-r border-white/5" : ""}`}
                 data-testid={`badge-trust-${i}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * (i + 1), duration: 0.5 }}
               >
                 <span className="text-primary flex-shrink-0">{item.icon}</span>
                 <span className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">
                   {item.label}
                 </span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -276,6 +321,7 @@ export default function Home() {
                 vehicle: "Toyota Camry or similar",
                 features: ["Comfortable seating", "Air-conditioned", "Professional driver", "Fixed pricing"],
                 color: "border-white/10",
+                price: "AED 80"
               },
               {
                 tier: "Business",
@@ -283,20 +329,23 @@ export default function Home() {
                 features: ["Premium leather interior", "Extended legroom", "Complimentary water", "Priority booking"],
                 color: "border-primary/40",
                 featured: true,
+                price: "AED 150"
               },
               {
                 tier: "Premium",
                 vehicle: "Mercedes S-Class or similar",
                 features: ["Luxury interior", "Privacy glass", "Concierge assistance", "24h dedicated support"],
                 color: "border-white/10",
+                price: "AED 280"
               },
             ].map((fleet, i) => (
               <motion.div
                 key={i}
-                className={`border ${fleet.color} p-8 md:p-10 relative ${fleet.featured ? "bg-card" : ""}`}
+                className={`border ${fleet.color} p-8 md:p-10 relative transition-colors duration-300 ${fleet.featured ? "bg-card" : "hover:border-primary/50"}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -4 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 data-testid={`card-fleet-${fleet.tier.toLowerCase()}`}
               >
@@ -308,14 +357,17 @@ export default function Home() {
                     Most Popular
                   </span>
                 )}
-                <div className="flex items-center gap-4 mb-8">
-                  <Car className="w-6 h-6 text-primary opacity-70" />
-                  <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-semibold">
-                    {fleet.tier}
-                  </span>
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-4">
+                    <Car className="w-6 h-6 text-primary opacity-70" />
+                    <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-semibold">
+                      {fleet.tier}
+                    </span>
+                  </div>
                 </div>
-                <h3 className="font-serif text-2xl mb-2 text-foreground">{fleet.tier} Class</h3>
-                <p className="text-muted-foreground text-sm mb-8">{fleet.vehicle}</p>
+                <h3 className="font-serif text-2xl mb-1 text-foreground">{fleet.tier} Class</h3>
+                <p className="text-muted-foreground text-sm mb-2">{fleet.vehicle}</p>
+                <p className="text-primary text-xs uppercase tracking-wider mb-8">from {fleet.price} / trip</p>
                 <ul className="space-y-3 mb-8">
                   {fleet.features.map((f) => (
                     <li key={f} className="flex items-center gap-3 text-sm text-muted-foreground">
@@ -347,7 +399,34 @@ export default function Home() {
             <SectionTitle subtitle="Client Experiences" title="What Our Guests Say" centered />
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/5">
+          <motion.div 
+            className="flex items-center gap-3 mb-12 justify-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-1">
+              {[1, 2, 3, 4, 5].map((_, i) => (
+                <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+              ))}
+            </div>
+            <span className="text-muted-foreground text-sm">4.97 average · 200+ journeys rated</span>
+          </motion.div>
+
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/5"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+          >
             {[
               {
                 name: "James Whitfield",
@@ -373,16 +452,16 @@ export default function Home() {
             ].map((t, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                }}
                 className={i < 2 ? "md:border-r border-white/5" : ""}
               >
                 <TestimonialCard {...t} />
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -451,7 +530,7 @@ export default function Home() {
       <section
         className="py-36 md:py-48 border-t border-white/5 relative overflow-hidden"
         data-testid="section-final-cta"
-        style={{ background: "linear-gradient(135deg, #111827 0%, #0A0A0A 100%)" }}
+        style={{ background: "radial-gradient(ellipse at center, #111827 0%, #0A0A0A 70%)" }}
       >
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
         <div className="container mx-auto px-6 md:px-12 text-center relative z-10">
@@ -461,10 +540,11 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
+            <div className="w-16 h-px bg-primary mx-auto mb-8" />
             <span className="block text-primary text-xs uppercase tracking-[0.4em] mb-8">
               Begin Your Journey
             </span>
-            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground mb-8 leading-tight">
+            <h2 className="font-serif text-6xl md:text-7xl lg:text-8xl text-foreground mb-8 leading-tight">
               Ready to Arrive
               <br />
               <span className="text-primary">in Silence?</span>
@@ -479,16 +559,17 @@ export default function Home() {
                 rel="noreferrer"
                 data-testid="link-cta-whatsapp"
               >
-                <CTAButton variant="filled" className="px-12 py-4 text-sm">
+                <CTAButton variant="filled" className="px-12 py-4 text-sm w-full sm:w-auto">
                   Book on WhatsApp
                 </CTAButton>
               </a>
               <Link href="/contact" data-testid="link-cta-contact">
-                <CTAButton variant="outline" className="px-12 py-4 text-sm">
+                <CTAButton variant="outline" className="px-12 py-4 text-sm w-full sm:w-auto">
                   Get a Quote
                 </CTAButton>
               </Link>
             </div>
+            <p className="text-muted-foreground/40 text-xs mt-8 uppercase tracking-[0.3em]">Available now · Response within 15 minutes</p>
           </motion.div>
         </div>
       </section>
