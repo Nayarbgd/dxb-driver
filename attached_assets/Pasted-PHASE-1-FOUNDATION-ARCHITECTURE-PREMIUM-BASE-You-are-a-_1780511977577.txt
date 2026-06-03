@@ -1,0 +1,232 @@
+PHASE 1 — FOUNDATION / ARCHITECTURE / PREMIUM BASE
+
+You are a senior full-stack developer, conversion-focused UX strategist, and premium brand designer.
+
+Your task is to build the FOUNDATION of a high-converting premium website for:
+
+DXB Driver
+Private driver & chauffeur service in Dubai, UAE.
+
+This is NOT a generic startup landing page.
+This is NOT a template-style SaaS website.
+Avoid anything that feels cheap, common, playful, or overused.
+
+The website should feel:
+
+* premium,
+* cinematic,
+* elegant,
+* trustworthy,
+* luxurious,
+* modern,
+* conversion-focused.
+
+Think:
+“Private chauffeur service for executives, airport travelers, tourists, and high-value clients in Dubai.”
+
+The final result should feel closer to:
+
+* a luxury hotel brand,
+* premium hospitality,
+* private aviation,
+* executive transport,
+  than a taxi app.
+
+IMPORTANT:
+Focus ONLY on building the solid premium structure and architecture first.
+Do not overcomplicate animations yet.
+Prioritize:
+
+* layout quality,
+* spacing,
+* typography,
+* responsiveness,
+* conversion structure,
+* visual hierarchy,
+* SEO architecture,
+* reusable components,
+* clean code.
+
+TECH STACK:
+
+* Next.js 14 App Router
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+* next/image
+* Responsive mobile-first architecture
+
+CREATE THESE PAGES:
+
+1. Homepage
+2. Services
+3. Pricing
+4. About
+5. Contact
+6. FAQ
+
+CREATE SHARED COMPONENTS:
+
+* Navbar
+* Footer
+* Mobile menu
+* Floating WhatsApp button
+* Reusable CTA buttons
+* Reusable section title component
+* Booking form component
+* Testimonial card component
+* Service card component
+
+BRAND STYLE:
+
+Color palette:
+
+* Background: #0A0A0A
+* Surface: #111827
+* Accent Gold: #C9A84C
+* Text Primary: #F5F5F0
+* Text Muted: #8B8B8B
+
+Typography:
+
+* Headings: Cormorant Garamond
+* Body: DM Sans
+
+STYLE RULES:
+
+* Large editorial spacing
+* Elegant typography hierarchy
+* Sophisticated alignment
+* No overcrowded sections
+* No bright gradients
+* No neon aesthetics
+* No startup/SaaS look
+* No rounded childish UI
+* No random colors
+* No generic icons everywhere
+
+VISUAL DIRECTION:
+Dark luxury aesthetic inspired by:
+
+* Dubai hospitality brands
+* Armani Hotel Dubai
+* Premium concierge services
+* Luxury transport websites
+
+SEO REQUIREMENTS:
+
+* Proper metadata on every page
+* Semantic HTML
+* Structured heading hierarchy
+* Fast loading
+* Mobile optimized
+* Clean URL structure
+
+HOMEPAGE STRUCTURE:
+
+1. HERO SECTION
+
+* Full-screen cinematic hero
+* Strong emotional headline
+* Luxury positioning
+* Two CTAs:
+
+  * WhatsApp booking
+  * Get quote
+* Premium dark overlay
+* Elegant typography
+* Immediate trust feeling
+
+2. TRUST BAR
+   Include:
+
+* 24/7 Available
+* RTA Licensed
+* Professional Drivers
+* Fast WhatsApp Response
+
+3. SERVICES OVERVIEW
+   Three premium cards:
+
+* Airport Transfers
+* City Rides
+* Inter-Emirate Transfers
+
+Each must feel visually premium and conversion-oriented.
+
+4. HOW IT WORKS
+   Simple 3-step booking flow.
+
+5. FLEET PREVIEW
+   Economy / Business / Premium vehicles.
+
+6. TESTIMONIALS
+   Luxury testimonial section with believable reviews.
+
+7. FAQ PREVIEW
+
+8. FINAL CTA SECTION
+
+SERVICES PAGE:
+
+* Detailed service breakdown
+* Fleet showcase
+* Premium layouts
+* Conversion-focused CTA sections
+
+PRICING PAGE:
+
+* Elegant pricing cards
+* Economy / Business / Premium
+* Premium positioning
+* Clear comparison structure
+
+ABOUT PAGE:
+
+* Premium brand storytelling
+* Professionalism
+* Trust
+* Reliability
+* Executive-level service positioning
+
+CONTACT PAGE:
+
+* Premium booking form
+* WhatsApp integration
+* Dubai location
+* Mobile-first UX
+
+FAQ PAGE:
+
+* SEO-friendly accordion structure
+* Real user objections
+* Trust-building answers
+
+IMPORTANT UX RULES:
+
+* Sticky navbar
+* Floating WhatsApp button
+* Smooth scrolling
+* Excellent mobile experience
+* High readability
+* Strong CTA visibility
+* Clear hierarchy
+
+IMPORTANT:
+Do NOT generate placeholder-looking layouts.
+Do NOT generate generic startup sections.
+Do NOT create weak visual hierarchy.
+Do NOT make the site look like a template.
+
+The website must feel intentionally art-directed.
+
+Focus heavily on:
+
+* spacing,
+* typography,
+* premium layout composition,
+* emotional perception,
+* trust,
+* conversion.
+
+Build the entire project structure cleanly and professionally.

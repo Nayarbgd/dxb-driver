@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "T73ZD_58-4iJenuEi46ZM"
+uri = "file://artifacts/dxb-driver/public/images/sedan-night.png"
+type = "image"
+title = "Luxury sedan on Dubai highway"
+
+[[generated]]
+id = "PYjovL0Nc3U32S6l50k5Y"
+uri = "file://artifacts/dxb-driver/public/images/dubai-skyline.png"
+type = "image"
+title = "Dubai skyline at dusk"
+
+[[generated]]
+id = "WnCIJG98Or90ugRcVH3S0"
+uri = "file://artifacts/dxb-driver/public/images/chauffeur.png"
+type = "image"
+title = "Professional chauffeur"
+
+[[generated]]
+id = "6NfJFAezQc6mz0deAKGhu"
+uri = "file://artifacts/dxb-driver/public/images/car-interior.png"
+type = "image"
+title = "Luxury car interior"
