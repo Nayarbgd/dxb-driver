@@ -152,13 +152,19 @@ export default function Pricing() {
 
           <div className="overflow-x-auto -mx-6 md:mx-0 px-6 md:px-0">
           <div className="border border-white/10 overflow-hidden min-w-[480px]">
-            <div className="grid grid-cols-4 border-b border-white/10 bg-background/40">
+            <motion.div
+              className="grid grid-cols-4 border-b border-white/10 bg-background/40"
+              initial={{ opacity: 0, y: -8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            >
               {t.pricing.routeHeaders.map((h) => (
                 <div key={h} className="p-4 md:p-6">
                   <span className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">{h}</span>
                 </div>
               ))}
-            </div>
+            </motion.div>
             {[
               { route: "Dubai → Abu Dhabi", eco: "AED 250", bus: "AED 400", pre: "AED 700" },
               { route: "Dubai → Sharjah", eco: "AED 120", bus: "AED 200", pre: "AED 350" },
