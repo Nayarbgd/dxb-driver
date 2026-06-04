@@ -11,6 +11,9 @@ import {
   Plane,
   Globe,
   Users,
+  CheckCircle2,
+  DollarSign,
+  Languages,
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -30,33 +33,33 @@ const fadeUp = {
 const differentiators = [
   {
     icon: <UserCheck className="w-6 h-6" />,
-    title: "Professional Drivers",
-    body: "Travel with experienced drivers who understand the importance of punctuality, professionalism, and customer service.",
+    title: "Professional Chauffeurs",
+    body: "Every DXB Driver chauffeur is RTA licensed, background-checked, and trained to the standards of a private chauffeur service — not a ride-hailing driver.",
   },
   {
-    icon: <Car className="w-6 h-6" />,
-    title: "Comfortable Vehicles",
-    body: "Enjoy a comfortable environment designed to make every journey more enjoyable.",
+    icon: <DollarSign className="w-6 h-6" />,
+    title: "Fixed Pricing, Always",
+    body: "No meters, no surge pricing, no algorithm adjusting your fare at 7am on a Monday. The rate we quote is the rate you pay — always.",
   },
   {
     icon: <CalendarClock className="w-6 h-6" />,
-    title: "Flexible Scheduling",
-    body: "Book transportation around your schedule, not the other way around.",
+    title: "Advance Booking",
+    body: "Book your Dubai airport transfer or city ride days, weeks, or months ahead. We hold your booking and confirm your driver in advance.",
   },
   {
     icon: <PlaneTakeoff className="w-6 h-6" />,
-    title: "Airport Expertise",
-    body: "Stress-free transfers with careful planning and reliable timing.",
+    title: "Airport Meet & Greet",
+    body: "Your chauffeur waits in arrivals with a name sign, monitors your flight in real time, and adjusts for delays automatically — at no extra charge.",
   },
   {
-    icon: <MessageCircle className="w-6 h-6" />,
-    title: "Fast Communication",
-    body: "Quick responses and simple booking through WhatsApp and direct contact.",
+    icon: <Languages className="w-6 h-6" />,
+    title: "English & Spanish Drivers",
+    body: "Bilingual English and Spanish-speaking chauffeurs available on request. A service detail that matters more than most realize.",
   },
   {
     icon: <MapPin className="w-6 h-6" />,
-    title: "Dubai & UAE Coverage",
-    body: "Travel conveniently across Dubai and the wider UAE.",
+    title: "Dubai, UAE & Beyond",
+    body: "City rides, airport transfers across DXB and DWC, and inter-emirate travel to Abu Dhabi, Sharjah, Ajman, and all seven emirates.",
   },
 ];
 
@@ -342,6 +345,94 @@ export default function WhyChooseUs() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* MORE THAN JUST ANOTHER RIDE APP */}
+      <section className="py-28 md:py-36 border-b border-white/5" data-testid="section-why-vs-apps">
+        <div className="container mx-auto px-6 md:px-12">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <span className="block text-primary text-xs uppercase tracking-[0.4em] mb-5">The Distinction</span>
+            <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-tight max-w-2xl mx-auto">
+              More Than Just<br /><span className="text-primary">Another Ride App</span>
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto mt-6">
+              When you book a private chauffeur service in Dubai, you're not just booking a car. You're booking peace of mind — and that is something no app algorithm can replicate.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {/* App-based rides */}
+            <motion.div
+              className="border border-white/8 bg-card p-8 md:p-10"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <h3 className="font-serif text-xl text-muted-foreground/70 mb-8 pb-6 border-b border-white/5">App-Based Ride Hailing</h3>
+              <ul className="space-y-4">
+                {[
+                  "Variable pricing — surge rates during peak hours",
+                  "Random driver assigned — no advance relationship",
+                  "No flight tracking or automatic delay adjustment",
+                  "No meet-and-greet — locate your vehicle yourself",
+                  "Limited vehicle quality control",
+                  "No bilingual service option",
+                  "Booking confirmation is never guaranteed",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground/60">
+                    <span className="text-white/15 mt-0.5 shrink-0 text-base leading-none">—</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* DXB Driver */}
+            <motion.div
+              className="border border-primary/25 bg-card p-8 md:p-10 relative overflow-hidden"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+            >
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+              <h3 className="font-serif text-xl text-primary mb-8 pb-6 border-b border-primary/10">DXB Driver — Private Chauffeur</h3>
+              <ul className="space-y-4">
+                {[
+                  "Fixed rates — no surge pricing, ever",
+                  "Your dedicated professional chauffeur, every time",
+                  "Live flight tracking with automatic delay adjustment",
+                  "Meet-and-greet at arrivals with name sign",
+                  "Luxury fleet — Economy, Business & Premium classes",
+                  "English and Spanish-speaking chauffeurs available",
+                  "Advance booking weeks or months ahead",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                    <span className="text-foreground/80">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+
+          <motion.p
+            className="text-center text-muted-foreground/70 text-sm mt-10 font-serif italic max-w-2xl mx-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            For airport transfers and longer journeys across the UAE, a fixed-rate Dubai chauffeur service is often more cost-effective than ride-hailing — particularly when surge pricing applies.
+          </motion.p>
         </div>
       </section>
 

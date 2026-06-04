@@ -80,16 +80,20 @@ export default function Services() {
               <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6 leading-tight">
                 Airport Transfers
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-8 text-base">
-                Every detail considered before you land. We track your flight in real time, account for delays, and ensure your driver is exactly where you expect him — signboard, composure, and all. From DXB and DWC to any Dubai address, with no rushing and no waiting.
+              <p className="text-muted-foreground leading-relaxed mb-6 text-base">
+                Every detail considered before you land. We track your flight in real time, account for delays, and ensure your Dubai airport chauffeur is exactly where you expect him — signboard, composure, and all. From DXB and DWC to any Dubai address, with no rushing and no waiting.
+              </p>
+              <p className="text-primary/80 text-sm leading-relaxed mb-8 border-l-2 border-primary/30 pl-4">
+                For many airport journeys, a private Dubai airport chauffeur transfer is more cost-effective than ride-hailing apps — especially during peak hours when surge pricing applies. And the level of service is simply incomparable.
               </p>
               <ul className="space-y-4 mb-10">
                 {[
                   "Live flight tracking — delay-adjusted automatically",
                   "Meet-and-greet at arrivals with name sign",
                   "Assistance with luggage to the vehicle",
-                  "All three Dubai terminals covered",
-                  "Corporate billing available",
+                  "All three Dubai terminals covered (T1, T2, T3)",
+                  "Fixed rates — quoted before you travel, no surprises",
+                  "English and Spanish-speaking chauffeurs available",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
                     <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
@@ -151,14 +155,15 @@ export default function Services() {
                 City Rides
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-8 text-base">
-                Your private car for Dubai's every demand. Morning meetings in DIFC, lunches in Jumeirah, evening events in Downtown — your driver handles the roads while you handle the day. No surge pricing. No guesswork.
+                Your private Dubai chauffeur for the city's every demand. Morning meetings in DIFC, lunches in Jumeirah, evening events in Downtown — your driver handles the roads while you handle the day. Fixed pricing, professional bilingual chauffeurs, zero surge.
               </p>
               <ul className="space-y-4 mb-10">
                 {[
+                  "Fixed rates — no surge pricing at any hour",
+                  "English and Spanish-speaking private drivers",
                   "As-directed hourly hire available",
                   "Business district specialists (DIFC, Business Bay, DWTC)",
                   "Hotels, restaurants, venues across Dubai",
-                  "Child seat on request",
                   "Discretion guaranteed",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
@@ -217,15 +222,16 @@ export default function Services() {
                 Inter-Emirate Transfers
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-8 text-base">
-                The UAE is more connected than most visitors realise. Dubai to Abu Dhabi in comfort. Dubai to Sharjah in silence. We operate across all seven emirates, with fixed rates and professional chauffeurs who know every route.
+                The UAE is more connected than most visitors realise. Dubai to Abu Dhabi in comfort. Dubai to Sharjah in silence. For longer journeys across the Emirates, a fixed-rate private chauffeur consistently offers better value than app-based transportation — with no surge pricing and a professional service from door to door.
               </p>
               <ul className="space-y-4 mb-10">
                 {[
-                  "Dubai ↔ Abu Dhabi (approx. 90 min)",
-                  "Dubai ↔ Sharjah, Ajman, RAK",
-                  "Fixed rates — no meter surprises",
+                  "Dubai ↔ Abu Dhabi chauffeur (approx. 90 min)",
+                  "Dubai ↔ Sharjah, Ajman, RAK, Fujairah",
+                  "Fixed rates — no meter surprises, no surge",
+                  "English and Spanish-speaking chauffeurs on request",
                   "Return journeys arranged simultaneously",
-                  "Corporate account billing",
+                  "Corporate account billing available",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
                     <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />

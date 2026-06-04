@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Plane, MapPin, Route, Clock, Shield, Star, Car } from "lucide-react";
+import { Plane, MapPin, Route, Clock, Shield, Star, Car, CheckCircle2 } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import { CTAButton } from "@/components/CTAButton";
 import { SectionTitle } from "@/components/SectionTitle";
@@ -181,25 +181,27 @@ export default function Home() {
         data-testid="section-trust"
       >
         <div className="container mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="flex flex-wrap items-center divide-y md:divide-y-0 md:divide-x divide-white/5 -mx-0">
             {[
-              { icon: <Clock className="w-4 h-4" />, label: "24/7 Available" },
-              { icon: <Shield className="w-4 h-4" />, label: "RTA Licensed" },
-              { icon: <Star className="w-4 h-4" />, label: "Professional Drivers" },
-              { icon: <SiWhatsapp className="w-4 h-4" />, label: "Fast WhatsApp Response" },
+              { icon: <CheckCircle2 className="w-4 h-4" />, label: "Fixed Pricing", sub: "No surge, ever" },
+              { icon: <CheckCircle2 className="w-4 h-4" />, label: "English & Spanish Drivers", sub: "Bilingual chauffeurs" },
+              { icon: <CheckCircle2 className="w-4 h-4" />, label: "Airport Transfers", sub: "DXB · DWC · 24/7" },
+              { icon: <CheckCircle2 className="w-4 h-4" />, label: "Available 24/7", sub: "Any hour, any day" },
+              { icon: <CheckCircle2 className="w-4 h-4" />, label: "Often More Affordable", sub: "Than app-based rides" },
             ].map((item, i) => (
               <motion.div
                 key={i}
-                className={`flex items-center gap-3 ${i < 3 ? "md:border-r border-white/5" : ""}`}
+                className="flex items-center gap-3 px-4 py-2 w-full sm:w-1/2 lg:w-auto lg:flex-1 justify-center lg:justify-start"
                 data-testid={`badge-trust-${i}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 * (i + 1), duration: 0.5 }}
+                transition={{ delay: 0.08 * (i + 1), duration: 0.5 }}
               >
                 <span className="text-primary flex-shrink-0">{item.icon}</span>
-                <span className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">
-                  {item.label}
-                </span>
+                <div>
+                  <span className="text-xs uppercase tracking-widest text-foreground/90 font-semibold block leading-tight">{item.label}</span>
+                  <span className="text-[10px] text-muted-foreground/55 uppercase tracking-wider">{item.sub}</span>
+                </div>
               </motion.div>
             ))}
           </div>

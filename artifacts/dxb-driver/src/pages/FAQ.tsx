@@ -32,6 +32,10 @@ const faqCategories = [
         q: "Do you offer return journey bookings?",
         a: "Absolutely — and we recommend booking both legs simultaneously. We offer a small discount on return bookings and it guarantees the same driver for both directions if you prefer.",
       },
+      {
+        q: "Can I book airport transfers in advance?",
+        a: "Absolutely — and we strongly recommend it. You can book your Dubai airport transfer days, weeks, or even months ahead. We hold your booking, monitor your flight in real time, and adjust automatically for any delays. Advance booking guarantees your vehicle class and preferred driver, giving you one less thing to think about before you travel.",
+      },
     ],
   },
   {
@@ -63,6 +67,10 @@ const faqCategories = [
         a: "Yes. Every DXB Driver chauffeur holds a valid UAE driving licence and is registered with the Road and Transport Authority (RTA). We conduct thorough background checks on all drivers before they join our team.",
       },
       {
+        q: "Do you provide Spanish-speaking drivers?",
+        a: "Yes. DXB Driver has English and Spanish-speaking chauffeurs available. If you'd prefer a Spanish-speaking driver for your journey, simply mention it when booking and we'll match you accordingly. It's one of the ways we make travel more comfortable for our international clientele.",
+      },
+      {
         q: "What vehicles are in your fleet?",
         a: "We operate Economy (Toyota Camry or equivalent), Business (Mercedes E-Class or equivalent), and Premium (Mercedes S-Class or equivalent) classes. All vehicles are maintained to exacting standards and presented identically each time.",
       },
@@ -79,6 +87,14 @@ const faqCategories = [
   {
     category: "Pricing & Payment",
     items: [
+      {
+        q: "Do you offer fixed pricing?",
+        a: "Yes — always. Every DXB Driver journey is priced on a fixed rate agreed before you travel. There is no meter running, no surge pricing, and no algorithm adjusting your fare based on demand or time of day. What we quote is what you pay.",
+      },
+      {
+        q: "Are your services cheaper than Uber or Careem?",
+        a: "For many journeys — particularly airport transfers and inter-emirate travel — DXB Driver is often more cost-effective than popular ride-hailing apps, especially during peak hours when surge pricing can significantly increase the fare. Beyond price, you also receive a private chauffeur experience, advance booking, live flight tracking, and a meet-and-greet service that no app can offer. We encourage you to compare — message us for a quote.",
+      },
       {
         q: "How is pricing calculated?",
         a: "We provide fixed quotes before every journey — no meters, no surge pricing, no guessing. The rate we confirm is the rate you pay. Our pricing is based on vehicle class, route, and time of day (late-night and public holiday rates may apply).",
