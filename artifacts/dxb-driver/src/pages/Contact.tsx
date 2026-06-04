@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { CTAButton } from "@/components/CTAButton";
 import { SectionTitle } from "@/components/SectionTitle";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -290,7 +289,6 @@ export default function Contact() {
       </section>
 
       <Footer />
-      <FloatingWhatsApp />
     </div>
   );
 }

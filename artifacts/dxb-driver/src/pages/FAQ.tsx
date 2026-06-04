@@ -4,7 +4,6 @@ import { ChevronDown } from "lucide-react";
 import { Link } from "wouter";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { CTAButton } from "@/components/CTAButton";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -149,7 +148,6 @@ export default function FAQ() {
       </section>
 
       <Footer />
-      <FloatingWhatsApp />
     </div>
   );
 }

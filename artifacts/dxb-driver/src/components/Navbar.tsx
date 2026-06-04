@@ -4,6 +4,7 @@ import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import { CTAButton } from "./CTAButton";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import { useMobileMenu } from "@/context/MobileMenuContext";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,16 +12,38 @@ export function Navbar() {
   const [langOpen, setLangOpen] = useState(false);
   const [location] = useLocation();
   const { t, lang, setLang } = useLanguage();
+  const { setIsMenuOpen } = useMobileMenu();
   const langRef = useRef<HTMLDivElement>(null);
+
+  const openMenu = () => {
+    setIsOpen(true);
+    setIsMenuOpen(true);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+    setIsMenuOpen(false);
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    setIsOpen(false);
+    closeMenu();
   }, [location]);
 
   useEffect(() => {
@@ -131,7 +154,7 @@ export function Navbar() {
         {/* Mobile Toggle */}
         <button
           className="md:hidden text-foreground hover:text-primary transition-colors p-2"
-          onClick={() => setIsOpen(true)}
+          onClick={openMenu}
           data-testid="button-mobile-menu"
           aria-label="Open menu"
         >
@@ -139,87 +162,101 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay — portal-like fixed cover */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "spring", stiffness: 300, damping: 35 }}
-            className="fixed inset-0 bg-background/98 backdrop-blur-xl z-50 flex flex-col px-6 py-8 md:hidden"
-          >
-            <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/40 to-transparent" />
-            <div className="flex justify-between items-center mb-12">
-              <span className="font-serif text-2xl tracking-[0.3em] font-bold text-primary">
-                DXB DRIVER
-              </span>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="text-foreground hover:text-primary p-2 transition-colors"
-                data-testid="button-close-menu"
-                aria-label="Close menu"
-              >
-                <X className="w-8 h-8" />
-              </button>
-            </div>
+          <>
+            {/* Dark backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 bg-black/70 z-[60] md:hidden"
+              onClick={closeMenu}
+            />
 
-            <nav className="flex flex-col gap-8 text-center flex-grow justify-center pb-20">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * i, duration: 0.4 }}
+            {/* Menu panel */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.28, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="fixed inset-y-0 right-0 w-full max-w-sm bg-background z-[70] flex flex-col px-6 py-8 md:hidden overflow-y-auto overscroll-contain"
+            >
+              <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/40 to-transparent" />
+
+              <div className="flex justify-between items-center mb-12">
+                <span className="font-serif text-2xl tracking-[0.3em] font-bold text-primary">
+                  DXB DRIVER
+                </span>
+                <button
+                  onClick={closeMenu}
+                  className="text-foreground hover:text-primary p-2 transition-colors"
+                  data-testid="button-close-menu"
+                  aria-label="Close menu"
                 >
-                  <Link
-                    href={link.href}
-                    className={`text-2xl font-serif tracking-wider ${
-                      location === link.href ? "text-primary" : "text-foreground"
-                    }`}
+                  <X className="w-8 h-8" />
+                </button>
+              </div>
+
+              <nav className="flex flex-col gap-8 text-center flex-grow justify-center">
+                {navLinks.map((link, i) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.06 * i, duration: 0.3 }}
                   >
-                    {link.label}
+                    <Link
+                      href={link.href}
+                      className={`text-2xl font-serif tracking-wider ${
+                        location === link.href ? "text-primary" : "text-foreground"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
+
+                {/* Language Switcher — Mobile */}
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.3 }}
+                  className="flex items-center justify-center gap-4 pt-2"
+                >
+                  {langOptions.map((opt) => (
+                    <button
+                      key={opt.value}
+                      onClick={() => setLang(opt.value)}
+                      className={`flex items-center gap-2 px-4 py-2 border text-sm uppercase tracking-widest transition-all ${
+                        lang === opt.value
+                          ? "border-primary text-primary"
+                          : "border-white/15 text-muted-foreground"
+                      }`}
+                    >
+                      <span>{opt.flag}</span>
+                      <span>{opt.label}</span>
+                    </button>
+                  ))}
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.36, duration: 0.3 }}
+                  className="mt-4"
+                >
+                  <Link href="/contact">
+                    <CTAButton variant="filled" className="w-full text-lg py-4">
+                      {t.nav.bookNow}
+                    </CTAButton>
                   </Link>
                 </motion.div>
-              ))}
-
-              {/* Language Switcher — Mobile */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.45, duration: 0.4 }}
-                className="flex items-center justify-center gap-4 pt-2"
-              >
-                {langOptions.map((opt) => (
-                  <button
-                    key={opt.value}
-                    onClick={() => setLang(opt.value)}
-                    className={`flex items-center gap-2 px-4 py-2 border text-sm uppercase tracking-widest transition-all ${
-                      lang === opt.value
-                        ? "border-primary text-primary"
-                        : "border-white/15 text-muted-foreground"
-                    }`}
-                  >
-                    <span>{opt.flag}</span>
-                    <span>{opt.label}</span>
-                  </button>
-                ))}
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.55, duration: 0.4 }}
-                className="mt-4"
-              >
-                <Link href="/contact">
-                  <CTAButton variant="filled" className="w-full text-lg py-4">
-                    {t.nav.bookNow}
-                  </CTAButton>
-                </Link>
-              </motion.div>
-            </nav>
-          </motion.div>
+              </nav>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>

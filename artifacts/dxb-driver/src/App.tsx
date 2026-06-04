@@ -3,6 +3,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { MobileMenuProvider } from "@/context/MobileMenuContext";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Services from "@/pages/Services";
@@ -11,7 +13,6 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import FAQ from "@/pages/FAQ";
 import WhyChooseUs from "@/pages/WhyChooseUs";
-import { MobileCTABar } from "@/components/MobileCTABar";
 import { useEffect } from "react";
 
 const queryClient = new QueryClient();
@@ -45,15 +46,17 @@ function Router() {
 function App() {
   return (
     <LanguageProvider>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-            <Router />
-            <MobileCTABar />
-          </WouterRouter>
-          <Toaster />
-        </TooltipProvider>
-      </QueryClientProvider>
+      <MobileMenuProvider>
+        <QueryClientProvider client={queryClient}>
+          <TooltipProvider>
+            <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+              <Router />
+              <FloatingWhatsApp />
+            </WouterRouter>
+            <Toaster />
+          </TooltipProvider>
+        </QueryClientProvider>
+      </MobileMenuProvider>
     </LanguageProvider>
   );
 }

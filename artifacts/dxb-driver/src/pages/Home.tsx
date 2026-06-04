@@ -7,7 +7,6 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { cn } from "@/lib/utils";
 import {
   Accordion,
@@ -482,7 +481,6 @@ export default function Home() {
       </section>
 
       <Footer />
-      <FloatingWhatsApp />
     </div>
   );
 }
