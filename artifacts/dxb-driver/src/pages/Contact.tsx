@@ -18,10 +18,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 const bookingSchema = z.object({
   name: z.string().min(2, "Please enter your full name"),
   phone: z.string().min(7, "Please enter a valid phone number"),
-  pickup: z.string().min(3, "Please enter a pickup location"),
-  dropoff: z.string().min(3, "Please enter a drop-off location"),
-  date: z.string().min(1, "Please select a date"),
-  vehicleType: z.string().min(1, "Please select a vehicle class"),
+  time: z.string().optional(),
   notes: z.string().optional(),
 });
 
@@ -35,20 +32,27 @@ export default function Contact() {
     defaultValues: {
       name: "",
       phone: "",
-      pickup: "",
-      dropoff: "",
-      date: "",
-      vehicleType: "",
+      time: "",
       notes: "",
     },
   });
 
   function onSubmit(data: BookingFormData) {
-    const message = `New booking request from ${data.name}%0APhone: ${data.phone}%0APickup: ${data.pickup}%0ADrop-off: ${data.dropoff}%0ADate: ${data.date}%0AVehicle: ${data.vehicleType}${data.notes ? `%0ANotes: ${data.notes}` : ""}`;
+    const lines = [
+      "Hi DXB Driver! I need a ride.",
+      `Name: ${data.name}`,
+      `Phone: ${data.phone}`,
+      `Time: ${data.time || "..."}`,
+      "From: ",
+      "To: ",
+      "Vehicle: ",
+      `Notes: ${data.notes || "..."}`,
+    ];
+    const message = encodeURIComponent(lines.join("\n"));
     window.open(`https://wa.me/971528730883?text=${message}`, "_blank");
     toast({
       title: "Redirecting to WhatsApp",
-      description: "Your booking details have been pre-filled. Send the message to confirm.",
+      description: "Your details have been prepared. Complete and send the message to confirm.",
     });
     form.reset();
   }
@@ -103,7 +107,7 @@ export default function Contact() {
 
                 <div className="space-y-6">
                   <a
-                    href="https://wa.me/971528730883"
+                    href="https://wa.me/971528730883?text=Hi%20DXB%20Driver!%20I%20need%20a%20ride.%0AFrom%3A%20%0ATo%3A%20%0ADate%20%26%20Time%3A%20%0AVehicle%3A%20%0ANotes%3A%20..."
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-4 group"
@@ -231,90 +235,24 @@ export default function Contact() {
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <FormField
-                      control={form.control}
-                      name="pickup"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground">Pickup Location</FormLabel>
-                          <FormControl>
-                            <Input
-                              placeholder="Hotel, address, terminal..."
-                              {...field}
-                              className="bg-background border-white/10 focus:border-primary/50 text-foreground placeholder:text-muted-foreground/50"
-                              data-testid="input-pickup"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="dropoff"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground">Drop-off Location</FormLabel>
-                          <FormControl>
-                            <Input
-                              placeholder="Destination..."
-                              {...field}
-                              className="bg-background border-white/10 focus:border-primary/50 text-foreground placeholder:text-muted-foreground/50"
-                              data-testid="input-dropoff"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <FormField
-                      control={form.control}
-                      name="date"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground">Date & Time</FormLabel>
-                          <FormControl>
-                            <Input
-                              type="datetime-local"
-                              {...field}
-                              className="bg-background border-white/10 focus:border-primary/50 text-foreground placeholder:text-muted-foreground/50"
-                              data-testid="input-date"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="vehicleType"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground">Vehicle Class</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger
-                                className="bg-background border-white/10 focus:border-primary/50 text-foreground"
-                                data-testid="select-vehicle"
-                              >
-                                <SelectValue placeholder="Select class..." />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent className="bg-card border-white/10">
-                              <SelectItem value="economy">Economy — Toyota Camry</SelectItem>
-                              <SelectItem value="business">Business — Mercedes E-Class</SelectItem>
-                              <SelectItem value="premium">Premium — Mercedes S-Class</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
+                  <FormField
+                    control={form.control}
+                    name="time"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground">Preferred Time (Optional)</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="time"
+                            {...field}
+                            className="bg-background border-white/10 focus:border-primary/50 text-foreground placeholder:text-muted-foreground/50"
+                            data-testid="input-time"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
                   <FormField
                     control={form.control}
