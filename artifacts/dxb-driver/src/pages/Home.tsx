@@ -44,27 +44,22 @@ export default function Home() {
 function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
 
   const heroDesktopCtrl = useAnimation();
-  const heroMobileCtrl = useAnimation();
 
   useEffect(() => {
-    const runHero = (ctrl: ReturnType<typeof useAnimation>) => {
-      ctrl
-        .start({
-          opacity: 1,
-          filter: "brightness(1)",
-          scale: 1,
-          transition: { duration: 2.6, ease: [0.16, 1, 0.3, 1] },
-        })
-        .then(() => {
-          ctrl.start({
-            scale: [1, 1.016, 1],
-            transition: { duration: 28, ease: "easeInOut", repeat: Infinity, repeatType: "loop" },
-          });
+    heroDesktopCtrl
+      .start({
+        opacity: 1,
+        filter: "brightness(1)",
+        scale: 1,
+        transition: { duration: 2.6, ease: [0.16, 1, 0.3, 1] },
+      })
+      .then(() => {
+        heroDesktopCtrl.start({
+          scale: [1, 1.016, 1],
+          transition: { duration: 28, ease: "easeInOut", repeat: Infinity, repeatType: "loop" },
         });
-    };
-    runHero(heroDesktopCtrl);
-    runHero(heroMobileCtrl);
-  }, [heroDesktopCtrl, heroMobileCtrl]);
+      });
+  }, [heroDesktopCtrl]);
 
   const faqPreview = [
     t.faq.categories[0].items[1],
@@ -142,11 +137,9 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
             }}
           />
         </div>
-        {/* Mobile hero image — 9:16 vertical */}
+        {/* Mobile hero image — 9:16 vertical — static div, no JS animation */}
         <div className="absolute inset-0 z-0 block md:hidden overflow-hidden">
-          <motion.div
-            animate={heroMobileCtrl}
-            initial={{ opacity: 0, filter: "brightness(0.22)", scale: 1.06 }}
+          <div
             className="absolute inset-0"
             role="img"
             aria-label="Luxury chauffeur service in Dubai — private driver with luxury vehicle"
@@ -155,7 +148,6 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
               backgroundSize: "cover",
               backgroundPosition: "center 30%",
               backgroundRepeat: "no-repeat",
-              willChange: "transform, opacity, filter",
             }}
           />
         </div>
