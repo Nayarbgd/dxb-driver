@@ -263,7 +263,7 @@ export default function WhyChooseUs() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0 relative">
-            <div className="hidden md:block absolute top-[2.25rem] left-[16.67%] right-[16.67%] h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
+            <div className="hidden md:block absolute top-[5rem] left-[16.67%] right-[16.67%] h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
             {t.why.process.steps.map((step, i) => (
               <motion.div
                 key={i}
