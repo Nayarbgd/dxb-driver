@@ -92,16 +92,7 @@ export default function Services() {
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <div className="border border-primary/20 bg-background/80 backdrop-blur-sm p-6">
-                    <p className="text-primary text-xs uppercase tracking-widest mb-3">
-                      {t.services.airport.badge === "Service 01" ? "Note" : "Nota"}
-                    </p>
-                    <p className="text-foreground text-sm leading-relaxed font-serif italic">
-                      {t.services.airport.goldNote}
-                    </p>
-                  </div>
-                </div>
+
               </div>
             </motion.div>
           </div>
