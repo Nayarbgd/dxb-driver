@@ -18,23 +18,20 @@ export function Navbar() {
   const openMenu = () => {
     setIsOpen(true);
     setIsMenuOpen(true);
+    document.body.style.overflow = "hidden";
   };
 
   const closeMenu = () => {
     setIsOpen(false);
     setIsMenuOpen(false);
+    document.body.style.overflow = "";
   };
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
     return () => {
       document.body.style.overflow = "";
     };
-  }, [isOpen]);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -70,104 +67,113 @@ export function Navbar() {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-white/5 py-4"
-          : "bg-transparent py-6"
-      }`}
-    >
-      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2" data-testid="link-home">
-          <span className="font-serif text-2xl tracking-[0.3em] font-bold text-primary transition-all duration-500">
-            DXB DRIVER
-          </span>
-        </Link>
+    <>
+      {/* ── Navbar bar ── */}
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled
+            ? "bg-background/95 backdrop-blur-md border-b border-white/5 py-4"
+            : "bg-transparent py-6"
+        }`}
+      >
+        <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2" data-testid="link-home">
+            <span className="font-serif text-2xl tracking-[0.3em] font-bold text-primary transition-all duration-500">
+              DXB DRIVER
+            </span>
+          </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`text-sm uppercase tracking-widest transition-colors duration-300 hover:text-primary relative py-2 ${
-                location === link.href ? "text-primary" : "text-muted-foreground"
-              }`}
-              data-testid={`link-nav-${link.href.replace("/", "")}`}
-            >
-              {link.label}
-              {location === link.href && (
-                <span className="absolute bottom-0 left-0 right-0 h-px bg-primary" />
-              )}
-            </Link>
-          ))}
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm uppercase tracking-widest transition-colors duration-300 hover:text-primary relative py-2 ${
+                  location === link.href ? "text-primary" : "text-muted-foreground"
+                }`}
+                data-testid={`link-nav-${link.href.replace("/", "")}`}
+              >
+                {link.label}
+                {location === link.href && (
+                  <span className="absolute bottom-0 left-0 right-0 h-px bg-primary" />
+                )}
+              </Link>
+            ))}
 
-          {/* Language Switcher — Desktop */}
-          <div ref={langRef} className="relative">
-            <button
-              onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-widest py-2 border border-white/10 px-3 hover:border-primary/30"
-              aria-label="Change language"
-            >
-              <Globe className="w-3.5 h-3.5" />
-              <span>{lang === "en" ? "EN" : "ES"}</span>
-              <ChevronDown
-                className={`w-3 h-3 transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`}
-              />
-            </button>
-            <AnimatePresence>
-              {langOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.18 }}
-                  className="absolute right-0 top-full mt-2 bg-card border border-white/10 shadow-2xl shadow-black/40 min-w-[130px] z-50"
-                >
-                  {langOptions.map((opt) => (
-                    <button
-                      key={opt.value}
-                      onClick={() => { setLang(opt.value); setLangOpen(false); }}
-                      className={`flex items-center gap-2.5 w-full px-4 py-3 text-sm text-left transition-colors hover:bg-white/5 ${
-                        lang === opt.value ? "text-primary" : "text-muted-foreground"
-                      }`}
-                    >
-                      <span>{opt.flag}</span>
-                      <span className="uppercase tracking-widest text-xs">{opt.label}</span>
-                      {lang === opt.value && (
-                        <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary" />
-                      )}
-                    </button>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+            {/* Language Switcher — Desktop */}
+            <div ref={langRef} className="relative">
+              <button
+                onClick={() => setLangOpen(!langOpen)}
+                className="flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-widest py-2 border border-white/10 px-3 hover:border-primary/30"
+                aria-label="Change language"
+              >
+                <Globe className="w-3.5 h-3.5" />
+                <span>{lang === "en" ? "EN" : "ES"}</span>
+                <ChevronDown
+                  className={`w-3 h-3 transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+              <AnimatePresence>
+                {langOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.18 }}
+                    className="absolute right-0 top-full mt-2 bg-card border border-white/10 shadow-2xl shadow-black/40 min-w-[130px] z-50"
+                  >
+                    {langOptions.map((opt) => (
+                      <button
+                        key={opt.value}
+                        onClick={() => { setLang(opt.value); setLangOpen(false); }}
+                        className={`flex items-center gap-2.5 w-full px-4 py-3 text-sm text-left transition-colors hover:bg-white/5 ${
+                          lang === opt.value ? "text-primary" : "text-muted-foreground"
+                        }`}
+                      >
+                        <span>{opt.flag}</span>
+                        <span className="uppercase tracking-widest text-xs">{opt.label}</span>
+                        {lang === opt.value && (
+                          <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary" />
+                        )}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
-          <div className="ml-2">
-            <Link href="/contact" data-testid="link-nav-book">
-              <CTAButton variant="filled">{t.nav.bookNow}</CTAButton>
-            </Link>
-          </div>
-        </nav>
+            <div className="ml-2">
+              <Link href="/contact" data-testid="link-nav-book">
+                <CTAButton variant="filled">{t.nav.bookNow}</CTAButton>
+              </Link>
+            </div>
+          </nav>
 
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-foreground hover:text-primary transition-colors p-2"
-          onClick={openMenu}
-          data-testid="button-mobile-menu"
-          aria-label="Open menu"
-        >
-          <Menu className="w-6 h-6" />
-        </button>
-      </div>
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden text-foreground hover:text-primary transition-colors p-2"
+            onClick={openMenu}
+            data-testid="button-mobile-menu"
+            aria-label="Open menu"
+          >
+            <Menu className="w-6 h-6" />
+          </button>
+        </div>
+      </header>
 
-      {/* Mobile Menu Overlay — portal-like fixed cover */}
+      {/*
+        ── Mobile menu overlay ──
+        Rendered as a SIBLING of <header>, not a child.
+        This escapes the backdrop-blur stacking context that the header creates
+        when scrolled, which would otherwise clip the fixed children.
+      */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Dark backdrop */}
+            {/* Dim backdrop — tap to close */}
             <motion.div
+              key="backdrop"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -176,16 +182,18 @@ export function Navbar() {
               onClick={closeMenu}
             />
 
-            {/* Menu panel */}
+            {/* Slide-in panel */}
             <motion.div
+              key="panel"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.28, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="fixed inset-y-0 right-0 w-full max-w-sm bg-background z-[70] flex flex-col px-6 py-8 md:hidden overflow-y-auto overscroll-contain"
+              className="fixed inset-y-0 right-0 w-full bg-background z-[70] flex flex-col px-6 py-8 md:hidden overflow-y-auto overscroll-contain"
             >
               <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/40 to-transparent" />
 
+              {/* Panel header */}
               <div className="flex justify-between items-center mb-12">
                 <span className="font-serif text-2xl tracking-[0.3em] font-bold text-primary">
                   DXB DRIVER
@@ -200,6 +208,7 @@ export function Navbar() {
                 </button>
               </div>
 
+              {/* Nav links */}
               <nav className="flex flex-col gap-8 text-center flex-grow justify-center">
                 {navLinks.map((link, i) => (
                   <motion.div
@@ -219,7 +228,7 @@ export function Navbar() {
                   </motion.div>
                 ))}
 
-                {/* Language Switcher — Mobile */}
+                {/* Language switcher */}
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -242,6 +251,7 @@ export function Navbar() {
                   ))}
                 </motion.div>
 
+                {/* Book Now */}
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -259,6 +269,6 @@ export function Navbar() {
           </>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
