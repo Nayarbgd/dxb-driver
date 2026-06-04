@@ -115,6 +115,7 @@ export default function BookInAdvance() {
       <SEOHead
         title="Book Dubai Airport Transfer in Advance | DXB Driver"
         description="Reserve your Dubai chauffeur days or months ahead. Secure airport transfers, city rides & inter-emirate journeys. Fixed rate confirmed before you travel."
+        canonical="https://dxbdriver.com/book-in-advance"
       />
       <Navbar />
 

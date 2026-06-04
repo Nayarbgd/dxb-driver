@@ -21,28 +21,40 @@ export function Footer() {
 
           <div>
             <h4 className="text-foreground font-serif text-xl mb-6">{t.footer.explore}</h4>
-            <ul className="space-y-4">
-              <li>
-                <Link href="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">
-                  {t.footer.links.services}
-                </Link>
-              </li>
-              <li>
-                <Link href="/pricing" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">
-                  {t.footer.links.pricing}
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">
-                  {t.footer.links.about}
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">
-                  {t.footer.links.faq}
-                </Link>
-              </li>
-            </ul>
+            <nav aria-label="Footer navigation">
+              <ul className="space-y-4">
+                <li>
+                  <Link href="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">
+                    {t.footer.links.services}
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pricing" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">
+                    {t.footer.links.pricing}
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/why-choose-us" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">
+                    Why Choose Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/book-in-advance" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">
+                    Book in Advance
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">
+                    {t.footer.links.about}
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">
+                    {t.footer.links.faq}
+                  </Link>
+                </li>
+              </ul>
+            </nav>
           </div>
 
           <div>

@@ -85,7 +85,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -210,7 +210,7 @@ export function Navbar() {
               </div>
 
               {/* Nav links */}
-              <nav className="flex flex-col gap-8 text-center flex-grow justify-center">
+              <nav className="flex flex-col gap-8 text-center flex-grow justify-center" aria-label="Mobile navigation">
                 {navLinks.map((link, i) => (
                   <motion.div
                     key={link.href}

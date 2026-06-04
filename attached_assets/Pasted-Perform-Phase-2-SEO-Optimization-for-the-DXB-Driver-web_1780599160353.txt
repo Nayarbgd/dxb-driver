@@ -1,0 +1,178 @@
+Perform Phase 2 SEO Optimization for the DXB Driver website.
+
+IMPORTANT:
+
+Phase 1 has already been completed.
+
+Do NOT recreate:
+
+* Meta titles
+* Meta descriptions
+* Open Graph tags
+* Twitter Cards
+* LocalBusiness schema
+* FAQ schema
+* AggregateRating schema
+* robots.txt changes
+
+Do NOT redesign the website.
+Do NOT change layouts.
+Do NOT modify visual styling.
+Do NOT change copywriting.
+Do NOT alter user experience.
+
+The objective of Phase 2 is to improve crawlability, image SEO, performance, accessibility and search visibility while preserving the current design.
+
+---
+
+## PHASE 2 TASKS
+
+1. IMAGE SEO IMPROVEMENTS
+
+Inspect all major visual sections.
+
+Where technically possible:
+
+* Replace critical hero CSS background images with SEO-friendly image implementations.
+* Preserve the exact same visual appearance.
+* Preserve overlays, brightness levels and animations.
+* Preserve responsive behaviour.
+
+Add descriptive alt attributes.
+
+Examples:
+
+Home Hero:
+"Luxury chauffeur service in Dubai"
+
+Airport Transfer:
+"Private airport transfer chauffeur at Dubai International Airport"
+
+City Rides:
+"Executive chauffeur driving through Dubai"
+
+Inter-Emirate Transfers:
+"Private chauffeur transfer between Dubai and Abu Dhabi"
+
+If an image must remain a CSS background, document it.
+
+---
+
+2. IMAGE PERFORMANCE
+
+Inspect all images in:
+
+/public
+/public/images
+
+Report:
+
+* File dimensions
+* File sizes
+* Opportunities for compression
+
+If images exceed reasonable web size:
+
+* Generate optimized WebP versions
+* Update references safely
+
+Target:
+
+* No visual quality loss
+* Faster loading
+
+---
+
+3. LAZY LOADING
+
+Add lazy loading where appropriate.
+
+Requirements:
+
+* Images below the fold should use lazy loading.
+* Above-the-fold hero content must not use lazy loading.
+* Preserve UX.
+
+---
+
+4. ACCESSIBILITY SEO
+
+Improve accessibility signals without visual changes.
+
+Review:
+
+* Missing alt attributes
+* Missing aria-labels
+* Navigation accessibility
+* Language attributes
+* Form labels
+
+Implement improvements where appropriate.
+
+---
+
+5. XML SITEMAP VALIDATION
+
+Verify sitemap generation.
+
+Check:
+
+* All important pages included
+* No duplicate URLs
+* No broken URLs
+* Correct canonical structure
+
+Provide report.
+
+---
+
+6. INTERNAL LINKING REVIEW
+
+Inspect internal linking structure.
+
+Report:
+
+* Orphan pages
+* Weakly connected pages
+* Opportunities for contextual internal links
+
+Only implement safe improvements.
+
+Do not modify page layouts.
+
+---
+
+7. CORE WEB VITALS REVIEW
+
+Analyze likely performance bottlenecks.
+
+Review:
+
+* LCP
+* CLS
+* Render blocking resources
+* Large image assets
+* JavaScript payload
+
+Provide findings and implement safe optimizations that do not alter design.
+
+---
+
+8. FINAL REPORT
+
+Provide:
+
+* Files modified
+* Optimizations completed
+* Performance improvements achieved
+* Remaining SEO opportunities
+* Estimated SEO score after Phase 2
+
+IMPORTANT:
+
+Do not perform content marketing.
+Do not create new landing pages.
+Do not redesign pages.
+Do not modify branding.
+
+Only improve technical SEO, image SEO, performance and crawlability.

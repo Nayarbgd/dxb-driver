@@ -34,6 +34,7 @@ export default function Home() {
       <SEOHead
         title="Private Chauffeur Service Dubai | DXB Driver"
         description="Dubai's premier private chauffeur. Fixed rates, airport transfers, city rides & inter-emirate travel. RTA licensed, 24/7 available. Book on WhatsApp."
+        canonical="https://dxbdriver.com/"
       />
       <HomeContent t={t} waLink={waLink} lang={lang} />
     </>
@@ -130,6 +131,8 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
             animate={heroDesktopCtrl}
             initial={{ opacity: 0, filter: "brightness(0.22)", scale: 1.06 }}
             className="absolute inset-0"
+            role="img"
+            aria-label="Luxury chauffeur service in Dubai — professional driver opening car door at night"
             style={{
               backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780517410/11_rqt4kf.png')",
               backgroundSize: "cover",
@@ -145,6 +148,8 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
             animate={heroMobileCtrl}
             initial={{ opacity: 0, filter: "brightness(0.22)", scale: 1.06 }}
             className="absolute inset-0"
+            role="img"
+            aria-label="Luxury chauffeur service in Dubai — private driver with luxury vehicle"
             style={{
               backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780555769/43444_b0pley.png')",
               backgroundSize: "cover",

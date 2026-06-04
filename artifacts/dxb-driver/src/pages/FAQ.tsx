@@ -80,6 +80,7 @@ export default function FAQ() {
       <SEOHead
         title="Dubai Chauffeur Service FAQ | Booking & Pricing | DXB Driver"
         description="Answers to common questions about booking a private chauffeur in Dubai — pricing, airport transfers, fleet, and how DXB Driver works. Read before you book."
+        canonical="https://dxbdriver.com/faq"
         schema={FAQ_SCHEMA}
       />
       <Navbar />

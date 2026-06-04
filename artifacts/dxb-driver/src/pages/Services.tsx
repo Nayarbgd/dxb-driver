@@ -15,6 +15,7 @@ export default function Services() {
       <SEOHead
         title="Chauffeur Services Dubai | Airport Transfers & City Rides"
         description="Airport transfers from DXB & DWC, city rides and inter-emirate travel. Fixed rates, RTA licensed private chauffeurs. Get your quote instantly on WhatsApp."
+        canonical="https://dxbdriver.com/services"
       />
       <Navbar />
 
@@ -87,16 +88,16 @@ export default function Services() {
               transition={{ duration: 0.8 }}
               className="space-y-0"
             >
-              <div
-                className="w-full aspect-[4/3] bg-card relative overflow-hidden"
-                style={{
-                  backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780529871/Gemini_Generated_Image_k3cdkmk3cdkmk3cd_whaze7.png')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "left center",
-                }}
-              >
+              <div className="w-full aspect-[4/3] bg-card relative overflow-hidden">
+                <img
+                  src="https://res.cloudinary.com/djepsudop/image/upload/v1780529871/Gemini_Generated_Image_k3cdkmk3cdkmk3cd_whaze7.png"
+                  alt="Private airport transfer chauffeur at Dubai International Airport"
+                  className="absolute inset-0 w-full h-full object-cover object-left"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-
               </div>
             </motion.div>
           </div>
@@ -114,14 +115,15 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div
-                className="w-full aspect-[4/3] relative overflow-hidden"
-                style={{
-                  backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780529912/Gemini_Generated_Image_xhp52wxhp52wxhp5_jbox4j.png')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "left center",
-                }}
-              >
+              <div className="w-full aspect-[4/3] relative overflow-hidden">
+                <img
+                  src="https://res.cloudinary.com/djepsudop/image/upload/v1780529912/Gemini_Generated_Image_xhp52wxhp52wxhp5_jbox4j.png"
+                  alt="Executive chauffeur driving through Dubai city streets"
+                  className="absolute inset-0 w-full h-full object-cover object-left"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
               </div>
             </motion.div>
@@ -192,14 +194,15 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div
-                className="w-full aspect-[4/3] relative overflow-hidden"
-                style={{
-                  backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780529876/Gemini_Generated_Image_momdenmomdenmomd_rv9qgd.png')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "left center",
-                }}
-              >
+              <div className="w-full aspect-[4/3] relative overflow-hidden">
+                <img
+                  src="https://res.cloudinary.com/djepsudop/image/upload/v1780529876/Gemini_Generated_Image_momdenmomdenmomd_rv9qgd.png"
+                  alt="Private chauffeur transfer between Dubai and Abu Dhabi on UAE highway"
+                  className="absolute inset-0 w-full h-full object-cover object-left"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
               </div>
             </motion.div>

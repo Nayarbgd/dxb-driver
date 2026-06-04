@@ -23,6 +23,7 @@ export default function About() {
       <SEOHead
         title="About DXB Driver | Luxury Chauffeur Service Dubai"
         description="Learn about DXB Driver – Dubai's premier private chauffeur. RTA licensed fleet, 5,000+ journeys, 4.97 average rating. Driven by excellence, every ride."
+        canonical="https://dxbdriver.com/about"
       />
       <Navbar />
 
@@ -98,6 +99,8 @@ export default function About() {
       {/* CINEMATIC INTERLUDE */}
       <section
         className="relative py-32 overflow-hidden"
+        role="img"
+        aria-label="Luxury sedan at night — the DXB Driver standard of excellence"
         style={{
           backgroundImage: "url('https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1920&q=80')",
           backgroundSize: "cover",

@@ -54,6 +54,7 @@ export default function WhyChooseUs() {
       <SEOHead
         title="Why Choose DXB Driver | Private Chauffeur Dubai"
         description="Discover why Dubai travelers choose DXB Driver — RTA licensed chauffeurs, fixed pricing, airport meet & greet, bilingual English & Spanish service. Book today."
+        canonical="https://dxbdriver.com/why-choose-us"
       />
       <Navbar />
 

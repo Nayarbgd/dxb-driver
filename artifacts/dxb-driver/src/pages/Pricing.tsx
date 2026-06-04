@@ -20,6 +20,7 @@ export default function Pricing() {
       <SEOHead
         title="Dubai Chauffeur Pricing | Fixed Rates, No Surge | DXB Driver"
         description="Transparent fixed pricing for Dubai chauffeur services. Economy, Business & Premium classes. No surge pricing, ever. View rates and book your ride today."
+        canonical="https://dxbdriver.com/pricing"
       />
       <Navbar />
 
