@@ -34,13 +34,13 @@ export default function About() {
             className="block text-primary text-xs uppercase tracking-[0.4em] mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
           >
             {t.about.pageBadge}
           </motion.span>
           <motion.h1
             className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-foreground leading-tight"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
@@ -61,10 +61,10 @@ export default function About() {
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
+              initial={{ opacity: 0, x: -18 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 0.06 }}
+              transition={{ duration: 0.5 }}
             >
               <SectionTitle subtitle={t.about.story.subtitle} title={t.about.story.title} />
               <div className="space-y-6 text-muted-foreground leading-relaxed">
@@ -75,10 +75,10 @@ export default function About() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
+              initial={{ opacity: 0, x: 18 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 0.06 }}
+              transition={{ duration: 0.5 }}
               className="space-y-0 border border-white/10"
             >
               {t.about.stats.map((stat, i) => (
@@ -113,8 +113,8 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.55 }}
           >
             <div className="w-px h-16 bg-gradient-to-b from-transparent via-primary to-transparent mx-auto mb-10" />
             <p className="font-serif text-3xl md:text-4xl text-foreground leading-relaxed italic">
@@ -129,10 +129,10 @@ export default function About() {
       <section className="py-28 md:py-36 bg-card border-b border-white/5" data-testid="section-about-values">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.45 }}
           >
             <SectionTitle subtitle={t.about.values.subtitle} title={t.about.values.title} centered />
           </motion.div>
@@ -144,7 +144,7 @@ export default function About() {
                 className={`p-8 md:p-12 ${i % 2 === 0 ? "md:border-r" : ""} ${i < 2 ? "border-b" : ""} border-white/5`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.06 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 data-testid={`card-value-${i}`}
               >
@@ -161,10 +161,10 @@ export default function About() {
       <section className="py-28 md:py-36 border-b border-white/5" data-testid="section-about-drivers">
         <div className="container mx-auto px-6 md:px-12 max-w-3xl">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.45 }}
           >
             <SectionTitle subtitle={t.about.drivers.subtitle} title={t.about.drivers.title} />
           </motion.div>
@@ -189,10 +189,10 @@ export default function About() {
       <section className="py-32 md:py-40" data-testid="section-about-cta">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.5 }}
           >
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-foreground mb-8">
               {t.about.cta.title}

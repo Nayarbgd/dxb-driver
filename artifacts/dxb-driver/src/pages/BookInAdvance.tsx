@@ -9,7 +9,7 @@ import { CheckCircle, Calendar, Shield, MessageCircle } from "lucide-react";
 const WA_NUMBER = "971528730883";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 14 },
   show: (i = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.55, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] } }),
 };
 
@@ -171,7 +171,7 @@ export default function BookInAdvance() {
               return (
                 <motion.div
                   key={i}
-                  initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} custom={i * 0.5}
+                  initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.06 }} variants={fadeUp} custom={i * 0.5}
                   className="relative border border-white/8 bg-white/[0.025] p-8 group hover:border-primary/30 hover:bg-white/[0.04] transition-all duration-400"
                 >
                   <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
@@ -192,7 +192,7 @@ export default function BookInAdvance() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent pointer-events-none" />
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
-            initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}
+            initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.06 }} variants={fadeUp}
             className="text-center mb-16"
           >
             <div className="w-12 h-px bg-primary/40 mx-auto mb-6" />

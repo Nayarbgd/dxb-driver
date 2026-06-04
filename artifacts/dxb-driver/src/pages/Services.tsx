@@ -26,13 +26,13 @@ export default function Services() {
             className="block text-primary text-xs uppercase tracking-[0.4em] mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
           >
             {t.services.pageBadge}
           </motion.span>
           <motion.h1
             className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight max-w-3xl"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
@@ -56,10 +56,10 @@ export default function Services() {
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
+              initial={{ opacity: 0, x: -18 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 0.06 }}
+              transition={{ duration: 0.5 }}
             >
               <span className="block text-primary text-xs uppercase tracking-[0.3em] mb-6">{t.services.airport.badge}</span>
               <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6 leading-tight">
@@ -82,10 +82,10 @@ export default function Services() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
+              initial={{ opacity: 0, x: 18 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 0.06 }}
+              transition={{ duration: 0.5 }}
               className="space-y-0"
             >
               <div className="w-full aspect-[4/3] bg-card relative overflow-hidden">
@@ -110,10 +110,10 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
             <motion.div
               className="order-2 md:order-1"
-              initial={{ opacity: 0, x: -40 }}
+              initial={{ opacity: 0, x: -18 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 0.06 }}
+              transition={{ duration: 0.5 }}
             >
               <div className="w-full aspect-[4/3] relative overflow-hidden">
                 <img
@@ -130,10 +130,10 @@ export default function Services() {
 
             <motion.div
               className="order-1 md:order-2"
-              initial={{ opacity: 0, x: 40 }}
+              initial={{ opacity: 0, x: 18 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 0.06 }}
+              transition={{ duration: 0.5 }}
             >
               <span className="block text-primary text-xs uppercase tracking-[0.3em] mb-6">{t.services.city.badge}</span>
               <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6 leading-tight">
@@ -163,10 +163,10 @@ export default function Services() {
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
+              initial={{ opacity: 0, x: -18 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 0.06 }}
+              transition={{ duration: 0.5 }}
             >
               <span className="block text-primary text-xs uppercase tracking-[0.3em] mb-6">{t.services.emirate.badge}</span>
               <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-6 leading-tight">
@@ -189,10 +189,10 @@ export default function Services() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
+              initial={{ opacity: 0, x: 18 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 0.06 }}
+              transition={{ duration: 0.5 }}
             >
               <div className="w-full aspect-[4/3] relative overflow-hidden">
                 <img
@@ -214,10 +214,10 @@ export default function Services() {
       <section className="py-32 md:py-40" data-testid="section-services-cta">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.5 }}
           >
             <span className="block text-primary text-xs uppercase tracking-[0.4em] mb-6">{t.services.cta.subtitle}</span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-foreground mb-8">

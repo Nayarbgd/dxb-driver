@@ -78,13 +78,13 @@ export default function Contact() {
             className="block text-primary text-xs uppercase tracking-[0.4em] mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
           >
             {t.contact.pageBadge}
           </motion.span>
           <motion.h1
             className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight max-w-3xl"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
@@ -103,10 +103,10 @@ export default function Contact() {
             {/* LEFT — Info */}
             <motion.div
               className="lg:col-span-2"
-              initial={{ opacity: 0, x: -40 }}
+              initial={{ opacity: 0, x: -18 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 0.06 }}
+              transition={{ duration: 0.5 }}
             >
               <SectionTitle subtitle={t.contact.getInTouch} title={t.contact.subtitle} />
 
@@ -180,10 +180,10 @@ export default function Contact() {
             {/* RIGHT — Booking Form */}
             <motion.div
               className="lg:col-span-3 border border-white/10 bg-card p-8 md:p-12"
-              initial={{ opacity: 0, x: 40 }}
+              initial={{ opacity: 0, x: 18 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 0.06 }}
+              transition={{ duration: 0.5 }}
             >
               <div className="border-b border-white/5 pb-8 mb-8">
                 <h3 className="font-serif text-2xl text-foreground">{t.contact.form.title}</h3>

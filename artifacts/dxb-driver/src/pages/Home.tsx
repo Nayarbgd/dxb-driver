@@ -19,11 +19,11 @@ import {
 import { useLanguage } from "@/context/LanguageContext";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 16 },
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+    transition: { duration: 0.45, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
   }),
 };
 
@@ -280,10 +280,10 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
       <section className="py-28 md:py-36" data-testid="section-services">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.45 }}
           >
             <SectionTitle subtitle={t.home.services.subtitle} title={t.home.services.title} centered />
           </motion.div>
@@ -296,9 +296,9 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
             ].map((service, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.06 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className={i < 2 ? "md:border-r border-white/5" : ""}
               >
@@ -313,10 +313,10 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
       <section className="py-28 md:py-36 bg-card border-y border-white/5" data-testid="section-how-it-works">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.45 }}
           >
             <SectionTitle subtitle={t.home.howItWorks.subtitle} title={t.home.howItWorks.title} centered />
           </motion.div>
@@ -327,9 +327,9 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
               <motion.div
                 key={i}
                 className="text-center px-8 relative"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.06 }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
                 data-testid={`step-how-${i + 1}`}
               >
@@ -348,10 +348,10 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
       <section className="py-28 md:py-36" data-testid="section-fleet">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.45 }}
           >
             <SectionTitle subtitle={lang === "es" ? "La Flota" : "The Fleet"} title={lang === "es" ? "Cada Vehículo. Cada Estándar." : "Every Vehicle. Every Standard."} />
           </motion.div>
@@ -361,9 +361,9 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
               <motion.div
                 key={i}
                 className={`border ${fleet.color} p-8 md:p-10 pt-12 md:pt-14 relative transition-colors duration-300 ${fleet.featured ? "bg-card" : "hover:border-primary/50"}`}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.06 }}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 data-testid={`card-fleet-${fleet.tier.toLowerCase()}`}
@@ -407,10 +407,10 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
       <section className="py-28 md:py-36 bg-card border-y border-white/5" data-testid="section-testimonials">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.45 }}
           >
             <SectionTitle subtitle={t.home.testimonials.subtitle} title={t.home.testimonials.title} centered />
           </motion.div>
@@ -419,7 +419,7 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
             className="flex items-center gap-3 mb-12 justify-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.06 }}
           >
             <div className="flex items-center gap-1">
               {[1, 2, 3, 4, 5].map((_, i) => (
@@ -433,7 +433,7 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
             className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/5"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.06 }}
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
           >
             {[
@@ -443,7 +443,7 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
             ].map((testimonial, i) => (
               <motion.div
                 key={i}
-                variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
+                variants={{ hidden: { opacity: 0, y: 14 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
                 className={i < 2 ? "md:border-r border-white/5" : ""}
               >
                 <TestimonialCard {...testimonial} />
@@ -457,10 +457,10 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
       <section className="py-28 md:py-36" data-testid="section-faq-preview">
         <div className="container mx-auto px-6 md:px-12 max-w-3xl">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.45 }}
           >
             <SectionTitle subtitle={t.home.faqSection.subtitle} title={t.home.faqSection.title} centered />
           </motion.div>
@@ -487,7 +487,7 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
             className="text-center mt-12"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.06 }}
             transition={{ duration: 0.5 }}
           >
             <Link href="/faq" data-testid="link-view-all-faq">
@@ -506,10 +506,10 @@ function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
         <div className="container mx-auto px-6 md:px-12 text-center relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.5 }}
           >
             <div className="w-16 h-px bg-primary mx-auto mb-8" />
             <span className="block text-primary text-xs uppercase tracking-[0.4em] mb-8">{beginJourney}</span>

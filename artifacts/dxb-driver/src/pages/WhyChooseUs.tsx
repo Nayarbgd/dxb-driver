@@ -22,11 +22,11 @@ import { CTAButton } from "@/components/CTAButton";
 import { useLanguage } from "@/context/LanguageContext";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 16 },
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+    transition: { duration: 0.45, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
   }),
 };
 
@@ -65,13 +65,13 @@ export default function WhyChooseUs() {
             className="block text-primary text-xs uppercase tracking-[0.4em] mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
           >
             {t.why.pageBadge}
           </motion.span>
           <motion.h1
             className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-foreground leading-tight max-w-3xl"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
@@ -110,7 +110,7 @@ export default function WhyChooseUs() {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.06 }}
               variants={fadeUp}
             >
               <SectionTitle subtitle={t.why.whyClients.subtitle} title={t.why.whyClients.title} />
@@ -124,7 +124,7 @@ export default function WhyChooseUs() {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.06 }}
               variants={{ hidden: { opacity: 0, x: 30 }, visible: { opacity: 1, x: 0, transition: { duration: 0.7 } } }}
               className="border border-white/8 bg-card p-8 md:p-10"
             >
@@ -148,10 +148,10 @@ export default function WhyChooseUs() {
       <section className="py-28 md:py-36 bg-card border-b border-white/5" data-testid="section-why-reliability">
         <div className="container mx-auto px-6 md:px-12 max-w-3xl">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.45 }}
           >
             <SectionTitle subtitle={t.why.reliability.subtitle} title={t.why.reliability.title} />
           </motion.div>
@@ -164,7 +164,7 @@ export default function WhyChooseUs() {
             className="mt-12 border-l-2 border-primary pl-6 py-2"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.06 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <p className="font-serif text-xl text-foreground leading-relaxed italic">
@@ -178,10 +178,10 @@ export default function WhyChooseUs() {
       <section className="py-28 md:py-36 border-b border-white/5" data-testid="section-why-audience">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.45 }}
           >
             <SectionTitle subtitle={t.why.audience.subtitle} title={t.why.audience.title} centered />
           </motion.div>
@@ -198,9 +198,9 @@ export default function WhyChooseUs() {
               <motion.div
                 key={i}
                 className={`p-8 md:p-10 ${audienceBorders[i]}`}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.06 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 data-testid={`card-audience-${i}`}
               >
@@ -218,10 +218,10 @@ export default function WhyChooseUs() {
       <section className="py-28 md:py-36 bg-card border-b border-white/5" data-testid="section-why-differentiators">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.45 }}
           >
             <SectionTitle subtitle={t.why.differentiators.subtitle} title={t.why.differentiators.title} centered />
           </motion.div>
@@ -242,7 +242,7 @@ export default function WhyChooseUs() {
                 className={`p-8 md:p-10 ${diffBorders[i]}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.06 }}
                 transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
                 data-testid={`card-diff-${i}`}
               >
@@ -260,10 +260,10 @@ export default function WhyChooseUs() {
       <section className="py-28 md:py-36 border-b border-white/5" data-testid="section-why-process">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.45 }}
           >
             <SectionTitle subtitle={t.why.process.subtitle} title={t.why.process.title} centered />
           </motion.div>
@@ -274,9 +274,9 @@ export default function WhyChooseUs() {
               <motion.div
                 key={i}
                 className="text-center px-8"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.06 }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
                 data-testid={`step-why-${i + 1}`}
               >
@@ -296,10 +296,10 @@ export default function WhyChooseUs() {
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
             className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.45 }}
           >
             <span className="block text-primary text-xs uppercase tracking-[0.4em] mb-5">{t.why.vsApps.subtitle}</span>
             <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-tight max-w-2xl mx-auto">
@@ -317,8 +317,8 @@ export default function WhyChooseUs() {
               className="border border-white/8 bg-card p-8 md:p-10"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              viewport={{ once: true, amount: 0.06 }}
+              transition={{ duration: 0.45 }}
             >
               <h3 className="font-serif text-xl text-muted-foreground/70 mb-8 pb-6 border-b border-white/5">
                 {t.why.vsApps.appTitle}
@@ -337,7 +337,7 @@ export default function WhyChooseUs() {
               className="border border-primary/25 bg-card p-8 md:p-10 relative overflow-hidden"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.06 }}
               transition={{ duration: 0.7, delay: 0.1 }}
             >
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
@@ -359,7 +359,7 @@ export default function WhyChooseUs() {
             className="text-center text-muted-foreground/70 text-sm mt-10 font-serif italic max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.06 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             {t.why.vsApps.footnote}
@@ -371,10 +371,10 @@ export default function WhyChooseUs() {
       <section className="py-28 md:py-36 border-b border-white/5 bg-card" data-testid="section-why-philosophy">
         <div className="container mx-auto px-6 md:px-12 max-w-3xl text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.5 }}
           >
             <span className="block text-primary text-xs uppercase tracking-[0.4em] mb-8">{t.why.philosophy.subtitle}</span>
             <div className="w-px h-12 bg-gradient-to-b from-transparent via-primary/50 to-transparent mx-auto mb-10" />
@@ -396,10 +396,10 @@ export default function WhyChooseUs() {
       <section className="py-32 md:py-40" data-testid="section-why-cta">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.5 }}
           >
             <span className="block text-primary text-xs uppercase tracking-[0.4em] mb-6">{t.why.finalCTA.subtitle}</span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-foreground mb-6 leading-tight">

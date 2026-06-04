@@ -124,6 +124,19 @@
   }
   html {
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  @media (max-width: 768px) {
+    html {
+      scroll-behavior: auto;
+    }
+    section {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    [data-testid^="section-"] {
+      transform: translateZ(0);
+    }
   }
   ::selection {
     background-color: rgba(201, 168, 76, 0.25);

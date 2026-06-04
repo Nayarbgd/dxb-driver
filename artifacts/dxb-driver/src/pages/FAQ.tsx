@@ -40,7 +40,7 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
       className="border-b border-white/5"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.06 }}
       transition={{ duration: 0.5, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
     >
       <button
@@ -92,13 +92,13 @@ export default function FAQ() {
             className="block text-primary text-xs uppercase tracking-[0.4em] mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
           >
             {t.faq.pageBadge}
           </motion.span>
           <motion.h1
             className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-foreground leading-tight max-w-3xl"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
@@ -124,10 +124,10 @@ export default function FAQ() {
             {t.faq.categories.map((cat, ci) => (
               <motion.div
                 key={ci}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+                viewport={{ once: true, amount: 0.06 }}
+                transition={{ duration: 0.4 }}
                 data-testid={`faq-category-${ci}`}
               >
                 <div className="flex items-center gap-4 mb-8">
@@ -152,10 +152,10 @@ export default function FAQ() {
       <section className="py-28 md:py-36 bg-card border-t border-white/5" data-testid="section-faq-cta">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.5 }}
           >
             <span className="block text-primary text-xs uppercase tracking-[0.4em] mb-6">
               {t.faq.contact.subtitle}

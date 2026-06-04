@@ -31,13 +31,13 @@ export default function Pricing() {
             className="block text-primary text-xs uppercase tracking-[0.4em] mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
           >
             {t.pricing.pageBadge}
           </motion.span>
           <motion.h1
             className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-foreground leading-tight max-w-3xl"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
@@ -60,10 +60,10 @@ export default function Pricing() {
       <section className="py-28 md:py-36" data-testid="section-pricing-tiers">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.45 }}
           >
             <SectionTitle subtitle={t.pricing.tiers.subtitle} title={t.pricing.tiers.title} centered />
           </motion.div>
@@ -73,9 +73,9 @@ export default function Pricing() {
               <motion.div
                 key={i}
                 className={`relative border flex flex-col ${featured[i] ? "border-primary/40 bg-card" : "border-white/10"}`}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.06 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 data-testid={`card-pricing-${plan.tier.toLowerCase()}`}
               >
@@ -136,7 +136,7 @@ export default function Pricing() {
             className="text-center text-muted-foreground text-xs mt-8 tracking-wide"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.06 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             {t.pricing.rateNote}
@@ -148,10 +148,10 @@ export default function Pricing() {
       <section className="py-28 md:py-36 bg-card border-y border-white/5" data-testid="section-pricing-routes">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.45 }}
           >
             <SectionTitle subtitle={t.pricing.routes.subtitle} title={t.pricing.routes.title} />
           </motion.div>
@@ -162,7 +162,7 @@ export default function Pricing() {
               className="grid grid-cols-4 border-b border-white/10 bg-background/40"
               initial={{ opacity: 0, y: -8 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.06 }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
               {t.pricing.routeHeaders.map((h) => (
@@ -183,7 +183,7 @@ export default function Pricing() {
                 className="grid grid-cols-4 border-b border-white/5 last:border-b-0 hover:bg-background/20 transition-colors"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.06 }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
                 data-testid={`row-route-${i}`}
               >
@@ -203,10 +203,10 @@ export default function Pricing() {
       <section className="py-32 md:py-40" data-testid="section-pricing-cta">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.5 }}
           >
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-foreground mb-8">
               {t.pricing.cta.title}
