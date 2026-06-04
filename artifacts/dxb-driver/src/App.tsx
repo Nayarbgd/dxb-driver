@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { MobileMenuProvider } from "@/context/MobileMenuContext";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Services from "@/pages/Services";
@@ -73,6 +74,7 @@ function App() {
         <QueryClientProvider client={queryClient}>
           <TooltipProvider>
             <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+              <ScrollProgressBar />
               <Router />
               <FloatingWhatsApp />
             </WouterRouter>
