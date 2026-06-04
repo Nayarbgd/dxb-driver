@@ -34,7 +34,7 @@ export default function About() {
             {t.about.pageBadge}
           </motion.span>
           <motion.h1
-            className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-foreground leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -187,7 +187,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="font-serif text-5xl md:text-6xl text-foreground mb-8">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-foreground mb-8">
               {t.about.cta.title}
               <br />
               <span className="text-primary">{t.about.cta.titleGold}</span>

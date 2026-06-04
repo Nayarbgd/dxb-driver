@@ -40,7 +40,7 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="text-muted-foreground text-sm leading-relaxed pb-6 pr-8">{a}</p>
+            <p className="text-muted-foreground text-sm leading-relaxed pb-6 pr-4 md:pr-8">{a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -67,7 +67,7 @@ export default function FAQ() {
             {t.faq.pageBadge}
           </motion.span>
           <motion.h1
-            className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight max-w-3xl"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-foreground leading-tight max-w-3xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}

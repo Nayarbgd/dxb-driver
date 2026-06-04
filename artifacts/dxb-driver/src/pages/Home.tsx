@@ -117,7 +117,7 @@ export default function Home() {
               </span>
             </motion.div>
 
-            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.9] text-foreground mb-8">
+            <h1 className="font-serif text-[2.8rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.9] text-foreground mb-8">
               <div className="overflow-hidden">
                 <motion.div
                   initial={{ y: "100%" }}
@@ -458,7 +458,7 @@ export default function Home() {
           >
             <div className="w-16 h-px bg-primary mx-auto mb-8" />
             <span className="block text-primary text-xs uppercase tracking-[0.4em] mb-8">{beginJourney}</span>
-            <h2 className="font-serif text-6xl md:text-7xl lg:text-8xl text-foreground mb-8 leading-tight">
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground mb-8 leading-tight">
               {finalTitle1}
               <br />
               <span className="text-primary">{finalTitle2}</span>

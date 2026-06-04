@@ -31,7 +31,7 @@ export default function Pricing() {
             {t.pricing.pageBadge}
           </motion.span>
           <motion.h1
-            className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight max-w-3xl"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-foreground leading-tight max-w-3xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -151,7 +151,8 @@ export default function Pricing() {
             <SectionTitle subtitle={t.pricing.routes.subtitle} title={t.pricing.routes.title} />
           </motion.div>
 
-          <div className="border border-white/10 overflow-hidden">
+          <div className="overflow-x-auto -mx-6 md:mx-0 px-6 md:px-0">
+          <div className="border border-white/10 overflow-hidden min-w-[480px]">
             <div className="grid grid-cols-4 border-b border-white/10 bg-background/40">
               {t.pricing.routeHeaders.map((h) => (
                 <div key={h} className="p-4 md:p-6">
@@ -182,6 +183,7 @@ export default function Pricing() {
               </motion.div>
             ))}
           </div>
+          </div>
           <p className="text-muted-foreground text-xs mt-6 tracking-wide">{t.pricing.routeNote}</p>
         </div>
       </section>
@@ -195,7 +197,7 @@ export default function Pricing() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="font-serif text-5xl md:text-6xl text-foreground mb-8">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-foreground mb-8">
               {t.pricing.cta.title}
               <br />
               <span className="text-primary">{t.pricing.cta.titleGold}</span>

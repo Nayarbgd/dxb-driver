@@ -5,7 +5,7 @@ export function Footer() {
   const { t, waLink } = useLanguage();
 
   return (
-    <footer className="bg-background border-t border-white/5 pt-24 pb-12">
+    <footer className="bg-background border-t border-white/5 pt-24 pb-28 md:pb-12">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">

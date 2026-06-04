@@ -6,7 +6,7 @@ export function FloatingWhatsApp() {
   const { waLink } = useLanguage();
 
   return (
-    <div className="fixed bottom-8 right-8 z-50" data-testid="link-floating-whatsapp">
+    <div className="fixed bottom-24 right-5 md:bottom-8 md:right-8 z-50" data-testid="link-floating-whatsapp">
       <span className="absolute inset-0 rounded-full bg-[#25D366]/30 animate-ping" style={{ animationDuration: "2s" }} />
       <span className="absolute inset-[-6px] rounded-full bg-[#25D366]/15 animate-ping" style={{ animationDuration: "2s", animationDelay: "0.4s" }} />
 

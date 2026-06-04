@@ -65,7 +65,7 @@ export default function WhyChooseUs() {
             {t.why.pageBadge}
           </motion.span>
           <motion.h1
-            className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight max-w-3xl"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-foreground leading-tight max-w-3xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -88,11 +88,11 @@ export default function WhyChooseUs() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
           >
-            <a href={waLink} target="_blank" rel="noreferrer" data-testid="link-why-whatsapp">
-              <CTAButton variant="filled" className="px-10 py-4">{t.why.hero.cta1}</CTAButton>
+            <a href={waLink} target="_blank" rel="noreferrer" data-testid="link-why-whatsapp" className="w-full sm:w-auto">
+              <CTAButton variant="filled" className="px-10 py-4 w-full sm:w-auto justify-center">{t.why.hero.cta1}</CTAButton>
             </a>
-            <a href={waLink} target="_blank" rel="noreferrer">
-              <CTAButton variant="outline" className="px-10 py-4">{t.why.hero.cta2}</CTAButton>
+            <a href={waLink} target="_blank" rel="noreferrer" className="w-full sm:w-auto">
+              <CTAButton variant="outline" className="px-10 py-4 w-full sm:w-auto justify-center">{t.why.hero.cta2}</CTAButton>
             </a>
           </motion.div>
         </div>
@@ -101,7 +101,7 @@ export default function WhyChooseUs() {
       {/* WHY CLIENTS CHOOSE DXB DRIVER */}
       <section className="py-28 md:py-36 border-b border-white/5" data-testid="section-why-clients">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start max-w-5xl">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -182,10 +182,17 @@ export default function WhyChooseUs() {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border border-white/5">
-            {t.why.audience.items.map((item, i) => (
+            {(() => {
+              const audienceBorders = [
+                "border-b border-white/5 sm:border-r lg:border-b-0",
+                "border-b border-white/5 lg:border-r lg:border-b-0",
+                "border-b border-white/5 sm:border-b-0 sm:border-r lg:border-b-0",
+                "",
+              ];
+              return t.why.audience.items.map((item, i) => (
               <motion.div
                 key={i}
-                className={`p-8 md:p-10 ${i < 3 ? "border-r border-white/5" : ""} border-b border-white/5 lg:border-b-0`}
+                className={`p-8 md:p-10 ${audienceBorders[i]}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -196,7 +203,8 @@ export default function WhyChooseUs() {
                 <h3 className="font-serif text-xl text-foreground mb-3">{item.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{item.body}</p>
               </motion.div>
-            ))}
+            ));
+            })()}
           </div>
         </div>
       </section>
@@ -214,12 +222,19 @@ export default function WhyChooseUs() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-white/5">
-            {t.why.differentiators.items.map((item, i) => (
+            {(() => {
+              const diffBorders = [
+                "border-b border-white/5 md:border-r",
+                "border-b border-white/5 lg:border-r",
+                "border-b border-white/5 md:border-r",
+                "border-b border-white/5 md:border-r lg:border-r lg:border-b-0",
+                "border-b border-white/5 md:border-b-0 md:border-r lg:border-r lg:border-b-0",
+                "md:border-b-0 lg:border-b-0",
+              ];
+              return t.why.differentiators.items.map((item, i) => (
               <motion.div
                 key={i}
-                className={`p-8 md:p-10 border-b border-white/5 ${
-                  i % 3 !== 2 ? "lg:border-r" : ""
-                } ${i >= t.why.differentiators.items.length - 3 ? "lg:border-b-0" : ""}`}
+                className={`p-8 md:p-10 ${diffBorders[i]}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -230,7 +245,8 @@ export default function WhyChooseUs() {
                 <h3 className="font-serif text-xl text-foreground mb-3">{item.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{item.body}</p>
               </motion.div>
-            ))}
+            ));
+            })()}
           </div>
         </div>
       </section>
@@ -381,7 +397,7 @@ export default function WhyChooseUs() {
             transition={{ duration: 0.8 }}
           >
             <span className="block text-primary text-xs uppercase tracking-[0.4em] mb-6">{t.why.finalCTA.subtitle}</span>
-            <h2 className="font-serif text-5xl md:text-6xl text-foreground mb-6 leading-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-foreground mb-6 leading-tight">
               {t.why.finalCTA.title}
             </h2>
             <p className="text-muted-foreground max-w-lg mx-auto mb-10 leading-relaxed">

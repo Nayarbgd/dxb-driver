@@ -1,0 +1,180 @@
+Perform a complete mobile-first responsive optimization of the entire DXB Driver website.
+
+IMPORTANT:
+
+Do NOT redesign the website.
+
+Do NOT change the luxury visual identity.
+
+Do NOT modify colors, branding, typography hierarchy, copywriting, images, navigation structure, services, pricing, or page content.
+
+The goal is ONLY to make the entire website feel premium, fast, fluid, and perfectly adapted to mobile devices.
+
+MOBILE EXPERIENCE TARGET
+
+The website should feel like a premium luxury mobile application, not a desktop website squeezed into a phone.
+
+Optimize for:
+
+- iPhone SE
+- iPhone 13 / 14 / 15
+- iPhone Pro Max
+- Samsung Galaxy devices
+- Android devices
+- Tablets
+
+RESPONSIVE LAYOUT
+
+Review every section individually.
+
+Ensure:
+
+- No horizontal scrolling.
+- No text clipping.
+- No overlapping elements.
+- No buttons touching screen edges.
+- No cards cut off.
+- No images cropped incorrectly.
+- No awkward spacing.
+- No oversized typography.
+
+HERO SECTION
+
+The hero section is the highest priority.
+
+Requirements:
+
+- Headline scales perfectly on all screens.
+- Maintain luxury appearance.
+- Preserve visual impact.
+- Keep CTA buttons highly visible.
+- Stack buttons vertically on smaller devices if needed.
+- Ensure the hero image remains cinematic.
+- Ensure text never covers important parts of the image.
+- Keep sufficient padding from screen edges.
+
+NAVIGATION
+
+Mobile navigation must feel premium.
+
+Requirements:
+
+- Elegant hamburger menu.
+- Smooth open/close animation.
+- Full-screen luxury menu experience.
+- Easy thumb navigation.
+- Language selector accessible inside mobile menu.
+- Maintain all navigation functionality.
+
+WHATSAPP BUTTON
+
+Optimize floating WhatsApp button.
+
+Requirements:
+
+- Positioned safely above screen edges.
+- Never overlap important content.
+- Mobile-friendly touch target.
+- Smooth pulse animation.
+- Maintain visibility while scrolling.
+- Respect safe-area insets on iPhone devices.
+
+SERVICES SECTION
+
+Review all service cards.
+
+Requirements:
+
+- Perfect stacking on mobile.
+- Equal spacing.
+- Consistent image sizing.
+- Proper text hierarchy.
+- Buttons full width where appropriate.
+- Comfortable reading experience.
+
+WHY CHOOSE US PAGE
+
+Optimize all sections.
+
+Requirements:
+
+- Proper card stacking.
+- Readable typography.
+- Consistent spacing.
+- No crowded layouts.
+- Strong visual hierarchy.
+
+FLEET & PRICING PAGE
+
+Requirements:
+
+- Pricing cards stack elegantly.
+- No horizontal scrolling.
+- Pricing remains easy to compare.
+- CTA buttons remain visible.
+- Maintain premium luxury presentation.
+
+IMAGES
+
+Review every image.
+
+Requirements:
+
+- Responsive image loading.
+- Correct aspect ratios.
+- No stretched images.
+- No blurry images.
+- Mobile-optimized rendering.
+- Lazy loading where appropriate.
+
+TYPOGRAPHY
+
+Improve readability.
+
+Requirements:
+
+- Comfortable line height.
+- Consistent spacing.
+- Proper paragraph width.
+- Responsive font scaling.
+- Luxury editorial appearance.
+
+PERFORMANCE
+
+Optimize mobile performance without changing design.
+
+Requirements:
+
+- Reduce layout shifts.
+- Improve scrolling smoothness.
+- Avoid animation stuttering.
+- Optimize image loading.
+- Minimize unnecessary re-renders.
+- Ensure smooth experience on mid-range Android devices.
+
+TOUCH EXPERIENCE
+
+Review every interactive element.
+
+Requirements:
+
+- Proper tap targets.
+- Comfortable spacing between buttons.
+- No accidental taps.
+- Smooth hover-to-touch adaptations.
+- Mobile-friendly forms.
+
+FINAL VALIDATION
+
+Review the entire website at:
+
+- 320px
+- 375px
+- 390px
+- 414px
+- 768px
+- 1024px
+
+Fix every layout issue found.
+
+The final result should feel like a luxury chauffeur brand website built specifically for mobile users, while maintaining the exact same premium visual identity currently used on desktop.

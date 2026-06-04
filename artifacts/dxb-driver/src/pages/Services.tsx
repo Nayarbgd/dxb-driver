@@ -49,7 +49,7 @@ export default function Services() {
       {/* AIRPORT TRANSFERS */}
       <section className="py-28 md:py-36 border-b border-white/5" data-testid="section-service-airport">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -102,7 +102,7 @@ export default function Services() {
       {/* CITY RIDES */}
       <section className="py-28 md:py-36 border-b border-white/5 bg-card" data-testid="section-service-city">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
             <motion.div
               className="order-2 md:order-1"
               initial={{ opacity: 0, x: -40 }}
@@ -155,7 +155,7 @@ export default function Services() {
       {/* INTER-EMIRATE */}
       <section className="py-28 md:py-36 border-b border-white/5" data-testid="section-service-emirate">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -213,7 +213,7 @@ export default function Services() {
             transition={{ duration: 0.8 }}
           >
             <span className="block text-primary text-xs uppercase tracking-[0.4em] mb-6">{t.services.cta.subtitle}</span>
-            <h2 className="font-serif text-5xl md:text-6xl text-foreground mb-8">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-foreground mb-8">
               {t.services.cta.title}
               <br />
               <span className="text-primary">{t.services.cta.titleGold}</span>
