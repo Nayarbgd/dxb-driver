@@ -811,7 +811,7 @@ const es: Translations = {
   },
   home: {
     badge: "El Servicio de Ch\u00f3fer Premium de Dub\u00e1i",
-    title: ["Llega", "Sin", "Compromisos."],
+    title: ["Tu Viaje", "Sin", "Improvisar."],
     subtitle:
       "Servicio de ch\u00f3fer privado en Dub\u00e1i, dise\u00f1ado para quienes exigen lo mejor en cada viaje. Traslados al aeropuerto, viajes por la ciudad y traslados entre emiratos — en su horario, en silencio y con estilo.",
     smallBadge: "Licencia RTA · Disponible 24/7 · Sin pago previo",

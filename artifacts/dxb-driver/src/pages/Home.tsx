@@ -109,13 +109,6 @@ export default function Home() {
 
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-4xl">
-            <motion.div initial="hidden" animate="visible" custom={0} variants={fadeUp}>
-              <span className="inline-block text-primary text-xs uppercase tracking-[0.4em] mb-8">
-                <span className="w-6 h-px bg-primary inline-block mr-3 align-middle" />
-                {t.home.badge}
-              </span>
-            </motion.div>
-
             <h1 className="font-serif text-[2.8rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.9] text-foreground mb-8">
               <div className="overflow-hidden">
                 <motion.div
