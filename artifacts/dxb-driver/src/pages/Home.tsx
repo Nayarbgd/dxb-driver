@@ -87,8 +87,9 @@ export default function Home() {
         data-testid="section-hero"
         style={{ background: "#0A0A0A" }}
       >
+        {/* Desktop hero image */}
         <motion.div
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 hidden md:block"
           initial={{ opacity: 0.45, scale: 1.025 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2.5, ease: [0.16, 1, 0.3, 1] }}
@@ -96,6 +97,20 @@ export default function Home() {
             backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780517410/11_rqt4kf.png')",
             backgroundSize: "cover",
             backgroundPosition: "center 40%",
+            backgroundRepeat: "no-repeat",
+            willChange: "transform, opacity",
+          }}
+        />
+        {/* Mobile hero image — 9:16 vertical */}
+        <motion.div
+          className="absolute inset-0 z-0 block md:hidden"
+          initial={{ opacity: 0.45, scale: 1.025 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 2.5, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780555769/43444_b0pley.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center 30%",
             backgroundRepeat: "no-repeat",
             willChange: "transform, opacity",
           }}
