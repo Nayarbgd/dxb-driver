@@ -87,13 +87,17 @@ export default function Home() {
         data-testid="section-hero"
         style={{ background: "#0A0A0A" }}
       >
-        <div
+        <motion.div
           className="absolute inset-0 z-0"
+          initial={{ opacity: 0.45, scale: 1.025 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 2.5, ease: [0.16, 1, 0.3, 1] }}
           style={{
             backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780517410/11_rqt4kf.png')",
             backgroundSize: "cover",
             backgroundPosition: "center 40%",
             backgroundRepeat: "no-repeat",
+            willChange: "transform, opacity",
           }}
         />
         <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(105deg, rgba(10,10,10,0.96) 0%, rgba(10,10,10,0.85) 45%, rgba(10,10,10,0.60) 100%)" }} />
