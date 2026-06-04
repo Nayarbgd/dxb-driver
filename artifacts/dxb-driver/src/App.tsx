@@ -1,6 +1,6 @@
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/context/LanguageContext";
@@ -16,7 +16,7 @@ import Contact from "@/pages/Contact";
 import FAQ from "@/pages/FAQ";
 import WhyChooseUs from "@/pages/WhyChooseUs";
 import BookInAdvance from "@/pages/BookInAdvance";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const queryClient = new QueryClient();
 
@@ -68,21 +68,35 @@ function Router() {
 }
 
 function App() {
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== "undefined" && window.innerWidth < 768
+  );
+
+  useEffect(() => {
+    const mql = window.matchMedia("(max-width: 767px)");
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mql.addEventListener("change", handler);
+    setIsMobile(mql.matches);
+    return () => mql.removeEventListener("change", handler);
+  }, []);
+
   return (
-    <LanguageProvider>
-      <MobileMenuProvider>
-        <QueryClientProvider client={queryClient}>
-          <TooltipProvider>
-            <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-              <ScrollProgressBar />
-              <Router />
-              <FloatingWhatsApp />
-            </WouterRouter>
-            <Toaster />
-          </TooltipProvider>
-        </QueryClientProvider>
-      </MobileMenuProvider>
-    </LanguageProvider>
+    <MotionConfig reducedMotion={isMobile ? "always" : "never"}>
+      <LanguageProvider>
+        <MobileMenuProvider>
+          <QueryClientProvider client={queryClient}>
+            <TooltipProvider>
+              <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+                <ScrollProgressBar />
+                <Router />
+                <FloatingWhatsApp />
+              </WouterRouter>
+              <Toaster />
+            </TooltipProvider>
+          </QueryClientProvider>
+        </MobileMenuProvider>
+      </LanguageProvider>
+    </MotionConfig>
   );
 }
 
