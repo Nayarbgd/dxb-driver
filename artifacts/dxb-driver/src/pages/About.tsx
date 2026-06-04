@@ -6,8 +6,18 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { CTAButton } from "@/components/CTAButton";
 import { Shield, Clock, Star, MapPin } from "lucide-react";
 import { Link } from "wouter";
+import { useLanguage } from "@/context/LanguageContext";
+
+const valueIcons = [
+  <Clock className="w-6 h-6" />,
+  <Shield className="w-6 h-6" />,
+  <Star className="w-6 h-6" />,
+  <MapPin className="w-6 h-6" />,
+];
 
 export default function About() {
+  const { t, waLink } = useLanguage();
+
   return (
     <div className="bg-background text-foreground overflow-x-hidden">
       <Navbar />
@@ -21,7 +31,7 @@ export default function About() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            About DXB Driver
+            {t.about.pageBadge}
           </motion.span>
           <motion.h1
             className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight"
@@ -29,14 +39,14 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            Built on the
+            {t.about.hero.title[0]}
             <br />
-            Belief That{" "}
-            <span className="text-primary">Getting There</span>
+            {t.about.hero.title[1]}{" "}
+            <span className="text-primary">{t.about.hero.title[2]}</span>
             <br />
-            Should Be Part
+            {t.about.hero.title[3]}
             <br />
-            of the Experience.
+            {t.about.hero.title[4]}
           </motion.h1>
         </div>
       </section>
@@ -51,20 +61,11 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <SectionTitle subtitle="Our Story" title="Dubai Raised. Excellence Driven." />
+              <SectionTitle subtitle={t.about.story.subtitle} title={t.about.story.title} />
               <div className="space-y-6 text-muted-foreground leading-relaxed">
-                <p>
-                  DXB Driver was founded on a simple premise: the people who travel most deserve to travel best. Not just when they land — from the moment they land until they step through the door they're heading for.
-                </p>
-                <p>
-                  Dubai is a city that moves at an extraordinary pace. Its airports process millions of travellers every year, its highways connect a region, and its business community operates on schedules that leave no room for uncertainty. We built our service to match that standard.
-                </p>
-                <p>
-                  Every driver we work with is hand-selected, professionally trained, and deeply familiar with the streets, shortcuts, and sensibilities of Dubai. Every vehicle in our fleet is maintained to the highest standard and presented the same way each time — clean, restocked, and ready.
-                </p>
-                <p>
-                  We do not compete on price. We compete on the feeling you have when you arrive.
-                </p>
+                {t.about.story.paragraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
               </div>
             </motion.div>
 
@@ -75,12 +76,7 @@ export default function About() {
               transition={{ duration: 0.8 }}
               className="space-y-0 border border-white/10"
             >
-              {[
-                { number: "5,000+", label: "Journeys completed" },
-                { number: "4.97", label: "Average client rating" },
-                { number: "100%", label: "RTA licensed fleet" },
-                { number: "24/7", label: "Available, year-round" },
-              ].map((stat, i) => (
+              {t.about.stats.map((stat, i) => (
                 <div
                   key={i}
                   className={`p-8 md:p-10 ${i < 3 ? "border-b border-white/10" : ""} bg-card`}
@@ -95,7 +91,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Cinematic interlude */}
+      {/* CINEMATIC INTERLUDE */}
       <section
         className="relative py-32 overflow-hidden"
         style={{
@@ -115,7 +111,7 @@ export default function About() {
           >
             <div className="w-px h-16 bg-gradient-to-b from-transparent via-primary to-transparent mx-auto mb-10" />
             <p className="font-serif text-3xl md:text-4xl text-foreground leading-relaxed italic">
-              "The standard of a chauffeur service is measured not by the car, but by the moment the door opens."
+              {t.about.quote}
             </p>
             <div className="w-px h-16 bg-gradient-to-b from-primary via-primary/20 to-transparent mx-auto mt-10" />
           </motion.div>
@@ -131,32 +127,11 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <SectionTitle subtitle="How We Operate" title="The Principles That Drive Us" centered />
+            <SectionTitle subtitle={t.about.values.subtitle} title={t.about.values.title} centered />
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-white/5">
-            {[
-              {
-                icon: <Clock className="w-6 h-6" />,
-                title: "Punctuality Is Non-Negotiable",
-                desc: "We track every flight, account for every delay, and schedule with margin. Being on time means being early. Our drivers understand that your schedule is sacred.",
-              },
-              {
-                icon: <Shield className="w-6 h-6" />,
-                title: "Trust Is Earned on Every Ride",
-                desc: "Our fleet is fully RTA-licensed and insured. Our drivers are background-checked. Our vehicles are inspected before every booking. Trust is not assumed — it's built.",
-              },
-              {
-                icon: <Star className="w-6 h-6" />,
-                title: "The Detail Is the Standard",
-                desc: "A chilled bottle of water. Silence unless you speak first. A vehicle that is clean in ways you might not notice but would immediately feel if it weren't. The detail is everything.",
-              },
-              {
-                icon: <MapPin className="w-6 h-6" />,
-                title: "Local Knowledge, Global Standard",
-                desc: "Our drivers know Dubai the way a concierge knows a hotel. The best routes, the quietest entry points, the buildings that are easier to enter from the east side. Knowledge that only comes from years.",
-              },
-            ].map((value, i) => (
+            {t.about.values.items.map((value, i) => (
               <motion.div
                 key={i}
                 className={`p-8 md:p-12 ${i % 2 === 0 ? "md:border-r" : ""} ${i < 2 ? "border-b" : ""} border-white/5`}
@@ -166,7 +141,7 @@ export default function About() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 data-testid={`card-value-${i}`}
               >
-                <div className="text-primary mb-6">{value.icon}</div>
+                <div className="text-primary mb-6">{valueIcons[i]}</div>
                 <h3 className="font-serif text-2xl text-foreground mb-4">{value.title}</h3>
                 <p className="text-muted-foreground leading-relaxed text-sm">{value.desc}</p>
               </motion.div>
@@ -175,7 +150,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* TEAM / DRIVERS */}
+      {/* CHAUFFEURS */}
       <section className="py-28 md:py-36 border-b border-white/5" data-testid="section-about-drivers">
         <div className="container mx-auto px-6 md:px-12 max-w-3xl">
           <motion.div
@@ -184,24 +159,20 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <SectionTitle subtitle="The Team" title="Our Chauffeurs" />
+            <SectionTitle subtitle={t.about.drivers.subtitle} title={t.about.drivers.title} />
           </motion.div>
 
           <div className="space-y-8 text-muted-foreground leading-relaxed">
-            <p>
-              We do not hire drivers. We select chauffeurs. The distinction matters enormously to us — and we believe it will matter to you.
-            </p>
-            <p>
-              Every DXB Driver chauffeur holds a valid UAE driving licence, is registered with the RTA, and has completed our in-house orientation covering route knowledge, client etiquette, vehicle presentation, and emergency procedures.
-            </p>
-            <p>
-              Many of our drivers have been with us from the beginning. They know our clients by name, remember their preferences, and carry a quiet professionalism that no algorithm can replicate.
-            </p>
+            {t.about.drivers.paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
             <div className="border-l-2 border-primary pl-6 py-2 my-10">
               <p className="font-serif text-xl text-foreground leading-relaxed italic">
-                "The journey is not a gap between departure and destination. It is part of the experience. We intend it to be a good one."
+                {t.about.drivers.blockquote}
               </p>
-              <p className="text-muted-foreground text-xs uppercase tracking-widest mt-4">— DXB Driver</p>
+              <p className="text-muted-foreground text-xs uppercase tracking-widest mt-4">
+                {t.about.drivers.attribution}
+              </p>
             </div>
           </div>
         </div>
@@ -217,16 +188,16 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="font-serif text-5xl md:text-6xl text-foreground mb-8">
-              Experience the
+              {t.about.cta.title}
               <br />
-              <span className="text-primary">Difference.</span>
+              <span className="text-primary">{t.about.cta.titleGold}</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://wa.me/971528730883?text=Hi%20DXB%20Driver!%20I%20need%20a%20ride.%0AFrom%3A%20%0ATo%3A%20%0ADate%20%26%20Time%3A%20%0AVehicle%3A%20%0ANotes%3A%20..." target="_blank" rel="noreferrer" data-testid="link-about-whatsapp">
-                <CTAButton variant="filled" className="px-12 py-4">Book Your Ride</CTAButton>
+              <a href={waLink} target="_blank" rel="noreferrer" data-testid="link-about-whatsapp">
+                <CTAButton variant="filled" className="px-12 py-4">{t.about.cta.book}</CTAButton>
               </a>
               <Link href="/contact" data-testid="link-about-contact">
-                <CTAButton variant="outline" className="px-12 py-4">Get in Touch</CTAButton>
+                <CTAButton variant="outline" className="px-12 py-4">{t.about.cta.contact}</CTAButton>
               </Link>
             </div>
           </motion.div>

@@ -1,0 +1,155 @@
+Implement a complete bilingual system for the entire website.
+
+IMPORTANT:
+This is not just a visual language switcher.
+
+The selected language must affect:
+
+* Navigation
+* Hero section
+* All page content
+* Buttons
+* Forms
+* FAQ
+* Services
+* Why Choose Us page
+* Fleet & Pricing page
+* Footer
+* Contact sections
+* WhatsApp messages
+* Success messages
+* Error messages
+
+LANGUAGES
+
+1. English (default)
+2. Spanish
+
+LANGUAGE SWITCHER
+
+Add a professional language selector in the top navigation bar.
+
+Desktop:
+
+* Small globe icon
+* Dropdown selector
+* English 🇬🇧
+* Español 🇪🇸
+
+Mobile:
+
+* Include the language selector inside the mobile menu.
+
+The language selector must look premium and match the site's luxury design system.
+
+LANGUAGE PERSISTENCE
+
+When the user changes language:
+
+* Store the preference in localStorage.
+* Keep the selected language when navigating between pages.
+* Keep the selected language after page refresh.
+* Automatically load the previously selected language on return visits.
+
+WHATSAPP INTEGRATION
+
+This is extremely important.
+
+All WhatsApp buttons across the website must dynamically adapt to the selected language.
+
+ENGLISH MODE
+
+When the user clicks any WhatsApp button, prefill:
+
+Hello DXB Driver,
+
+I would like to book a chauffeur service.
+
+Pickup Location:
+Destination:
+Date:
+Time:
+Vehicle Preference:
+Additional Notes:
+
+Thank you.
+
+SPANISH MODE
+
+When the user clicks any WhatsApp button, prefill:
+
+Hola DXB Driver,
+
+Me gustaría reservar un servicio de chófer.
+
+Lugar de recogida:
+Destino:
+Fecha:
+Hora:
+Vehículo preferido:
+Notas adicionales:
+
+Gracias.
+
+All WhatsApp entry points must use the language-specific message:
+
+* Hero section button
+* Floating WhatsApp button
+* Mobile sticky WhatsApp button
+* Footer WhatsApp button
+* Service page buttons
+* Airport Transfer buttons
+* City Ride buttons
+* Inter-Emirate Transfer buttons
+* Quote buttons
+* Contact page buttons
+
+FORMS
+
+When Spanish is selected:
+
+Name → Nombre
+Email → Correo electrónico
+Phone → Teléfono
+Pickup Location → Lugar de recogida
+Destination → Destino
+Date → Fecha
+Time → Hora
+Notes → Notas
+
+All validation messages must also be translated.
+
+SEO REQUIREMENTS
+
+Implement proper multilingual SEO:
+
+* hreflang="en"
+* hreflang="es"
+
+Generate localized metadata.
+
+English examples:
+
+Private Chauffeur Service Dubai
+Airport Transfer Dubai
+Luxury Driver Dubai
+
+Spanish examples:
+
+Servicio de chófer privado en Dubái
+Traslados al aeropuerto en Dubái
+Conductor privado de lujo en Dubái
+
+USER EXPERIENCE
+
+Language switching must be instant.
+
+No page reloads.
+
+Smooth transitions.
+
+Professional experience consistent with a premium luxury transportation brand.
+
+GOAL
+
+Create a fully professional bilingual luxury chauffeur website where English and Spanish users experience the website as if it had been originally built in their native language.

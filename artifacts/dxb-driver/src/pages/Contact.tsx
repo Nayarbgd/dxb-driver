@@ -10,50 +10,55 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { SiWhatsapp } from "react-icons/si";
 import { MapPin, Phone, Mail } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
-const bookingSchema = z.object({
-  name: z.string().min(2, "Please enter your full name"),
-  phone: z.string().min(7, "Please enter a valid phone number"),
-  time: z.string().optional(),
-  notes: z.string().optional(),
-});
-
-type BookingFormData = z.infer<typeof bookingSchema>;
+type BookingFormData = { name: string; phone: string; time?: string; notes?: string };
 
 export default function Contact() {
+  const { t, waLink, lang } = useLanguage();
   const { toast } = useToast();
+
+  const bookingSchema = z.object({
+    name: z.string().min(2, t.contact.form.nameError),
+    phone: z.string().min(7, t.contact.form.phoneError),
+    time: z.string().optional(),
+    notes: z.string().optional(),
+  });
 
   const form = useForm<BookingFormData>({
     resolver: zodResolver(bookingSchema),
-    defaultValues: {
-      name: "",
-      phone: "",
-      time: "",
-      notes: "",
-    },
+    defaultValues: { name: "", phone: "", time: "", notes: "" },
   });
 
   function onSubmit(data: BookingFormData) {
-    const lines = [
-      "Hi DXB Driver! I need a ride.",
-      `Name: ${data.name}`,
-      `Phone: ${data.phone}`,
-      `Time: ${data.time || "..."}`,
-      "From: ",
-      "To: ",
-      "Vehicle: ",
-      `Notes: ${data.notes || "..."}`,
-    ];
+    const lines =
+      lang === "es"
+        ? [
+            "Hola DXB Driver! Necesito un servicio de chófer.",
+            `Nombre: ${data.name}`,
+            `Teléfono: ${data.phone}`,
+            `Hora: ${data.time || "..."}`,
+            "Lugar de recogida: ",
+            "Destino: ",
+            "Vehículo: ",
+            `Notas: ${data.notes || "..."}`,
+          ]
+        : [
+            "Hi DXB Driver! I need a chauffeur service.",
+            `Name: ${data.name}`,
+            `Phone: ${data.phone}`,
+            `Time: ${data.time || "..."}`,
+            "From: ",
+            "To: ",
+            "Vehicle: ",
+            `Notes: ${data.notes || "..."}`,
+          ];
     const message = encodeURIComponent(lines.join("\n"));
     window.open(`https://wa.me/971528730883?text=${message}`, "_blank");
-    toast({
-      title: "Redirecting to WhatsApp",
-      description: "Your details have been prepared. Complete and send the message to confirm.",
-    });
+    toast({ title: t.contact.form.toastTitle, description: t.contact.form.toastDesc });
     form.reset();
   }
 
@@ -70,7 +75,7 @@ export default function Contact() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            Book a Journey
+            {t.contact.pageBadge}
           </motion.span>
           <motion.h1
             className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight max-w-3xl"
@@ -78,9 +83,9 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            One Message.
+            {t.contact.hero.title}
             <br />
-            <span className="text-primary">Your Driver Is Ready.</span>
+            <span className="text-primary">{t.contact.hero.titleGold}</span>
           </motion.h1>
         </div>
       </section>
@@ -98,54 +103,42 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <SectionTitle subtitle="Get in Touch" title="We Respond Within Minutes." />
+              <SectionTitle subtitle={t.contact.getInTouch} title={t.contact.subtitle} />
 
               <div className="space-y-8 mb-12">
                 <p className="text-muted-foreground leading-relaxed text-sm">
-                  Fill in the form and we'll pre-fill a WhatsApp message for you to send directly. Alternatively, message us yourself at any time — we are available 24 hours a day.
+                  {lang === "es"
+                    ? "Complete el formulario y le precompletaremos un mensaje de WhatsApp para que lo envíe directamente. También puede escribirnos en cualquier momento — estamos disponibles las 24 horas del día."
+                    : "Fill in the form and we'll pre-fill a WhatsApp message for you to send directly. Alternatively, message us yourself at any time — we are available 24 hours a day."}
                 </p>
 
                 <div className="space-y-6">
-                  <a
-                    href="https://wa.me/971528730883?text=Hi%20DXB%20Driver!%20I%20need%20a%20ride.%0AFrom%3A%20%0ATo%3A%20%0ADate%20%26%20Time%3A%20%0AVehicle%3A%20%0ANotes%3A%20..."
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-4 group"
-                    data-testid="link-contact-whatsapp-direct"
-                  >
+                  <a href={waLink} target="_blank" rel="noreferrer" className="flex items-center gap-4 group" data-testid="link-contact-whatsapp-direct">
                     <div className="w-10 h-10 border border-primary/30 flex items-center justify-center text-primary group-hover:bg-primary/10 transition-colors">
                       <SiWhatsapp className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="text-foreground text-sm font-semibold group-hover:text-primary transition-colors">WhatsApp</p>
+                      <p className="text-foreground text-sm font-semibold group-hover:text-primary transition-colors">{t.contact.info.whatsapp}</p>
                       <p className="text-muted-foreground text-xs">+971 52 873 0883</p>
                     </div>
                   </a>
 
-                  <a
-                    href="tel:+971528730883"
-                    className="flex items-center gap-4 group"
-                    data-testid="link-contact-phone"
-                  >
+                  <a href="tel:+971528730883" className="flex items-center gap-4 group" data-testid="link-contact-phone">
                     <div className="w-10 h-10 border border-white/10 flex items-center justify-center text-muted-foreground group-hover:border-primary/30 group-hover:text-primary transition-colors">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="text-foreground text-sm font-semibold group-hover:text-primary transition-colors">Phone</p>
+                      <p className="text-foreground text-sm font-semibold group-hover:text-primary transition-colors">{t.contact.info.phone}</p>
                       <p className="text-muted-foreground text-xs">+971 52 873 0883</p>
                     </div>
                   </a>
 
-                  <a
-                    href="mailto:dxbdriver@dxbdriver.com"
-                    className="flex items-center gap-4 group"
-                    data-testid="link-contact-email"
-                  >
+                  <a href="mailto:dxbdriver@dxbdriver.com" className="flex items-center gap-4 group" data-testid="link-contact-email">
                     <div className="w-10 h-10 border border-white/10 flex items-center justify-center text-muted-foreground group-hover:border-primary/30 group-hover:text-primary transition-colors">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="text-foreground text-sm font-semibold group-hover:text-primary transition-colors">Email</p>
+                      <p className="text-foreground text-sm font-semibold group-hover:text-primary transition-colors">{t.contact.info.email}</p>
                       <p className="text-muted-foreground text-xs">dxbdriver@dxbdriver.com</p>
                     </div>
                   </a>
@@ -155,27 +148,25 @@ export default function Contact() {
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="text-foreground text-sm font-semibold">Location</p>
-                      <p className="text-muted-foreground text-xs leading-relaxed">DAMAC Smart Heights, 23rd Floor,<br />Barsha Heights, Dubai, UAE</p>
+                      <p className="text-foreground text-sm font-semibold">{t.contact.info.address}</p>
+                      <p className="text-muted-foreground text-xs leading-relaxed whitespace-pre-line">{t.footer.address}</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="border border-white/5 bg-card p-6">
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Operating Hours</p>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">{t.contact.hoursTitle}</p>
                 <div className="space-y-3">
+                  {t.contact.hours.map((h, i) => (
+                    <div key={i} className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">{h.label}</span>
+                      <span className="text-foreground">{h.value}</span>
+                    </div>
+                  ))}
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Bookings</span>
-                    <span className="text-foreground">24 / 7</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">WhatsApp Response</span>
-                    <span className="text-foreground">Within 15 min</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Airport Transfers</span>
-                    <span className="text-foreground">All hours</span>
+                    <span className="text-muted-foreground">{lang === "es" ? "Respuesta WhatsApp" : "WhatsApp Response"}</span>
+                    <span className="text-foreground">{lang === "es" ? "En 15 min" : "Within 15 min"}</span>
                   </div>
                 </div>
               </div>
@@ -190,8 +181,8 @@ export default function Contact() {
               transition={{ duration: 0.8 }}
             >
               <div className="border-b border-white/5 pb-8 mb-8">
-                <h3 className="font-serif text-2xl text-foreground">Booking Request Form</h3>
-                <p className="text-muted-foreground text-sm mt-2">We'll send your details directly to WhatsApp for confirmation.</p>
+                <h3 className="font-serif text-2xl text-foreground">{t.contact.form.title}</h3>
+                <p className="text-muted-foreground text-sm mt-2">{t.contact.form.subtitle}</p>
               </div>
 
               <Form {...form}>
@@ -202,10 +193,12 @@ export default function Contact() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground">Full Name</FormLabel>
+                          <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground">
+                            {t.contact.form.nameLabel}
+                          </FormLabel>
                           <FormControl>
                             <Input
-                              placeholder="Your name"
+                              placeholder={t.contact.form.namePlaceholder}
                               {...field}
                               className="bg-background border-white/10 focus:border-primary/50 text-foreground placeholder:text-muted-foreground/50"
                               data-testid="input-name"
@@ -220,10 +213,12 @@ export default function Contact() {
                       name="phone"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground">Phone / WhatsApp</FormLabel>
+                          <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground">
+                            {t.contact.form.phoneLabel}
+                          </FormLabel>
                           <FormControl>
                             <Input
-                              placeholder="+971 5X XXX XXXX"
+                              placeholder={t.contact.form.phonePlaceholder}
                               {...field}
                               className="bg-background border-white/10 focus:border-primary/50 text-foreground placeholder:text-muted-foreground/50"
                               data-testid="input-phone"
@@ -240,7 +235,9 @@ export default function Contact() {
                     name="time"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground">Preferred Time (Optional)</FormLabel>
+                        <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground">
+                          {t.contact.form.timeLabel}
+                        </FormLabel>
                         <FormControl>
                           <Input
                             type="time"
@@ -259,10 +256,12 @@ export default function Contact() {
                     name="notes"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground">Additional Notes (Optional)</FormLabel>
+                        <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground">
+                          {t.contact.form.notesLabel}
+                        </FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="Flight number, special requests, number of passengers..."
+                            placeholder={t.contact.form.notesPh}
                             rows={3}
                             {...field}
                             className="bg-background border-white/10 focus:border-primary/50 text-foreground placeholder:text-muted-foreground/50 resize-none"
@@ -281,7 +280,7 @@ export default function Contact() {
                     disabled={form.formState.isSubmitting}
                     data-testid="button-submit-booking"
                   >
-                    Send Booking Request via WhatsApp
+                    {t.contact.form.submit}
                   </CTAButton>
                 </form>
               </Form>

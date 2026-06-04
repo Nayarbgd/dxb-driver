@@ -1,39 +1,57 @@
 import { Link, useLocation } from "wouter";
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import { CTAButton } from "./CTAButton";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
   const [location] = useLocation();
+  const { t, lang, setLang } = useLanguage();
+  const langRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
 
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
   const navLinks = [
-    { href: "/services", label: "Services" },
-    { href: "/why-choose-us", label: "Why Us" },
-    { href: "/pricing", label: "Fleet & Pricing" },
-    { href: "/about", label: "About" },
-    { href: "/faq", label: "FAQ" },
+    { href: "/services", label: t.nav.services },
+    { href: "/why-choose-us", label: t.nav.whyUs },
+    { href: "/pricing", label: t.nav.pricing },
+    { href: "/about", label: t.nav.about },
+    { href: "/faq", label: t.nav.faq },
+  ];
+
+  const langOptions: { value: "en" | "es"; flag: string; label: string }[] = [
+    { value: "en", flag: "🇬🇧", label: "English" },
+    { value: "es", flag: "🇪🇸", label: "Español" },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md border-b border-white/5 py-4" : "bg-transparent py-6"
+        isScrolled
+          ? "bg-background/95 backdrop-blur-md border-b border-white/5 py-4"
+          : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -52,7 +70,7 @@ export function Navbar() {
               className={`text-sm uppercase tracking-widest transition-colors duration-300 hover:text-primary relative py-2 ${
                 location === link.href ? "text-primary" : "text-muted-foreground"
               }`}
-              data-testid={`link-nav-${link.label.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
+              data-testid={`link-nav-${link.href.replace("/", "")}`}
             >
               {link.label}
               {location === link.href && (
@@ -60,9 +78,52 @@ export function Navbar() {
               )}
             </Link>
           ))}
-          <div className="ml-4">
+
+          {/* Language Switcher — Desktop */}
+          <div ref={langRef} className="relative">
+            <button
+              onClick={() => setLangOpen(!langOpen)}
+              className="flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-widest py-2 border border-white/10 px-3 hover:border-primary/30"
+              aria-label="Change language"
+            >
+              <Globe className="w-3.5 h-3.5" />
+              <span>{lang === "en" ? "EN" : "ES"}</span>
+              <ChevronDown
+                className={`w-3 h-3 transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+            <AnimatePresence>
+              {langOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.18 }}
+                  className="absolute right-0 top-full mt-2 bg-card border border-white/10 shadow-2xl shadow-black/40 min-w-[130px] z-50"
+                >
+                  {langOptions.map((opt) => (
+                    <button
+                      key={opt.value}
+                      onClick={() => { setLang(opt.value); setLangOpen(false); }}
+                      className={`flex items-center gap-2.5 w-full px-4 py-3 text-sm text-left transition-colors hover:bg-white/5 ${
+                        lang === opt.value ? "text-primary" : "text-muted-foreground"
+                      }`}
+                    >
+                      <span>{opt.flag}</span>
+                      <span className="uppercase tracking-widest text-xs">{opt.label}</span>
+                      {lang === opt.value && (
+                        <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary" />
+                      )}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          <div className="ml-2">
             <Link href="/contact" data-testid="link-nav-book">
-              <CTAButton variant="filled">Book Now</CTAButton>
+              <CTAButton variant="filled">{t.nav.bookNow}</CTAButton>
             </Link>
           </div>
         </nav>
@@ -121,14 +182,40 @@ export function Navbar() {
                   </Link>
                 </motion.div>
               ))}
+
+              {/* Language Switcher — Mobile */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.4 }}
-                className="mt-8"
+                transition={{ delay: 0.45, duration: 0.4 }}
+                className="flex items-center justify-center gap-4 pt-2"
+              >
+                {langOptions.map((opt) => (
+                  <button
+                    key={opt.value}
+                    onClick={() => setLang(opt.value)}
+                    className={`flex items-center gap-2 px-4 py-2 border text-sm uppercase tracking-widest transition-all ${
+                      lang === opt.value
+                        ? "border-primary text-primary"
+                        : "border-white/15 text-muted-foreground"
+                    }`}
+                  >
+                    <span>{opt.flag}</span>
+                    <span>{opt.label}</span>
+                  </button>
+                ))}
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.55, duration: 0.4 }}
+                className="mt-4"
               >
                 <Link href="/contact">
-                  <CTAButton variant="filled" className="w-full text-lg py-4">Book Now</CTAButton>
+                  <CTAButton variant="filled" className="w-full text-lg py-4">
+                    {t.nav.bookNow}
+                  </CTAButton>
                 </Link>
               </motion.div>
             </nav>

@@ -1,6 +1,6 @@
-# [Project name]
+# DXB Driver
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+_Premium private chauffeur service website for Dubai — fully bilingual (English + Spanish), 7 pages, dark luxury aesthetic._
 
 ## Run & Operate
 
@@ -22,15 +22,22 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/dxb-driver/src/i18n/translations.ts` — all EN + ES strings, `getWaLink(lang)` helper, `Translations` interface
+- `artifacts/dxb-driver/src/context/LanguageContext.tsx` — `LanguageProvider` + `useLanguage()` hook (provides `t`, `lang`, `setLang`, `waLink`)
+- `artifacts/dxb-driver/src/pages/` — 7 pages: Home, Services, Pricing, About, Contact, FAQ, WhyChooseUs
+- `artifacts/dxb-driver/src/components/` — Navbar, Footer, FloatingWhatsApp, MobileCTABar, CTAButton, SectionTitle, ServiceCard, TestimonialCard
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- **i18n approach**: flat `translations.ts` with typed `Translations` interface, two exported objects (`en`, `es`) merged into `translations` record — no library overhead.
+- **Language persistence**: `localStorage` key `"dxb-lang"`, defaults to `"en"`. SEO meta + `<html lang>` updated via `useEffect` in the context.
+- **WhatsApp links**: `getWaLink(lang)` in `translations.ts` generates the full `wa.me` URL with a bilingual pre-filled message via `encodeURIComponent`. All components consume `waLink` from the context.
+- **Array data (FAQ, pricing tiers, differentiators, etc.)**: stored inside `translations` as typed arrays so components iterate over `t.faq.categories`, `t.pricing.tierData`, `t.why.differentiators.items` — no module-level constants that break bilingual rendering.
+- **Icon arrays** (WhyChooseUs differentiators, audience): kept as JSX arrays indexed inside the component, since icons are not text and don't need translation.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+DXB Driver is a premium private chauffeur booking site for Dubai. Visitors can learn about three service categories (airport transfers, city rides, inter-emirate), see fleet tiers with pricing, read FAQ, and book instantly via WhatsApp (pre-filled bilingual message). Full English + Spanish support with a globe icon switcher in the navbar.
 
 ## User preferences
 
@@ -38,7 +45,9 @@ _Populate as you build — explicit user instructions worth remembering across s
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- WhatsApp number: `971528730883` — appears only in `translations.ts` (`WA_BASE`) and `Contact.tsx` form submit handler.
+- Contact form `onSubmit` generates a custom bilingual WA message using form field values; it does NOT use `waLink` directly.
+- The Zod schema in `Contact.tsx` is defined inside the component so error messages can reference `t.contact.form.*` translation keys.
 
 ## Pointers
 

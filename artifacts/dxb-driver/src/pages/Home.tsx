@@ -1,7 +1,6 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Plane, MapPin, Route, Clock, Shield, Star, Car, CheckCircle2 } from "lucide-react";
-import { SiWhatsapp } from "react-icons/si";
+import { Plane, MapPin, Route, Star, Car, CheckCircle2 } from "lucide-react";
 import { CTAButton } from "@/components/CTAButton";
 import { SectionTitle } from "@/components/SectionTitle";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -16,6 +15,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useLanguage } from "@/context/LanguageContext";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -27,6 +27,57 @@ const fadeUp = {
 };
 
 export default function Home() {
+  const { t, waLink, lang } = useLanguage();
+
+  const faqPreview = [
+    t.faq.categories[0].items[1],
+    t.faq.categories[2].items[0],
+    t.faq.categories[1].items[0],
+    t.faq.categories[2].items[3],
+  ];
+
+  const fleetCards = [
+    {
+      tier: t.pricing.tierData[0].tier,
+      vehicle: t.pricing.tierData[0].vehicle,
+      features: t.pricing.tierData[0].features.slice(0, 4),
+      price: "AED 80",
+      color: "border-white/10",
+      featured: false,
+    },
+    {
+      tier: t.pricing.tierData[1].tier,
+      vehicle: t.pricing.tierData[1].vehicle,
+      features: t.pricing.tierData[1].features.slice(0, 4),
+      price: "AED 150",
+      color: "border-primary/40",
+      featured: true,
+    },
+    {
+      tier: t.pricing.tierData[2].tier,
+      vehicle: t.pricing.tierData[2].vehicle,
+      features: t.pricing.tierData[2].features.slice(0, 4),
+      price: "AED 280",
+      color: "border-white/10",
+      featured: false,
+    },
+  ];
+
+  const viewPricing = lang === "es" ? "Ver Precios" : "View Pricing";
+  const fromLabel = lang === "es" ? "desde" : "from";
+  const tripLabel = lang === "es" ? "viaje" : "trip";
+  const orLabel = lang === "es" ? "o" : "or";
+  const ratingLine =
+    lang === "es"
+      ? "4.97 promedio · más de 200 viajes valorados"
+      : "4.97 average · 200+ journeys rated";
+  const viewAllFaq = lang === "es" ? "Ver Todas las Preguntas" : "View All Questions";
+  const beginJourney = lang === "es" ? "Comience Su Viaje" : "Begin Your Journey";
+  const finalTitle1 = lang === "es" ? "Listo Para Llegar" : "Ready to Arrive";
+  const finalTitle2 = lang === "es" ? "en Silencio?" : "in Silence?";
+  const finalSub = lang === "es" ? "Un mensaje. Su conductor está organizado. Sin apps, sin tarifas variables, sin incertidumbre." : "One message. Your driver is arranged. No apps, no surges, no uncertainty.";
+  const availableNote = lang === "es" ? "Disponible ahora · Respuesta en 15 minutos" : "Available now · Response within 15 minutes";
+
   return (
     <div className="bg-background text-foreground overflow-x-hidden">
       <Navbar />
@@ -35,11 +86,8 @@ export default function Home() {
       <section
         className="relative min-h-screen flex items-end pb-24 md:pb-32"
         data-testid="section-hero"
-        style={{
-          background: "#0A0A0A",
-        }}
+        style={{ background: "#0A0A0A" }}
       >
-        {/* Cinematic vehicle background */}
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -49,35 +97,23 @@ export default function Home() {
             backgroundRepeat: "no-repeat",
           }}
         />
-        {/* Multi-layer dark overlay for text legibility */}
         <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(105deg, rgba(10,10,10,0.96) 0%, rgba(10,10,10,0.85) 45%, rgba(10,10,10,0.60) 100%)" }} />
         <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0) 50%)" }} />
-
-        {/* Cinematic grid lines */}
         <div
           className="absolute inset-0 opacity-[0.04] z-[2]"
           style={{
-            backgroundImage:
-              "linear-gradient(to right, #C9A84C 1px, transparent 1px), linear-gradient(to bottom, #C9A84C 1px, transparent 1px)",
+            backgroundImage: "linear-gradient(to right, #C9A84C 1px, transparent 1px), linear-gradient(to bottom, #C9A84C 1px, transparent 1px)",
             backgroundSize: "80px 80px",
           }}
         />
-
-        {/* Gold accent line */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent z-[2]" />
 
-        {/* Hero content */}
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-4xl">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              custom={0}
-              variants={fadeUp}
-            >
+            <motion.div initial="hidden" animate="visible" custom={0} variants={fadeUp}>
               <span className="inline-block text-primary text-xs uppercase tracking-[0.4em] mb-8">
                 <span className="w-6 h-px bg-primary inline-block mr-3 align-middle" />
-                Dubai's Premier Chauffeur Service
+                {t.home.badge}
               </span>
             </motion.div>
 
@@ -88,7 +124,7 @@ export default function Home() {
                   animate={{ y: 0 }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.1 }}
                 >
-                  Arrive
+                  {t.home.title[0]}
                 </motion.div>
               </div>
               <div className="overflow-hidden">
@@ -97,7 +133,7 @@ export default function Home() {
                   animate={{ y: 0 }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.15 }}
                 >
-                  <span className="text-primary">Without</span>
+                  <span className="text-primary">{t.home.title[1]}</span>
                 </motion.div>
               </div>
               <div className="overflow-hidden">
@@ -106,7 +142,7 @@ export default function Home() {
                   animate={{ y: 0 }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.2 }}
                 >
-                  Compromise.
+                  {t.home.title[2]}
                 </motion.div>
               </div>
             </h1>
@@ -118,16 +154,10 @@ export default function Home() {
               custom={2}
               variants={fadeUp}
             >
-              Private chauffeur service in Dubai, tailored to those who expect more from every journey. Airport transfers, city rides, and inter-emirate travel — on your schedule, in silence and style.
+              {t.home.subtitle}
             </motion.p>
 
-            <motion.div
-              className="flex items-center gap-3 my-8"
-              initial="hidden"
-              animate="visible"
-              custom={2}
-              variants={fadeUp}
-            >
+            <motion.div className="flex items-center gap-3 my-8" initial="hidden" animate="visible" custom={2} variants={fadeUp}>
               <span className="w-8 h-px bg-primary/40" />
               <span className="w-1 h-1 bg-primary/60 rounded-full" />
               <span className="w-8 h-px bg-primary/40" />
@@ -140,21 +170,15 @@ export default function Home() {
               custom={3}
               variants={fadeUp}
             >
-              <a
-                href="https://wa.me/971528730883?text=Hi%20DXB%20Driver!%20I%20need%20a%20ride.%0AFrom%3A%20%0ATo%3A%20%0ADate%20%26%20Time%3A%20%0AVehicle%3A%20%0ANotes%3A%20..."
-                target="_blank"
-                rel="noreferrer"
-                data-testid="link-hero-whatsapp"
-                className="w-full sm:w-auto"
-              >
+              <a href={waLink} target="_blank" rel="noreferrer" data-testid="link-hero-whatsapp" className="w-full sm:w-auto">
                 <CTAButton variant="filled" className="w-full sm:w-auto px-10 py-4 text-sm">
-                  Book via WhatsApp
+                  {t.mobileCTA.bookWhatsapp}
                 </CTAButton>
               </a>
-              <span className="text-muted-foreground/40 text-xs italic font-serif mx-2">or</span>
+              <span className="text-muted-foreground/40 text-xs italic font-serif mx-2">{orLabel}</span>
               <Link href="/contact" data-testid="link-hero-quote" className="w-full sm:w-auto">
                 <CTAButton variant="outline" className="w-full sm:w-auto px-10 py-4 text-sm">
-                  Get a Quote
+                  {t.mobileCTA.getQuote}
                 </CTAButton>
               </Link>
             </motion.div>
@@ -166,29 +190,18 @@ export default function Home() {
               custom={4}
               variants={fadeUp}
             >
-              RTA Licensed · 24/7 Available · No upfront payment
+              {t.home.smallBadge}
             </motion.p>
           </div>
         </div>
-
-        {/* Bottom gradient fade */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </section>
 
       {/* TRUST BAR */}
-      <section
-        className="border-y border-white/5 bg-card py-6"
-        data-testid="section-trust"
-      >
+      <section className="border-y border-white/5 bg-card py-6" data-testid="section-trust">
         <div className="container mx-auto px-6 md:px-12">
           <div className="flex flex-wrap items-center divide-y md:divide-y-0 md:divide-x divide-white/5 -mx-0">
-            {[
-              { icon: <CheckCircle2 className="w-4 h-4" />, label: "Fixed Pricing", sub: "No surge, ever" },
-              { icon: <CheckCircle2 className="w-4 h-4" />, label: "English & Spanish Drivers", sub: "Bilingual chauffeurs" },
-              { icon: <CheckCircle2 className="w-4 h-4" />, label: "Airport Transfers", sub: "DXB · DWC · 24/7" },
-              { icon: <CheckCircle2 className="w-4 h-4" />, label: "Available 24/7", sub: "Any hour, any day" },
-              { icon: <CheckCircle2 className="w-4 h-4" />, label: "Often More Affordable", sub: "Than app-based rides" },
-            ].map((item, i) => (
+            {t.home.trustBar.map((item, i) => (
               <motion.div
                 key={i}
                 className="flex items-center gap-3 px-4 py-2 w-full sm:w-1/2 lg:w-auto lg:flex-1 justify-center lg:justify-start"
@@ -197,7 +210,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.08 * (i + 1), duration: 0.5 }}
               >
-                <span className="text-primary flex-shrink-0">{item.icon}</span>
+                <span className="text-primary flex-shrink-0"><CheckCircle2 className="w-4 h-4" /></span>
                 <div>
                   <span className="text-xs uppercase tracking-widest text-foreground/90 font-semibold block leading-tight">{item.label}</span>
                   <span className="text-[10px] text-muted-foreground/55 uppercase tracking-wider">{item.sub}</span>
@@ -217,36 +230,14 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <SectionTitle
-              subtitle="What We Offer"
-              title="Services Crafted for Every Journey"
-              centered
-            />
+            <SectionTitle subtitle={t.home.services.subtitle} title={t.home.services.title} centered />
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/5">
             {[
-              {
-                icon: <Plane className="w-8 h-8" />,
-                title: "Airport Transfers",
-                description:
-                  "Flight tracking, meet-and-greet at arrivals, and seamless transfers to any Dubai destination. No waiting, no surprises.",
-                href: "/services",
-              },
-              {
-                icon: <MapPin className="w-8 h-8" />,
-                title: "City Rides",
-                description:
-                  "Business meetings, hotel to hotel, evening events. Your private car, always where you need it.",
-                href: "/services",
-              },
-              {
-                icon: <Route className="w-8 h-8" />,
-                title: "Inter-Emirate",
-                description:
-                  "Dubai to Abu Dhabi, Sharjah, Ras Al Khaimah. Long-distance transfers executed with the same precision as local rides.",
-                href: "/services",
-              },
+              { icon: <Plane className="w-8 h-8" />, title: t.home.services.airport.name, description: t.home.services.airport.desc, href: "/services" },
+              { icon: <MapPin className="w-8 h-8" />, title: t.home.services.city.name, description: t.home.services.city.desc, href: "/services" },
+              { icon: <Route className="w-8 h-8" />, title: t.home.services.emirate.name, description: t.home.services.emirate.desc, href: "/services" },
             ].map((service, i) => (
               <motion.div
                 key={i}
@@ -256,12 +247,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className={i < 2 ? "md:border-r border-white/5" : ""}
               >
-                <ServiceCard
-                  icon={service.icon}
-                  title={service.title}
-                  description={service.description}
-                  href={service.href}
-                />
+                <ServiceCard icon={service.icon} title={service.title} description={service.description} href={service.href} />
               </motion.div>
             ))}
           </div>
@@ -277,28 +263,12 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <SectionTitle subtitle="The Process" title="Simple. Precise. Effortless." centered />
+            <SectionTitle subtitle={t.home.howItWorks.subtitle} title={t.home.howItWorks.title} centered />
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0 relative">
             <div className="hidden md:block absolute top-[2.25rem] left-[16.67%] right-[16.67%] h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
-            {[
-              {
-                step: "01",
-                title: "Send a Message",
-                description: "Reach us via WhatsApp or our booking form with your journey details.",
-              },
-              {
-                step: "02",
-                title: "Confirm & Relax",
-                description: "We'll confirm your booking instantly with driver details and pricing.",
-              },
-              {
-                step: "03",
-                title: "Arrive in Style",
-                description: "Your chauffeur arrives on time. You arrive unforgettable.",
-              },
-            ].map((step, i) => (
+            {t.home.howItWorks.steps.map((step, i) => (
               <motion.div
                 key={i}
                 className="text-center px-8 relative"
@@ -309,10 +279,10 @@ export default function Home() {
                 data-testid={`step-how-${i + 1}`}
               >
                 <div className="inline-block mb-8">
-                  <span className="font-serif text-7xl text-primary/20 leading-none">{step.step}</span>
+                  <span className="font-serif text-7xl text-primary/20 leading-none">{step.number}</span>
                 </div>
                 <h3 className="font-serif text-2xl mb-4 text-foreground">{step.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">{step.body}</p>
               </motion.div>
             ))}
           </div>
@@ -328,34 +298,11 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <SectionTitle subtitle="The Fleet" title="Every Vehicle. Every Standard." />
+            <SectionTitle subtitle={lang === "es" ? "La Flota" : "The Fleet"} title={lang === "es" ? "Cada Vehículo. Cada Estándar." : "Every Vehicle. Every Standard."} />
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                tier: "Economy",
-                vehicle: "Toyota Camry or similar",
-                features: ["Comfortable seating", "Air-conditioned", "Professional driver", "Fixed pricing"],
-                color: "border-white/10",
-                price: "AED 80"
-              },
-              {
-                tier: "Business",
-                vehicle: "Mercedes E-Class or similar",
-                features: ["Premium leather interior", "Extended legroom", "Complimentary water", "Priority booking"],
-                color: "border-primary/40",
-                featured: true,
-                price: "AED 150"
-              },
-              {
-                tier: "Premium",
-                vehicle: "Mercedes S-Class or similar",
-                features: ["Luxury interior", "Privacy glass", "Concierge assistance", "24h dedicated support"],
-                color: "border-white/10",
-                price: "AED 280"
-              },
-            ].map((fleet, i) => (
+            {fleetCards.map((fleet, i) => (
               <motion.div
                 key={i}
                 className={`border ${fleet.color} p-8 md:p-10 pt-12 md:pt-14 relative transition-colors duration-300 ${fleet.featured ? "bg-card" : "hover:border-primary/50"}`}
@@ -366,34 +313,25 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 data-testid={`card-fleet-${fleet.tier.toLowerCase()}`}
               >
-                {fleet.featured && (
-                  <div className="absolute -top-px left-0 right-0 h-px bg-primary" />
-                )}
+                {fleet.featured && <div className="absolute -top-px left-0 right-0 h-px bg-primary" />}
                 {fleet.featured && (
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-[10px] uppercase tracking-widest px-3 py-1 font-semibold">
-                    Most Popular
+                    {t.pricing.mostPopular}
                   </span>
                 )}
-                <div className={cn(
-                  "w-full h-px mb-8",
-                  fleet.featured 
-                    ? "bg-gradient-to-r from-transparent via-primary to-transparent" 
-                    : "bg-gradient-to-r from-transparent via-white/10 to-transparent"
-                )} />
+                <div className={cn("w-full h-px mb-8", fleet.featured ? "bg-gradient-to-r from-transparent via-primary to-transparent" : "bg-gradient-to-r from-transparent via-white/10 to-transparent")} />
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center gap-4">
                     <Car className="w-6 h-6 text-primary opacity-70" />
-                    <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-semibold">
-                      {fleet.tier}
-                    </span>
+                    <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-semibold">{fleet.tier}</span>
                   </div>
                 </div>
-                <h3 className="font-serif text-2xl mb-1 text-foreground">{fleet.tier} Class</h3>
+                <h3 className="font-serif text-2xl mb-1 text-foreground">{fleet.tier} {t.pricing.labels.class}</h3>
                 <p className="text-muted-foreground text-sm mb-2">{fleet.vehicle}</p>
-                <p className="text-primary text-xs uppercase tracking-wider mb-8">from {fleet.price} / trip</p>
+                <p className="text-primary text-xs uppercase tracking-wider mb-8">{fromLabel} {fleet.price} / {tripLabel}</p>
                 <ul className="space-y-3 mb-8">
-                  {fleet.features.map((f) => (
-                    <li key={f} className="flex items-center gap-3 text-sm text-muted-foreground">
+                  {fleet.features.map((f, fi) => (
+                    <li key={fi} className="flex items-center gap-3 text-sm text-muted-foreground">
                       <span className="w-1 h-1 bg-primary rounded-full flex-shrink-0" />
                       {f}
                     </li>
@@ -401,7 +339,7 @@ export default function Home() {
                 </ul>
                 <Link href="/pricing" data-testid={`link-fleet-pricing-${fleet.tier.toLowerCase()}`}>
                   <CTAButton variant={fleet.featured ? "filled" : "outline"} className="w-full justify-center text-center">
-                    View Pricing
+                    {viewPricing}
                   </CTAButton>
                 </Link>
               </motion.div>
@@ -419,10 +357,10 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <SectionTitle subtitle="Client Experiences" title="What Our Guests Say" centered />
+            <SectionTitle subtitle={t.home.testimonials.subtitle} title={t.home.testimonials.title} centered />
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="flex items-center gap-3 mb-12 justify-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -433,55 +371,27 @@ export default function Home() {
                 <Star key={i} className="w-4 h-4 fill-primary text-primary" />
               ))}
             </div>
-            <span className="text-muted-foreground text-sm">4.97 average · 200+ journeys rated</span>
+            <span className="text-muted-foreground text-sm">{ratingLine}</span>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/5"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            variants={{
-              hidden: {},
-              visible: {
-                transition: {
-                  staggerChildren: 0.1
-                }
-              }
-            }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
           >
             {[
-              {
-                name: "James Whitfield",
-                city: "London, UK",
-                rating: 5,
-                review:
-                  "Arrived at 2am on a delayed flight. Driver was waiting, signboard ready. Not a single moment of uncertainty. This is how transfers should work everywhere.",
-              },
-              {
-                name: "Aisha Al-Rasheed",
-                city: "Riyadh, KSA",
-                rating: 5,
-                review:
-                  "I've used every transfer service in Dubai. DXB Driver is the only one that makes me feel like a guest, not a passenger. The S-Class was immaculate.",
-              },
-              {
-                name: "Marcus Chen",
-                city: "Singapore",
-                rating: 5,
-                review:
-                  "Used for a week of business meetings across Dubai and Abu Dhabi. Always on time, always professional. Worth every dirham.",
-              },
-            ].map((t, i) => (
+              { name: "James Whitfield", city: "London, UK", rating: 5, review: "Arrived at 2am on a delayed flight. Driver was waiting, signboard ready. Not a single moment of uncertainty. This is how transfers should work everywhere." },
+              { name: "Aisha Al-Rasheed", city: "Riyadh, KSA", rating: 5, review: "I've used every transfer service in Dubai. DXB Driver is the only one that makes me feel like a guest, not a passenger. The S-Class was immaculate." },
+              { name: "Marcus Chen", city: "Singapore", rating: 5, review: "Used for a week of business meetings across Dubai and Abu Dhabi. Always on time, always professional. Worth every dirham." },
+            ].map((testimonial, i) => (
               <motion.div
                 key={i}
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-                }}
+                variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
                 className={i < 2 ? "md:border-r border-white/5" : ""}
               >
-                <TestimonialCard {...t} />
+                <TestimonialCard {...testimonial} />
               </motion.div>
             ))}
           </motion.div>
@@ -497,28 +407,11 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <SectionTitle subtitle="Quick Answers" title="Frequently Asked" centered />
+            <SectionTitle subtitle={t.home.faqSection.subtitle} title={t.home.faqSection.title} centered />
           </motion.div>
 
           <Accordion type="single" collapsible className="space-y-0">
-            {[
-              {
-                q: "How far in advance should I book?",
-                a: "We recommend booking at least 2 hours in advance for city rides and 24 hours for airport transfers. For premium vehicles, earlier is better — we'll always try to accommodate last-minute requests.",
-              },
-              {
-                q: "Are your drivers RTA licensed?",
-                a: "Yes. All DXB Driver chauffeurs hold valid UAE driving licences and are registered with the Road and Transport Authority (RTA). We conduct background checks on every driver.",
-              },
-              {
-                q: "What happens if my flight is delayed?",
-                a: "We track your flight in real time. If it's delayed, your driver adjusts accordingly — at no extra charge. You will never be left waiting.",
-              },
-              {
-                q: "Can I request the same driver again?",
-                a: "Absolutely. Once you've experienced a particular chauffeur, you can request them by name for future bookings. We aim to build lasting relationships.",
-              },
-            ].map((faq, i) => (
+            {faqPreview.map((faq, i) => (
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
@@ -543,7 +436,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
           >
             <Link href="/faq" data-testid="link-view-all-faq">
-              <CTAButton variant="outline">View All Questions</CTAButton>
+              <CTAButton variant="outline">{viewAllFaq}</CTAButton>
             </Link>
           </motion.div>
         </div>
@@ -564,35 +457,26 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <div className="w-16 h-px bg-primary mx-auto mb-8" />
-            <span className="block text-primary text-xs uppercase tracking-[0.4em] mb-8">
-              Begin Your Journey
-            </span>
+            <span className="block text-primary text-xs uppercase tracking-[0.4em] mb-8">{beginJourney}</span>
             <h2 className="font-serif text-6xl md:text-7xl lg:text-8xl text-foreground mb-8 leading-tight">
-              Ready to Arrive
+              {finalTitle1}
               <br />
-              <span className="text-primary">in Silence?</span>
+              <span className="text-primary">{finalTitle2}</span>
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto mb-12 text-lg leading-relaxed">
-              One message. Your driver is arranged. No apps, no surges, no uncertainty.
-            </p>
+            <p className="text-muted-foreground max-w-xl mx-auto mb-12 text-lg leading-relaxed">{finalSub}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://wa.me/971528730883?text=Hi%20DXB%20Driver!%20I%20need%20a%20ride.%0AFrom%3A%20%0ATo%3A%20%0ADate%20%26%20Time%3A%20%0AVehicle%3A%20%0ANotes%3A%20..."
-                target="_blank"
-                rel="noreferrer"
-                data-testid="link-cta-whatsapp"
-              >
+              <a href={waLink} target="_blank" rel="noreferrer" data-testid="link-cta-whatsapp">
                 <CTAButton variant="filled" className="px-12 py-4 text-sm w-full sm:w-auto">
-                  Book on WhatsApp
+                  {t.mobileCTA.bookWhatsapp}
                 </CTAButton>
               </a>
               <Link href="/contact" data-testid="link-cta-contact">
                 <CTAButton variant="outline" className="px-12 py-4 text-sm w-full sm:w-auto">
-                  Get a Quote
+                  {t.mobileCTA.getQuote}
                 </CTAButton>
               </Link>
             </div>
-            <p className="text-muted-foreground/40 text-xs mt-8 uppercase tracking-[0.3em]">Available now · Response within 15 minutes</p>
+            <p className="text-muted-foreground/40 text-xs mt-8 uppercase tracking-[0.3em]">{availableNote}</p>
           </motion.div>
         </div>
       </section>

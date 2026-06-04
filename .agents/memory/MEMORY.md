@@ -1,0 +1,1 @@
+- [DXB Driver i18n architecture](dxb-driver-i18n.md) — all EN/ES strings live in translations.ts; components consume useLanguage() for t, waLink, lang.

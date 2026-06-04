@@ -1,16 +1,17 @@
 import { SiWhatsapp } from "react-icons/si";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function FloatingWhatsApp() {
+  const { waLink } = useLanguage();
+
   return (
     <div className="fixed bottom-8 right-8 z-50" data-testid="link-floating-whatsapp">
-      {/* Ripple pulse rings — 2 layered rings that expand outward */}
-      <span className="absolute inset-0 rounded-full bg-[#25D366]/30 animate-ping" style={{ animationDuration: '2s' }} />
-      <span className="absolute inset-[-6px] rounded-full bg-[#25D366]/15 animate-ping" style={{ animationDuration: '2s', animationDelay: '0.4s' }} />
-      
-      {/* Main button with subtle float animation */}
+      <span className="absolute inset-0 rounded-full bg-[#25D366]/30 animate-ping" style={{ animationDuration: "2s" }} />
+      <span className="absolute inset-[-6px] rounded-full bg-[#25D366]/15 animate-ping" style={{ animationDuration: "2s", animationDelay: "0.4s" }} />
+
       <motion.a
-        href="https://wa.me/971528730883?text=Hi%20DXB%20Driver!%20I%20need%20a%20ride.%0AFrom%3A%20%0ATo%3A%20%0ADate%20%26%20Time%3A%20%0AVehicle%3A%20%0ANotes%3A%20..."
+        href={waLink}
         target="_blank"
         rel="noreferrer"
         aria-label="Contact on WhatsApp"
