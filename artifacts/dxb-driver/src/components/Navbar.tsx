@@ -239,7 +239,7 @@ export function Navbar() {
                   {langOptions.map((opt) => (
                     <button
                       key={opt.value}
-                      onClick={() => setLang(opt.value)}
+                      onClick={() => { setLang(opt.value); closeMenu(); }}
                       className={`flex items-center gap-2 px-4 py-2 border text-sm uppercase tracking-widest transition-all ${
                         lang === opt.value
                           ? "border-primary text-primary"
