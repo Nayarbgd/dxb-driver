@@ -220,7 +220,7 @@ const en: Translations = {
   nav: {
     services: "Services",
     whyUs: "Why Us",
-    pricing: "Fleet & Pricing",
+    pricing: "Pricing",
     about: "About",
     faq: "FAQ",
     bookNow: "Book Now",
@@ -231,7 +231,7 @@ const en: Translations = {
       "The premier private chauffeur service in Dubai. Unhurried, precise, and uncompromisingly professional. Where every journey feels like arriving.",
     explore: "Explore",
     contact: "Contact",
-    links: { services: "Services", pricing: "Fleet & Pricing", about: "About Us", faq: "FAQ" },
+    links: { services: "Services", pricing: "Pricing", about: "About Us", faq: "FAQ" },
     getQuote: "Get a Quote",
     address: "DAMAC Smart Heights, 23rd Floor,\nBarsha Heights, Dubai, UAE",
     rights: "All rights reserved.",
@@ -347,7 +347,7 @@ const en: Translations = {
     },
   },
   pricing: {
-    pageBadge: "Fleet & Pricing",
+    pageBadge: "Pricing",
     hero: {
       title: "Transparent Pricing.",
       titleGold: "No Surprises.",
@@ -786,7 +786,7 @@ const es: Translations = {
   nav: {
     services: "Servicios",
     whyUs: "Por Qu\u00e9 Nosotros",
-    pricing: "Flota y Precios",
+    pricing: "Precios",
     about: "Sobre Nosotros",
     faq: "Preguntas",
     bookNow: "Reservar",
@@ -799,7 +799,7 @@ const es: Translations = {
     contact: "Contacto",
     links: {
       services: "Servicios",
-      pricing: "Flota y Precios",
+      pricing: "Precios",
       about: "Sobre Nosotros",
       faq: "Preguntas",
     },
@@ -930,7 +930,7 @@ const es: Translations = {
     },
   },
   pricing: {
-    pageBadge: "Flota y Precios",
+    pageBadge: "Precios",
     hero: {
       title: "Precios Transparentes.",
       titleGold: "Sin Sorpresas.",
