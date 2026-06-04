@@ -13,6 +13,7 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import FAQ from "@/pages/FAQ";
 import WhyChooseUs from "@/pages/WhyChooseUs";
+import BookInAdvance from "@/pages/BookInAdvance";
 import { useEffect } from "react";
 
 const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ function Router() {
         <Route path="/contact" component={Contact} />
         <Route path="/faq" component={FAQ} />
         <Route path="/why-choose-us" component={WhyChooseUs} />
+        <Route path="/book-in-advance" component={BookInAdvance} />
         <Route component={NotFound} />
       </Switch>
     </>

@@ -19,6 +19,7 @@ export interface Translations {
     about: string;
     faq: string;
     bookNow: string;
+    bookInAdvance: string;
   };
   mobileCTA: { bookWhatsapp: string; getQuote: string };
   footer: {
@@ -214,6 +215,27 @@ export interface Translations {
     info: { whatsapp: string; phone: string; email: string; address: string };
     finalCTA: { subtitle: string; title: string; body: string };
   };
+  bookInAdvance: {
+    hero: { line1: string; line2: string; sub1: string; sub2: string; body: string };
+    benefits: { items: { title: string; body: string }[] };
+    form: {
+      sectionTitle: string;
+      name: string;
+      whatsapp: string;
+      email: string;
+      pickup: string;
+      destination: string;
+      date: string;
+      time: string;
+      tripType: string;
+      oneWay: string;
+      returnTrip: string;
+      notes: string;
+      notesPh: string;
+      submit: string;
+    };
+    confirm: { title: string; body: string };
+  };
 }
 
 const en: Translations = {
@@ -224,6 +246,7 @@ const en: Translations = {
     about: "About",
     faq: "FAQ",
     bookNow: "Book Now",
+    bookInAdvance: "Book in Advance",
   },
   mobileCTA: { bookWhatsapp: "Book on WhatsApp", getQuote: "Get a Quote" },
   footer: {
@@ -747,6 +770,51 @@ const en: Translations = {
       form: "Contact Form",
     },
   },
+  bookInAdvance: {
+    hero: {
+      line1: "Book Ahead.",
+      line2: "Travel Without Uncertainty.",
+      sub1: "Good trips are planned.",
+      sub2: "Great trips are confirmed in advance.",
+      body: "Reserve your chauffeur before your travel date and enjoy complete peace of mind knowing everything is already arranged.",
+    },
+    benefits: {
+      items: [
+        {
+          title: "Confirmed Before You Travel",
+          body: "Your booking is received in advance so your transportation can be planned properly.",
+        },
+        {
+          title: "Perfect For Important Schedules",
+          body: "Ideal for airport transfers, business meetings, events and family travel.",
+        },
+        {
+          title: "Fast WhatsApp Confirmation",
+          body: "Submit your request and receive confirmation directly through WhatsApp.",
+        },
+      ],
+    },
+    form: {
+      sectionTitle: "Tell Us About Your Trip",
+      name: "Full Name",
+      whatsapp: "WhatsApp Number",
+      email: "Email Address",
+      pickup: "Pickup Location",
+      destination: "Destination",
+      date: "Date",
+      time: "Time",
+      tripType: "Trip Type",
+      oneWay: "One Way",
+      returnTrip: "Return Trip",
+      notes: "Notes (optional)",
+      notesPh: "Anything we should know about your trip?",
+      submit: "Secure My Ride",
+    },
+    confirm: {
+      title: "Thank you.",
+      body: "Your booking request has been received.\n\nOur team will review your details and confirm availability shortly via WhatsApp.",
+    },
+  },
   contact: {
     pageBadge: "Book a Journey",
     hero: { title: "One Message.", titleGold: "Your Driver Is Ready." },
@@ -790,6 +858,7 @@ const es: Translations = {
     about: "Sobre Nosotros",
     faq: "Preguntas",
     bookNow: "Reservar",
+    bookInAdvance: "Reserva Con Anticipación",
   },
   mobileCTA: { bookWhatsapp: "Reservar por WhatsApp", getQuote: "Obtener Presupuesto" },
   footer: {
@@ -1344,9 +1413,54 @@ const es: Translations = {
       form: "Formulario de Contacto",
     },
   },
+  bookInAdvance: {
+    hero: {
+      line1: "Reserva Con Anticipación.",
+      line2: "Viaja Con Tranquilidad.",
+      sub1: "Los buenos viajes se planean.",
+      sub2: "Los grandes viajes se confirman con anticipación.",
+      body: "Reserva tu chófer antes de la fecha de tu viaje y disfruta de la tranquilidad de saber que todo está organizado de antemano.",
+    },
+    benefits: {
+      items: [
+        {
+          title: "Confirmado Antes De Tu Viaje",
+          body: "Recibimos tu solicitud con antelación para organizar cada detalle correctamente.",
+        },
+        {
+          title: "Ideal Para Momentos Importantes",
+          body: "Perfecto para traslados al aeropuerto, reuniones de negocios, eventos y viajes familiares.",
+        },
+        {
+          title: "Confirmación Rápida Por WhatsApp",
+          body: "Envía tu solicitud y recibe confirmación directamente por WhatsApp.",
+        },
+      ],
+    },
+    form: {
+      sectionTitle: "Cuéntanos Sobre Tu Viaje",
+      name: "Nombre Completo",
+      whatsapp: "Número De WhatsApp",
+      email: "Correo Electrónico",
+      pickup: "Lugar De Recogida",
+      destination: "Destino",
+      date: "Fecha",
+      time: "Hora",
+      tripType: "Tipo De Viaje",
+      oneWay: "Solo Ida",
+      returnTrip: "Ida Y Vuelta",
+      notes: "Notas (opcional)",
+      notesPh: "¿Hay algo que debamos saber sobre tu viaje?",
+      submit: "Reservar Mi Traslado",
+    },
+    confirm: {
+      title: "Gracias.",
+      body: "Hemos recibido tu solicitud de reserva.\n\nNuestro equipo revisará los detalles y confirmará la disponibilidad en breve por WhatsApp.",
+    },
+  },
   contact: {
     pageBadge: "Reservar un Viaje",
-    hero: { title: "Un Mensaje.", titleGold: "Su Conductor Est\u00e1 Listo." },
+    hero: { title: "Un Mensaje.", titleGold: "Su Conductor Está Listo." },
     getInTouch: "Cont\u00e1ctenos",
     subtitle: "Respondemos en Minutos.",
     hoursTitle: "Nuestro Horario",

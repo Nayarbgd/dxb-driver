@@ -1,0 +1,224 @@
+Create a new premium page called:
+
+"Book in Advance"
+
+Add it to the main navigation menu in both desktop and mobile.
+
+The goal of this page is NOT simply to collect booking information.
+
+The goal is to help visitors secure their transportation in advance, eliminate uncertainty, and feel that their trip is already taken care of before the day arrives.
+
+The page must be fully bilingual (English and Spanish) and work with the existing language switcher.
+
+Use the exact copy below.
+
+---
+
+## ENGLISH VERSION
+
+Hero Title:
+
+Book Ahead.
+Travel Without Uncertainty.
+
+Subheadline:
+
+Good trips are planned.
+Great trips are confirmed in advance.
+
+Reserve your chauffeur before your travel date and enjoy complete peace of mind knowing everything is already arranged.
+
+Benefits section (3 cards):
+
+Confirmed Before You Travel
+Your booking is received in advance so your transportation can be planned properly.
+
+Perfect For Important Schedules
+Ideal for airport transfers, business meetings, events and family travel.
+
+Fast WhatsApp Confirmation
+Submit your request and receive confirmation directly through WhatsApp.
+
+Form Section Title:
+
+Tell Us About Your Trip
+
+Form Fields:
+
+* Full Name
+* WhatsApp Number
+* Email Address
+* Pickup Location
+* Destination
+* Date
+* Time
+* Trip Type
+
+  * One Way
+  * Return Trip
+* Notes (optional)
+
+Placeholder for Notes:
+
+Anything we should know about your trip?
+
+Submit Button:
+
+Secure My Ride
+
+Confirmation Message:
+
+Thank you.
+Your booking request has been received.
+
+Our team will review your details and confirm availability shortly via WhatsApp.
+
+---
+
+## SPANISH VERSION
+
+Hero Title:
+
+Reserva Con Anticipación.
+Viaja Con Tranquilidad.
+
+Subheadline:
+
+Los buenos viajes se planean.
+Los grandes viajes se confirman con anticipación.
+
+Reserva tu chófer antes de la fecha de tu viaje y disfruta de la tranquilidad de saber que todo está organizado de antemano.
+
+Benefits section (3 cards):
+
+Confirmado Antes De Tu Viaje
+Recibimos tu solicitud con antelación para organizar cada detalle correctamente.
+
+Ideal Para Momentos Importantes
+Perfecto para traslados al aeropuerto, reuniones de negocios, eventos y viajes familiares.
+
+Confirmación Rápida Por WhatsApp
+Envía tu solicitud y recibe confirmación directamente por WhatsApp.
+
+Form Section Title:
+
+Cuéntanos Sobre Tu Viaje
+
+Form Fields:
+
+* Nombre Completo
+* Número De WhatsApp
+* Correo Electrónico
+* Lugar De Recogida
+* Destino
+* Fecha
+* Hora
+* Tipo De Viaje
+
+  * Solo Ida
+  * Ida Y Vuelta
+* Notas (opcional)
+
+Placeholder for Notes:
+
+¿Hay algo que debamos saber sobre tu viaje?
+
+Submit Button:
+
+Reservar Mi Traslado
+
+Confirmation Message:
+
+Gracias.
+Hemos recibido tu solicitud de reserva.
+
+Nuestro equipo revisará los detalles y confirmará la disponibilidad en breve por WhatsApp.
+
+---
+
+## FUNCTIONALITY
+
+For now, do NOT create a database.
+
+When the user submits the form:
+
+1. Open WhatsApp automatically.
+2. Generate a structured WhatsApp message containing all form information.
+3. Send the user to the existing business WhatsApp number already configured on the website.
+
+WhatsApp message format (English):
+
+Hi DXB Driver,
+
+I would like to reserve a ride in advance.
+
+Name:
+Pickup:
+Destination:
+Date:
+Time:
+Trip Type:
+Notes:
+
+Please confirm availability.
+
+WhatsApp message format (Spanish):
+
+Hola DXB Driver,
+
+Me gustaría reservar un viaje con anticipación.
+
+Nombre:
+Recogida:
+Destino:
+Fecha:
+Hora:
+Tipo de viaje:
+Notas:
+
+Por favor confirmen disponibilidad.
+
+---
+
+## DESIGN REQUIREMENTS
+
+The page must match the luxury visual identity of the rest of the website.
+
+Use:
+
+* dark premium background
+* gold accents
+* luxury typography
+* smooth animations
+* premium spacing
+* high-end hospitality aesthetic
+
+Avoid:
+
+* generic form design
+* basic contact-page appearance
+* crowded layouts
+
+The page should feel like a premium concierge reservation experience.
+
+---
+
+## MOBILE EXPERIENCE
+
+This page must be fully responsive.
+
+Optimize specifically for:
+
+* iPhone
+* Android devices
+
+Requirements:
+
+* large tap targets
+* easy date and time selection
+* excellent readability
+* no horizontal scrolling
+* form fields stacked vertically
+* CTA always visible and easy to tap
+
+The mobile version should feel native and premium.

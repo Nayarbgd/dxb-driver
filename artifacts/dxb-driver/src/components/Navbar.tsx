@@ -59,6 +59,7 @@ export function Navbar() {
     { href: "/pricing", label: t.nav.pricing },
     { href: "/about", label: t.nav.about },
     { href: "/faq", label: t.nav.faq },
+    { href: "/book-in-advance", label: t.nav.bookInAdvance },
   ];
 
   const langOptions: { value: "en" | "es"; flag: string; label: string }[] = [
