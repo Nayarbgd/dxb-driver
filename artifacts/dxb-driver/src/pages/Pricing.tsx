@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, Car } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 import { Link } from "wouter";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -16,6 +17,10 @@ export default function Pricing() {
 
   return (
     <div className="bg-background text-foreground overflow-x-hidden">
+      <SEOHead
+        title="Dubai Chauffeur Pricing | Fixed Rates, No Surge | DXB Driver"
+        description="Transparent fixed pricing for Dubai chauffeur services. Economy, Business & Premium classes. No surge pricing, ever. View rates and book your ride today."
+      />
       <Navbar />
 
       {/* HERO */}

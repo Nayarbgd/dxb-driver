@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEOHead } from "@/components/SEOHead";
 import { Link } from "wouter";
 import {
   UserCheck,
@@ -50,6 +51,10 @@ export default function WhyChooseUs() {
 
   return (
     <div className="bg-background text-foreground overflow-x-hidden">
+      <SEOHead
+        title="Why Choose DXB Driver | Private Chauffeur Dubai"
+        description="Discover why Dubai travelers choose DXB Driver — RTA licensed chauffeurs, fixed pricing, airport meet & greet, bilingual English & Spanish service. Book today."
+      />
       <Navbar />
 
       {/* HERO */}

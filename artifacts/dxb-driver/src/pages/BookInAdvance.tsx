@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { SEOHead } from "@/components/SEOHead";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
@@ -111,6 +112,10 @@ export default function BookInAdvance() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEOHead
+        title="Book Dubai Airport Transfer in Advance | DXB Driver"
+        description="Reserve your Dubai chauffeur days or months ahead. Secure airport transfers, city rides & inter-emirate journeys. Fixed rate confirmed before you travel."
+      />
       <Navbar />
 
       {/* ── HERO ── */}

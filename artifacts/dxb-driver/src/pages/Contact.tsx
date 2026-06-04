@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEOHead } from "@/components/SEOHead";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -63,6 +64,10 @@ export default function Contact() {
 
   return (
     <div className="bg-background text-foreground overflow-x-hidden">
+      <SEOHead
+        title="Book a Dubai Chauffeur | Contact DXB Driver"
+        description="Book your Dubai private chauffeur by WhatsApp or contact form. Instant reply, fixed rates, RTA licensed drivers available 24/7. One message away."
+      />
       <Navbar />
 
       {/* HERO */}

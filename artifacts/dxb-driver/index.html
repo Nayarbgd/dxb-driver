@@ -3,19 +3,119 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>DXB Driver</title>
-    <meta name="description" content="DXB Driver — built on Replit. Update this description to reflect the app." />
+    <title>DXB Driver | Private Chauffeur Service Dubai</title>
+    <meta name="description" content="Dubai's premier private chauffeur service. Fixed rates, airport transfers, city rides & inter-emirate travel. RTA licensed, available 24/7. Book now on WhatsApp." />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="DXB Driver" />
-    <meta property="og:description" content="DXB Driver — built on Replit. Update this description to reflect the app." />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="DXB Driver" />
     <meta property="og:type" content="website" />
+    <meta property="og:title" content="DXB Driver | Private Chauffeur Service Dubai" />
+    <meta property="og:description" content="Dubai's premier private chauffeur service. Fixed rates, airport transfers, city rides & inter-emirate travel. RTA licensed, available 24/7. Book now on WhatsApp." />
+    <meta property="og:image" content="/opengraph.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="DXB Driver — Private Chauffeur Service Dubai" />
+
+    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="DXB Driver" />
-    <meta name="twitter:description" content="DXB Driver — built on Replit. Update this description to reflect the app." />
+    <meta name="twitter:title" content="DXB Driver | Private Chauffeur Service Dubai" />
+    <meta name="twitter:description" content="Dubai's premier private chauffeur service. Fixed rates, airport transfers, city rides & inter-emirate travel. RTA licensed, available 24/7." />
+    <meta name="twitter:image" content="/opengraph.jpg" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- LocalBusiness + TaxiService Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "TaxiService"],
+      "name": "DXB Driver",
+      "description": "Premier private chauffeur service in Dubai. Airport transfers, city rides, and inter-emirate travel with RTA licensed chauffeurs. Fixed rates, bilingual English and Spanish drivers, available 24/7.",
+      "url": "https://dxbdriver.com",
+      "telephone": "+971528730883",
+      "email": "dxbdriver@dxbdriver.com",
+      "logo": "https://dxbdriver.com/favicon.svg",
+      "image": "https://dxbdriver.com/opengraph.jpg",
+      "priceRange": "$$",
+      "currenciesAccepted": "AED",
+      "paymentAccepted": "Cash, Bank Transfer",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "DAMAC Smart Heights, 23rd Floor",
+        "addressLocality": "Barsha Heights",
+        "addressRegion": "Dubai",
+        "addressCountry": "AE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "25.0954",
+        "longitude": "55.1719"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Dubai" },
+        { "@type": "City", "name": "Abu Dhabi" },
+        { "@type": "City", "name": "Sharjah" },
+        { "@type": "State", "name": "UAE" }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+971528730883",
+          "contactType": "customer service",
+          "availableLanguage": ["English", "Spanish"]
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Chauffeur Services Dubai",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Airport Transfer Dubai",
+              "description": "Private chauffeur airport transfers from DXB and DWC. Flight tracked, meet and greet, fixed rates."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "City Rides Dubai",
+              "description": "Private chauffeur city rides across Dubai. Fixed rates, no surge pricing, bilingual drivers."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Inter-Emirate Transfer",
+              "description": "Private chauffeur transfers between Emirates. Dubai to Abu Dhabi, Sharjah and all UAE Emirates."
+            }
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.97",
+        "ratingCount": "5000",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

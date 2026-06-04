@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEOHead } from "@/components/SEOHead";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SectionTitle } from "@/components/SectionTitle";
@@ -19,6 +20,10 @@ export default function About() {
 
   return (
     <div className="bg-background text-foreground overflow-x-hidden">
+      <SEOHead
+        title="About DXB Driver | Luxury Chauffeur Service Dubai"
+        description="Learn about DXB Driver – Dubai's premier private chauffeur. RTA licensed fleet, 5,000+ journeys, 4.97 average rating. Driven by excellence, every ride."
+      />
       <Navbar />
 
       {/* HERO */}

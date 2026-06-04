@@ -1,0 +1,171 @@
+Perform a complete Phase 1 SEO implementation for the DXB Driver website.
+
+IMPORTANT:
+
+Do NOT redesign the website.
+Do NOT modify layouts.
+Do NOT change styling.
+Do NOT change animations.
+Do NOT change the visual appearance.
+Do NOT change existing page content unless explicitly required for SEO metadata.
+
+The objective is to fix the highest-impact SEO issues while preserving the current design and user experience.
+
+---
+
+## PHASE 1 SEO TASKS
+
+1. META TITLES
+
+Create unique SEO-optimized title tags for every page.
+
+Target keywords should include combinations of:
+
+* Chauffeur Service Dubai
+* Private Driver Dubai
+* Airport Transfer Dubai
+* Luxury Chauffeur Dubai
+* Dubai Chauffeur Service
+
+Create unique titles for:
+
+* Home
+* Services
+* Pricing
+* About
+* FAQ
+* Contact
+* Why Choose Us
+* Book In Advance
+
+Keep titles between 50–60 characters where possible.
+
+---
+
+2. META DESCRIPTIONS
+
+Replace all Replit placeholder descriptions.
+
+Create unique meta descriptions for every page.
+
+Requirements:
+
+* Natural language
+* High click-through-rate copy
+* Include Dubai-related search intent
+* 140–160 characters
+* Luxury positioning
+* Encourage clicks
+
+---
+
+3. OPEN GRAPH OPTIMIZATION
+
+Implement:
+
+* og
+* og
+* og
+* og
+* og
+
+Verify that the existing image located in /public is properly used as the Open Graph image.
+
+Ensure WhatsApp, LinkedIn and Facebook previews display correctly.
+
+---
+
+---
+
+6. ROBOTS.TXT
+
+Update robots.txt.
+
+Ensure:
+
+User-agent: *
+Allow: /
+
+Add:
+
+Sitemap: https://YOUR_DOMAIN/sitemap.xml
+
+Use a placeholder domain if the final domain is not yet configured.
+
+---
+
+7. LOCAL BUSINESS SCHEMA
+
+Implement JSON-LD schema.
+
+Use LocalBusiness and TaxiService schema types where appropriate.
+
+Include:
+
+* Business name
+* Phone number
+* Email
+* Website
+* Service area
+* Dubai location
+* WhatsApp contact
+* Opening hours
+* RTA licensed business information where applicable
+
+Use information already present on the website.
+
+---
+
+8. FAQ SCHEMA
+
+Implement FAQPage schema.
+
+Automatically generate structured FAQ schema using the existing FAQ content.
+
+Do not rewrite FAQ answers.
+
+---
+
+9. AGGREGATE RATING SCHEMA
+
+Implement AggregateRating schema using existing trust signals and rating information already displayed on the website.
+
+Only use values already present in the website content.
+
+Do not invent reviews or ratings.
+
+---
+
+10. IMAGE SEO REVIEW
+
+Inspect all existing images.
+
+Report:
+
+* Which images currently cannot be indexed because they are CSS backgrounds.
+* Which images lack alt text.
+
+DO NOT redesign image sections.
+
+Only provide a report for future implementation.
+
+---
+
+11. FINAL REPORT
+
+After implementation provide:
+
+* List of files modified
+* SEO changes completed
+* Remaining high-priority SEO issues
+* Updated estimated SEO score
+
+IMPORTANT:
+
+Do not perform Phase 2 bilingual URL restructuring.
+
+Do not change language architecture.
+
+Do not redesign any page.
+
+Only implement the highest-impact Phase 1 SEO improvements.

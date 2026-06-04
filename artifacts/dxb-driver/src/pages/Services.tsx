@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 import { Link } from "wouter";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -11,6 +12,10 @@ export default function Services() {
 
   return (
     <div className="bg-background text-foreground overflow-x-hidden">
+      <SEOHead
+        title="Chauffeur Services Dubai | Airport Transfers & City Rides"
+        description="Airport transfers from DXB & DWC, city rides and inter-emirate travel. Fixed rates, RTA licensed private chauffeurs. Get your quote instantly on WhatsApp."
+      />
       <Navbar />
 
       {/* HERO */}

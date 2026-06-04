@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { SEOHead } from "@/components/SEOHead";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { Plane, MapPin, Route, Star, Car, CheckCircle2 } from "lucide-react";
@@ -28,6 +29,18 @@ const fadeUp = {
 
 export default function Home() {
   const { t, waLink, lang } = useLanguage();
+  return (
+    <>
+      <SEOHead
+        title="Private Chauffeur Service Dubai | DXB Driver"
+        description="Dubai's premier private chauffeur. Fixed rates, airport transfers, city rides & inter-emirate travel. RTA licensed, 24/7 available. Book on WhatsApp."
+      />
+      <HomeContent t={t} waLink={waLink} lang={lang} />
+    </>
+  );
+}
+
+function HomeContent({ t, waLink, lang }: ReturnType<typeof useLanguage>) {
 
   const heroDesktopCtrl = useAnimation();
   const heroMobileCtrl = useAnimation();
