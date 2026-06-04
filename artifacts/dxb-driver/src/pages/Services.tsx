@@ -86,7 +86,7 @@ export default function Services() {
               <div
                 className="w-full aspect-[4/3] bg-card relative overflow-hidden"
                 style={{
-                  backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780517408/7_zp71cp.png')",
+                  backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780529871/Gemini_Generated_Image_k3cdkmk3cdkmk3cd_whaze7.png')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -122,7 +122,7 @@ export default function Services() {
               <div
                 className="w-full aspect-[4/3] relative overflow-hidden"
                 style={{
-                  backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780517411/1_efkx7y.png')",
+                  backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780529912/Gemini_Generated_Image_xhp52wxhp52wxhp5_jbox4j.png')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -200,7 +200,7 @@ export default function Services() {
               <div
                 className="w-full aspect-[4/3] relative overflow-hidden"
                 style={{
-                  backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780517408/9_pkigjg.png')",
+                  backgroundImage: "url('https://res.cloudinary.com/djepsudop/image/upload/v1780529876/Gemini_Generated_Image_momdenmomdenmomd_rv9qgd.png')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
