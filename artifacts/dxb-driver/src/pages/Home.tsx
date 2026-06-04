@@ -84,7 +84,7 @@ export default function Home() {
 
       {/* HERO */}
       <section
-        className="relative min-h-screen flex items-end pb-24 md:pb-32"
+        className="relative min-h-screen flex items-end pt-24 md:pt-28 pb-24 md:pb-32"
         data-testid="section-hero"
         style={{ background: "#0A0A0A" }}
       >
