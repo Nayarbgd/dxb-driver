@@ -29,22 +29,28 @@ const fadeUp = {
 export default function Home() {
   const { t, waLink, lang } = useLanguage();
 
-  const heroCtrl = useAnimation();
+  const heroDesktopCtrl = useAnimation();
+  const heroMobileCtrl = useAnimation();
+
   useEffect(() => {
-    heroCtrl
-      .start({
-        opacity: 1,
-        filter: "brightness(1)",
-        scale: 1,
-        transition: { duration: 2.6, ease: [0.16, 1, 0.3, 1] },
-      })
-      .then(() => {
-        heroCtrl.start({
-          scale: [1, 1.016, 1],
-          transition: { duration: 28, ease: "easeInOut", repeat: Infinity, repeatType: "loop" },
+    const runHero = (ctrl: ReturnType<typeof useAnimation>) => {
+      ctrl
+        .start({
+          opacity: 1,
+          filter: "brightness(1)",
+          scale: 1,
+          transition: { duration: 2.6, ease: [0.16, 1, 0.3, 1] },
+        })
+        .then(() => {
+          ctrl.start({
+            scale: [1, 1.016, 1],
+            transition: { duration: 28, ease: "easeInOut", repeat: Infinity, repeatType: "loop" },
+          });
         });
-      });
-  }, [heroCtrl]);
+    };
+    runHero(heroDesktopCtrl);
+    runHero(heroMobileCtrl);
+  }, [heroDesktopCtrl, heroMobileCtrl]);
 
   const faqPreview = [
     t.faq.categories[0].items[1],
@@ -108,7 +114,7 @@ export default function Home() {
         {/* Desktop hero image */}
         <div className="absolute inset-0 z-0 hidden md:block overflow-hidden">
           <motion.div
-            animate={heroCtrl}
+            animate={heroDesktopCtrl}
             initial={{ opacity: 0, filter: "brightness(0.22)", scale: 1.06 }}
             className="absolute inset-0"
             style={{
@@ -123,7 +129,7 @@ export default function Home() {
         {/* Mobile hero image — 9:16 vertical */}
         <div className="absolute inset-0 z-0 block md:hidden overflow-hidden">
           <motion.div
-            animate={heroCtrl}
+            animate={heroMobileCtrl}
             initial={{ opacity: 0, filter: "brightness(0.22)", scale: 1.06 }}
             className="absolute inset-0"
             style={{
